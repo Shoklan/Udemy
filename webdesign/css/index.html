@@ -7,14 +7,46 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type="text/css">
-    	p{
-    		color: green;
+    	.large{
+    		font-size:300%;
     	}
+    	
+    	.small{
+    		font-size:25%;
+    	}
+
+    	#huge{
+    		font-size:900%;
+    	}
+
+    	.underline{
+    		text-decoration:underline;
+    	}
+
+    	.purplebox{
+    		background-color:#B404AE;
+    		width:200px;
+    		height:200px;
+    	}
+
+    	.greenbox{
+    		background-color:#295715;
+    		width:300px;
+    		height:100px;
+    	}
+    	
     </style>    
 </head>
 
 <body>
-<p>This is some text.</p>
-<p>This is some more text.</p>
+<div class="purplebox">
+	<p class="large">This is some text.</p>
+</div>
+
+<div class="greenbox">
+<p id="huge">This is some more text.</p>
+</div>
+
+<p>The third <span class="underline">word</span> in this paragraph is underlined.</p>
 </body>
 </html>
