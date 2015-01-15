@@ -29,23 +29,48 @@
     		height:200px;
     	}
 
+    	}
+
+    	.titlebar{
+    		background-color:#000000;
+    		width:100%;
+    		margin:50px 100px 0px 10px; /*margin-[direction]*/
+    		font-style:sans-serif;
+    		position:relative;
+    	}
+
+    	p{
+    		padding:0px;
+    		margin: 0px;
+    	}
+
+    	
+    	.bluebox{
+    		background-color: blue;
+    	}
+
+    	.redbox{
+    		background-color: red;
+    	}
+
     	.greenbox{
-    		background-color:#295715;
-    		width:300px;
-    		height:100px;
+    		background-color: green;
+    	}
+
+    	.div_properties{
+    		height: 100px;
+    		width: 100px;
+    		position: relative;
+    		float: left;
     	}
     	
     </style>    
 </head>
 
 <body>
-<div class="purplebox">
-	<p class="large">This is some text.</p>
-</div>
-
-<div class="greenbox">
-<p id="huge">This is some more text.</p>
-</div>
+<div class="redbox div_properties">Box 1</div>
+<div class="bluebox div_properties">Box2</div>
+<div class="greenbox div_properties">Box3</div>
 
 <p>The third <span class="underline">word</span> in this paragraph is underlined.</p>
 </body>
