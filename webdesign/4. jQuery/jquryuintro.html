@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+	<title>Learning JQuery</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html: charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+    <style>
+    	#draggable{
+    		height: 200px;
+    		width: 200px;
+    		background: green;
+    	}
+
+    	#resizeable{
+    		height: 200px;
+    		width: 200px;
+    		background: red;
+    	}
+
+    	#target{
+    		height: 300px;
+    		width: 300px;
+    		background-color: yellow;
+    	}
+		
+		li{
+			background-color: #ffffcc;
+			border-color: black;
+			border-style: solid;
+			border-radius: 3px;
+			margin: 3px;
+			
+			width: 140px;
+			padding-left: 15px;
+		}
+    </style>
+</head>
+
+<body>
+	
+	<ul>
+		<li>Pizza</li>
+		<li>Chicken Wings</li>
+		<li>Waffles</li>
+		<li>Fresh Turtle Meat</li>
+		<li>Llama</li>
+		<li>Cheeseburger</li>
+		<li>Python</li>
+	</ul>
+	
+	<h2> Accordion GG</h2>
+	<div id="accordian">
+	<h3>Title</h3><div>
+		<p>This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		</p>
+	</div>
+	
+	<h3>Title</h3><div>
+		<p>This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		</p>
+	</div>
+	
+	<h3>Title</h3><div>
+		<p>This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		</p>
+	</div>
+	
+	<h3>Title</h3><div>
+		<p>This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		</p>
+	</div>
+	
+	<h3>Title</h3><div>
+		<p>This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		</p>
+	</div>
+	
+	<h3>Title</h3><div>
+		<p>This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.
+		</p>
+	</div>
+	</div>
+	
+	<div id="draggable">Drag Me Around!</div>
+
+	<div id="resizeable">Resize Me!</div>
+	<div id="target"></div>
+
+	<script>
+	$("#draggable").draggable();
+	$("#resizeable").resizable();
+	$("#target").droppable({
+		drop: function(ui, event){
+			$("#target").css("background-color", "red");
+		}
+	});
+	$("#accordian").accordion();
+	$("ul").sortable();
+	</script>
+</body>
+</html>
