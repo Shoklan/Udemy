@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
  <head>
- <title>Learning JQuery - Changing Styles</title>
+ <title>Learning JQuery - Fading Content</title>
 
  <meta charset="utf-8" />
  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -31,29 +31,20 @@
 
 <body>
 
-	<div id="circle" class="green"></div>
-	<div class="square"></div>
-	<div class="square"></div>
+	<p>I'm going to make this text... DISAPPEAR!</P>
+	<button id="fadeOut">Disappear!</button>
+	<button id="fadeIn">Reappear!</button>
 
 	<script>
-		/* These were a previous parts of the lesson.
-		$("div").click(function(){
-			alert($(this).css("width"))
-		});
-		
-		$("div").click(function(){
-			$(this).css("width", "400px")
-		});
-		*/
-		
-		$("div").click(function(){
-			$(this).css("display", "None")
-		})
-
-		$("#circle").click(function(){
-			$(".square").fadeOut()
+		$("#fadeOut").click(function(){
+			$("p").fadeOut("slow", function(){
+				alert("You're a turtle!");
+			});
 		});
 
+		$("#fadeIn").click(function(){
+			$("p").fadeIn();
+		});
 	</script>
 </body>
 </html>

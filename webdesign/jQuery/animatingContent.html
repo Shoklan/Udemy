@@ -1,18 +1,13 @@
 <!doctype html>
 <html>
  <head>
- <title>Learning JQuery - Changing Styles</title>
+ <title>Learning JQuery - Animating Content</title>
 
  <meta charset="utf-8" />
  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1" />
  <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
  <style type="text/css">
-	
-	.green{
-		background-color: green;
-	}
- 
 	.square{
 		width: 300px;
 		height: 300px;
@@ -25,35 +20,24 @@
 		width:  200px;
 		height: 200px;
 		border-radius: 100px;
+		background-color: green;
 	}
  </style>
 </head>
 
 <body>
 
-	<div id="circle" class="green"></div>
-	<div class="square"></div>
-	<div class="square"></div>
+	<div id="circle"></div>
+
 
 	<script>
-		/* These were a previous parts of the lesson.
-		$("div").click(function(){
-			alert($(this).css("width"))
-		});
-		
-		$("div").click(function(){
-			$(this).css("width", "400px")
-		});
-		*/
-		
-		$("div").click(function(){
-			$(this).css("display", "None")
-		})
-
 		$("#circle").click(function(){
-			$(".square").fadeOut()
-		});
-
+			$(this).animate({width: "300px",
+		                     height: "300px",
+		                     borderRadius: "150px",
+		                 	 marginLeft: "100px",
+		                 	 marginTop: "100px" }, 800);
+		})
 	</script>
 </body>
 </html>
