@@ -1,0 +1,16 @@
+/* Author: Collin Mitchell
+	Project: ShawnCouncil.com
+*/
+body {
+	margin: auto;
+	padding: 0px;
+ 	/*	background-color: #f3f3f3; */
+}
+
+ #header-image{
+ 	padding-top: 80px;
+	background: url("../img/header-image.jpg") 50% -250px  fixed;
+	background-size: cover;
+}
+
+.right{	float: right; }
