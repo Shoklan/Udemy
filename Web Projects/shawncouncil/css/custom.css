@@ -9,8 +9,37 @@ body {
 
  #header-image{
  	padding-top: 80px;
-	background: url("../img/header-image.jpg") 50% -250px  fixed;
+	background: url("../img/header-image.jpg") 50% -340px  fixed;
 	background-size: cover;
+	height: 400px;
+
 }
 
-.right{	float: right; }
+#nameDiv{
+	position: relative;
+	float: right;
+	top: 205px;
+	width: 20%;
+}
+
+#descript{
+	background-color: #ffddaa;
+	width: 100%;
+}
+
+#contactBlock{
+	background-color: black;
+	width: 100%;
+	height: 20px;
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+}
+
+.botMargin{
+	margin-bottom: 20px
+}
+
+.topMargin{
+	margin-top: 40px;
+}
