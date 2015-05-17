@@ -7,8 +7,13 @@
 <?php
 	$password = 'turtlebananawaffle';
 
-	if(isset($_POST['password'])){
-		echo "submitted";
+	if(isset($_POST['password']) and !empty($_POST['password'])){
+		if($_POST['password'] == $password){
+			echo "Correct!";
+		}
+		else{
+			echo "Incorrect!";
+		}
 	}
 
 ?>
