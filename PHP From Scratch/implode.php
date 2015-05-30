@@ -7,4 +7,7 @@
 	}
 
 	echo $names_str;
+
+	$data = array(
+		'' => '')
 ?>
