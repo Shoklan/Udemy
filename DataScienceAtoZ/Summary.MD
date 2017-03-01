@@ -42,7 +42,26 @@
 - Tableau is drag and drop.
 - Tableau Public is free, but requires all code to be open.
 - [Course Public Files](http://www.superdatascience.com/training)
-- 
+- Open a .CSV file `Left Side > Text File > Select File`
+- If you add more than one file, Tableau will try to join them.
+
+- Dimensions are Independant Variables; Measures are Dependant Variables.
+
+Going to be really hard to translate visual data into textual data.
+
+### Problem: Who gets a bonus?
+- Kirill is correct; UI is amazingly intuitive.
+- You can use `Right Click > Calculated Fields` to create new variables in Tableau
+- Dragging a variable onto marks will allow you apply that mark to the variable and it will be added.
+- If you `CTRL + drag` the variable onto the mark, that will work too.
+- "Tableau has the capacity to make visualizations, but also to make them reasy to understand."
+- If you `Right CLK Worksheet > Copy > Image` then you can export the image; only if paid version though.
+
+- Type can be changed on a 'Dimension' using `Right CLK`.
+- Tableau is AMAZING at dealing with geo data.
+
+
+
 
 
 ## Modeling
