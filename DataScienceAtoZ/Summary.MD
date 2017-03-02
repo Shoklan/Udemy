@@ -60,6 +60,16 @@ Going to be really hard to translate visual data into textual data.
 - Type can be changed on a 'Dimension' using `Right CLK`.
 - Tableau is AMAZING at dealing with geo data.
 
+### Chi-Squared.
+- Data MUST be in aboslute terms: not percentage.
+- Build an expected table; using the 20% as the multiplier.
+- Multiplier is based on left_percentage / total_count in data.
+- If leaving company is independant of gender, then ~20% of both should leave.
+- Chi-Squared is a test designed to test the prop. of independence.
+
+- ALT ++  for excel ?
+- Minimum of 5 observations in each cell.
+
 
 
 
