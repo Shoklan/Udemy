@@ -72,9 +72,64 @@ Going to be really hard to translate visual data into textual data.
 
 
 
-
-
 ## Modeling
+- 50 lectures; HERE WE GO!
+- Not to teach you how to use R or Python.
+- This is about correct model building.
+
+- I've gone over all this regression stuff before.
+
+### Stats Refresher
+- Types of variables:
+	1. Categorical
+		i. Nominal: non-orderable.
+		ii. Ordinal: Can order, but no computations.
+	2. Numeric
+		i. Discrete.
+		ii. Continuous.
+
+- Regression: estimate of the relationship between variables.
+- Two Types:
+	1. Linear.
+		i. Simple Linear Regression.
+		ii. Multiple Linear Regression.
+	2. Logistic.
+		i. Simple Logistic Regression.
+		ii. Multiple Logistic Regression.
+
+- y = b0 + b1*x1
+
+- y = dependent variable
+- b0 = y intercept of the line.
+- b1 = coefficient of change.
+- x1 = independent variable
+
+- y = b0 + b1*x1 + b2*x2 ... bn*xn
+- y = dependent variable
+- b0 = y intercept of the line.
+- b1 = coefficient of change.
+- x1 = independent variable
+- b2 = coefficient of change.
+- x2 = independent variable
+
+
+- Ordinary Least Square.
+- The model line tells us were they should be, as per the model.
+- Actual point is yi.
+- yi^ is the Predeicted point
+
+- Line is Sum of (yi-yi^)^2.
+
+- R Squared: 1 - ( Residuals Sum of Squares / Total Sum of Squares)
+- Adjusted R Squared: 1 - (1 - R^2)( n-1 / n - p - 1), s.t. p = parameters; n = sample size.
+
+
+### Linear Regression
+- What is Gretl? ( GNU Regression, Econometrics and Time-series Library)
+- I'm not installing Gretl; R is king.
+- 
+
+
 
 ## Data Preparation
 
