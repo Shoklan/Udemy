@@ -127,6 +127,27 @@ Going to be really hard to translate visual data into textual data.
 ### Linear Regression
 - What is Gretl? ( GNU Regression, Econometrics and Time-series Library)
 - I'm not installing Gretl; R is king.
+- Assumptions:
+	1. Linearity
+	2. Homoscedasticity
+	3. Multivariate normality
+	4. Idependence of errors
+	5. Lack of Multicollinearity
+
+- Goe-demographic Segmentaition Model? (Logistic Regression) // Different Assumptions
+- Logistic most used.
+
+- Dummy Variables are features encoded as interporable values.
+
+- If mosre than one dummy variablke are included causes multicollinearity.
+- I know about forward, backword step-wise model building.
+
+- False positive is when you predict something is true, but it's not.
+- False Negative is when you predict something is false, but it's not.
+
+### Assessing models
+- Cumulative Accuracy Profile (CAP)
+- "Customer Segmentation Model"
 - 
 
 
