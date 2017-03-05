@@ -162,10 +162,29 @@ Going to be really hard to translate visual data into textual data.
 - I've seen this before.
 - Train on 80%; Testing on 20% to test for bias.
 
+### Odds Ratio
+- What does this mean?
+- If odds are $11, then you're winning $10 + $1 that you spent.
+- Losing to winning odds: 10:1; reverse them.
+- Win:Lose odds = p / ( 1 - p)
+- Increasing and independant variable xi by one unit will increase the odds by a multiplicative factor of e^(bi)
 
+### Model Maintenance
+- Models will deteriorate over time as the underlying reality changes.
+	1. Additional Factors
+	2. Changes in behavior.
+	3. Changes in Process.
+	4. Changes in Existing Factors
+	5. Competitors.
+	6. Changes in the Industry
+	7. Chnages in regulation.
+	8. Changes in Product.
+	9. Depletion
+	10. Spontaneous changes.
 
-
+- Assess -> Retrain -> Rebuild
 
 ## Data Preparation
+
 
 ## Communication
