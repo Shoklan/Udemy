@@ -147,8 +147,22 @@ Going to be really hard to translate visual data into textual data.
 
 ### Assessing models
 - Cumulative Accuracy Profile (CAP)
+- Also called the gain chart.
 - "Customer Segmentation Model"
-- 
+- CAP is not ROC.
+
+- I guess I need to know about excel.
+
+- Take the area under the good model, then divide that by the area under the perfect model.
+- AR = aR / aP.
+- As AR -> 1, better model.
+
+- Training vs Testing
+- Take 10%-20% to create a training/testing dataset.
+- I've seen this before.
+- Train on 80%; Testing on 20% to test for bias.
+
+
 
 
 
