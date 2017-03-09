@@ -185,6 +185,42 @@ Going to be really hard to translate visual data into textual data.
 - Assess -> Retrain -> Rebuild
 
 ## Data Preparation
+- Raw Data -> ETL -> Database -> Analyze -> Visualize -> Insights
+- "Data Warehousing"
+- " means storing data in relational Database.
+- What is Relational* Database?
+- A Database where the relationship between data matters.
+- Advantages over spreadsheets:
+	1. Integrity.
+	2. Combinations are easy.
+	3. Easily scalable.
+
+- SQL stands for Structured Query Languages
+- *Install SQL*
+- `CREATE TABLE TestTable{ Name VARCHAR( 100 ), AGE INT }` to create a two column table
+- Insert data using code below:
+```
+INSERT INTO TestTable {Name, Age}
+VALUES("Matt", 35), ("James", 45), ("Helan", 26)
+```
+
+- What is ETL?
+- ETL stands for Extract - Transform - Load
+- Move data from source to Warehouse via this process.
+- "SSIS via SSDT-BI with MSVS Shell" what?
+- MSVS = Microsfot Visual Studio Shell.
+- Only using BI package
+- SSDT-BI = SQL Server Data Tools - Business Intelligence.
+- Used to be called "Business intelligence Studio"
+- SSAS = SQL Server Analysis Services.
+- SSIS = SQL Server Integration Services.
+- SSRS = SQL Server Reporting Services
+
+- Data Wrangling just means data preparation
+
+
+
+
 
 
 ## Communication
