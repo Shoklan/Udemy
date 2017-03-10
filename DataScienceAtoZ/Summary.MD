@@ -218,7 +218,22 @@ VALUES("Matt", 35), ("James", 45), ("Helan", 26)
 
 - Data Wrangling just means data preparation
 
+- Project folder structure:
+	1. Original Data.
+	2. Prepared Data.
+	3. Uploaded Data.
+	4. Analysis
+	5. Insights.
+	6. Final
 
+- Sublime Text 3 FTW.
+- Excel will hide changes to dates.
+- The conversions are based on local date settings and will sometimes make mistakes
+- Excel also alters numbers that could be irreversable!
+- Setting extension type to .txt and then force Excel to use Data Import Wizard via open.
+- Have Excel interperate data as Text to protect data integrity.
+- To Safely alter column, select column and go to `Data Ribbon > Text to Column`.
+- Text Qualifier is what is treated as a container for text to be treated as a block.
 
 
 
