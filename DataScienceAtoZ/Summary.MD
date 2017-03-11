@@ -234,6 +234,67 @@ VALUES("Matt", 35), ("James", 45), ("Helan", 26)
 - Have Excel interperate data as Text to protect data integrity.
 - To Safely alter column, select column and go to `Data Ribbon > Text to Column`.
 - Text Qualifier is what is treated as a container for text to be treated as a block.
+- Set A	SQL do the heavy lifting of the analysis.
+
+- % is a wildcard inside of a string in a SQL query.
+- `F5` to run a typed query.
+- _ stands for exactly one character.
+- SQL regex is a LOT different than normal regex.
+- Make sure to use `LIKE` when using regex; else, wont work.
+- Comments are normal block comments: `/* comment block */`
+- Single line comment with `--`
+
+- Data Types:
+	1. Int
+	2. Flaot
+	3. Varchar(n); s.t. n = max length // max == 8K
+	4. Date       // canonical date format yyyy-mm-dd
+	5. Datetime   //
+	6. Bit
+	7. Money
+
+
+- Type Conversions: implicit or explicit.
+- Cast vs Convert?
+- `cast( SALES as FLOAT )`
+- `convert( float, [SALES] )
+- Is there a difference in speed?
+
+- NULL is SQL means empty cell: placeholder
+- `SET Discount = NULL WHERE Discount = .5`
+- `<>` means not equal
+- You cannot use = for NULL; use `is` instead.
+
+
+### Types of Joins
+- Inner join uses only intersection.
+- Left Outer Join keeps non-matching left table.
+- Right Outer Join keeps non-matching right table.
+- Full Outer Join just keps everything.
+
+- If there are multiple matches, then it will duplicate them.
+- Joining on more than one column is much safer.
+- You can give your tables aliases using `x as A`
+
+- You can save Queries.
+- These are called Procs.
+- Expand "Programabilty > Stored Procedures > Right CLCK > Store Procedure..."
+```
+CREATE PROC [BLD_WRK_OfficeSupplies_CustomerList]
+AS
+BEGIN
+	SELECT * FROM [dbo].[RAW_OfficeSupplies_CustomerList_20150810]
+END
+```
+
+```
+IF OBJECT_ID('WRK_OfficeSupplies_CustomerList') IS NOT NULL
+DROP TABLE [WRK_OfficeSupplies_CustomerList]
+```
+- Store results into a new table using `INTO`.
+
+
+
 
 
 
