@@ -1,5 +1,6 @@
 # Data Science A-Z
 
+
 ## Introduction
 - Course by Kirill Eremenko
 
@@ -38,6 +39,7 @@
 
 - Covering most topics in 21 hours of content?
 
+
 ## Tableau
 - Tableau is drag and drop.
 - Tableau Public is free, but requires all code to be open.
@@ -69,7 +71,6 @@ Going to be really hard to translate visual data into textual data.
 
 - ALT ++  for excel ?
 - Minimum of 5 observations in each cell.
-
 
 
 ## Modeling
@@ -122,7 +123,6 @@ Going to be really hard to translate visual data into textual data.
 
 - R Squared: 1 - ( Residuals Sum of Squares / Total Sum of Squares)
 - Adjusted R Squared: 1 - (1 - R^2)( n-1 / n - p - 1), s.t. p = parameters; n = sample size.
-
 
 ### Linear Regression
 - What is Gretl? ( GNU Regression, Econometrics and Time-series Library)
@@ -183,6 +183,7 @@ Going to be really hard to translate visual data into textual data.
 	10. Spontaneous changes.
 
 - Assess -> Retrain -> Rebuild
+
 
 ## Data Preparation
 - Raw Data -> ETL -> Database -> Analyze -> Visualize -> Insights
@@ -253,7 +254,6 @@ VALUES("Matt", 35), ("James", 45), ("Helan", 26)
 	6. Bit
 	7. Money
 
-
 - Type Conversions: implicit or explicit.
 - Cast vs Convert?
 - `cast( SALES as FLOAT )`
@@ -293,10 +293,22 @@ DROP TABLE [WRK_OfficeSupplies_CustomerList]
 ```
 - Store results into a new table using `INTO`.
 
+- Checks if values are numeric `ISNUMERIC( [BALANCE]) <> 1`
 
-
-
-
+- Use `FILTER` to filter rows.
+- Use `DELETE` to delete rows.
 
 
 ## Communication
+- Crowdsource anything you don't need to be directly involved in.
+- Gladwell would be proud; arbitrary boundaries apply.
+- Learn to say No.
+- Don't rely on slides.
+- Turn it onto a story.
+
+### Dealing with Execs
+- They care about $ first, foremost.
+- Be ready for questions.
+- Leave out one obvious detail for a leading question.
+
+- Answer is not always simple; not always pretty.
