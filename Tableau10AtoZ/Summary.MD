@@ -47,7 +47,7 @@
 - Blending can be done using multiple columns/Dimensions.
 - Subtracting an Aggregated field from a non-aggregated field will create errors.
 
-
+- Storylines are kind of like Powerpoint Presentations.
 
 
 
