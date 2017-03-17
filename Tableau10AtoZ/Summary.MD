@@ -46,13 +46,31 @@
 - Links are dynamically created based upon Dimension names.
 - Blending can be done using multiple columns/Dimensions.
 - Subtracting an Aggregated field from a non-aggregated field will create errors.
-
 - Storylines are kind of like Powerpoint Presentations.
 
+- Data Interpreter was introduced in T9.
+- Tableau will create an excel spreadsheet that explains its reasoning.
+- You will need to alter a copy of the original sometimes in Excel to make corrections Tableau can't resolve.
+- Tableau can do Pivots inside by simple highlight and select.
+- Tableau has a feature called 'split' that can break a column into multiple columns.
+- Metagrid allows you to look at all the columns at once.
 
+## Tableau 10
+1. Custom Territories.
+2. Clustering Feature.
+3. Data Connections; across databases.
 
+- Return on Marketing Investment (ROMI)
+- `CTRL + CLK` and then right click and select `Group > All Dimensions`.
+- To Add Highlight, Drag Dimension on to Details; select dropdown > `Show Highlighgt`.
+- Clustering can be found via the `Analytics Tab > Cluster`.
+- Algorithm is K-Means Clustering; default k is 2, but can be changed.
 
+- ! Pay attention to domain knowledge.
+- I'll stick to R for Modeling though.
+- There is an option for `Device Preview`.
 
 ## Research:
+- Excel: CTRL + G ?
 
 ## Reading:
