@@ -33,7 +33,7 @@
 - This can cause duplicate rows to exist.
 - .. Creates heirarchies to manage geolocation data.
 - .. will sometimes auto-create the data for you.
-- Apply filter to multiple worksheets: `Right Click Filter > Apply to Worksheets > All Using This Data Source`.
+- Apply filter to multiple worksheets: `Right Click Filter> Apply to Worksheets> All Using This Data Source`.
 
 - To modify the visualization for users, you use Filters and Actions.
 - Filters divide the data into subsets; highlights select only relevant data.
