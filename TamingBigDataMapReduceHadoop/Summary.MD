@@ -51,7 +51,17 @@ At a glance, the yield statement is used to define generators, replacing the ret
 
 - Make sure that any functions you need are defined INSIDE of the `MRClassName(MRJob)`
 - Python can change the encoding of words using `unicode(word, "utf-8", errors="ignore")`.
-- 
+- You can add multiple MapReduce levels using a list comprehension to get Hadoop to heavy lifting.
+- This is called 'stepping' and requires one to import MRStep from mrjob.step and include a `step()`.
+- To ensure all data is sorted uniformly, then you'll want a single Reducer.
+- A *Combinor* is where your Mapper has partial reducing function included in the Mapper.
+- Don't write essential code in the Combinor since you can't be assured of it's actually running all the time.
+- If you're looking for one value, then make the key uniform to combine all the data.
+
+- Files cannot be garunteed to be on the server.
+- You must pass the ancillary file along with the call.
+- This is done via calling the parent and tell **self** where the file is.
+- init functions can be in the reducer or mapper phase.
 
 ## Research:
 
