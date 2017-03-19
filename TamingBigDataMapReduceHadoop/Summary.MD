@@ -33,13 +33,25 @@ if __name__ == '__main__':
     MRRatingCounter.run()
 ```
 - `yield` is a new keyword for me.
+```
+At a glance, the yield statement is used to define generators, replacing the return of a function to provide a result to its caller without destroying local variables. Unlike a function, where on each call it starts with new set of variables, a generator will resume the execution where it was left off
+```
+- Overview of Iterators, Generators, and Yield can be found [here](http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python).
 - INPUT -> mapper() -> HADOOP -> reducer() -> OUTPUT
 
 - MapReduce is useful becuase it's partitionable and scalable across many PCs.
 - MAKE AS CLOSE TO ZERO ASSUMPTIONS AS POSSIBLE.
 
+- Overall
+	1. Familiarize with Data.
+	2. Question?
+	3. Write Mapper.
+	4. Write Reducer.
+	5. Call 
 
-
+- Make sure that any functions you need are defined INSIDE of the `MRClassName(MRJob)`
+- Python can change the encoding of words using `unicode(word, "utf-8", errors="ignore")`.
+- 
 
 ## Research:
 
