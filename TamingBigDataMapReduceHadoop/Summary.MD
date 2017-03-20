@@ -62,8 +62,29 @@ At a glance, the yield statement is used to define generators, replacing the ret
 - You must pass the ancillary file along with the call.
 - This is done via calling the parent and tell **self** where the file is.
 - init functions can be in the reducer or mapper phase.
+- mapper_init, reducer_init will run before the mapper, reducer.
+
+## Breadth-First Search
+- Convert data into a structure for nodes.
+- Feed one interaction into a new one.
+- A Counter is used to indicate how many times we hit the cahracter we're looking for.
+- Hadoop as counters for just this case; consistent across all nodes.
+- mjrob is normally in JSON.
+- Assign `INPUT_CONTROL = RawValueProtocol` and `OUTPUT_CONTROL = RawValueProtocol`.
+- `add_passthrough_option()` just makes sure all clusters know what information is important.
+- `self.increment_counter('Degrees of Separation', counterName, 1)` is how you name and adjust a counter.
+
+- `combinations(values, combinations)` is new and useful.
+- 
+
+## Scaling
+
 
 ## Research:
+*Item-Based Collaborative Filtering*
+- *Cosine Similarity*
+- *Jaccard Coefficient*
+
 
 ## Reading List:
 
