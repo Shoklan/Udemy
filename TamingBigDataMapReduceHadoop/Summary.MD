@@ -77,14 +77,44 @@ At a glance, the yield statement is used to define generators, replacing the ret
 - `combinations(values, combinations)` is new and useful.
 - 
 
-## Scaling
+## Hadoop Fundamentals
+- Framework for Distributed computing.
+- Offers redundancy and scalability.
+- Do not assume anything about the node that you're running on.
+
+### Hadoop File System (HDFS)
+- Breaks the blocks of information apart randomly across all nodes.
+- Apache YARN is how Hadoop manages resources across a cluster.
+- .. is part of Hadoop.
+- .. is not limited to MapReduce.
+- Spark is now competing with MapReduce; it's winning.
+- YARN is the 'API' for all this.
+- Written in Java; sad face.
+- It works by exchanging data as 'text streams.'
+
+### Getting an Amazon EC2 account
+- Visit site at [Amazon Elastic Map Reduce](https://www.aws.amazon.com).
+- Sign up for an account; before of paying on accident.
+- Connect to mrjob package.
+    1. Select your name > Security Credentials
+    2. Select Access Keys.
+    3. "Create New Access Key"; Confirm.
+    4. Copy the Secret Key; also, save the key.
+    5. Go to Environmental Variables
+    6. New variables: AWS_ACCESS_KEY_ID, Open Key; AWS_SECRET_ACCESS_KEY, Secret Key.
+    7. Restart 'cause Windows is stupid.
+    8. pass flag `-r emr` when running job.
+
+## Distributed Computing Fundamentals
+
+
 
 
 ## Research:
 *Item-Based Collaborative Filtering*
 - *Cosine Similarity*
 - *Jaccard Coefficient*
-
+- *Apache YARN*
 
 ## Reading List:
 
