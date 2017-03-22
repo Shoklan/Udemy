@@ -106,7 +106,15 @@ At a glance, the yield statement is used to define generators, replacing the ret
     8. pass flag `-r emr` when running job.
 
 ## Distributed Computing Fundamentals
+- Default only runs on 1 cloud box.
+- Speed is not multiplicative.
+- To add more cloudboxes, use `--num-ec2-instances 4`
+- There is a limit of 20 cloudboxes as per Amazon's boundary case.
+- Sorts are only done per reducer; therefore, we need to sort after run.
 
+- You have 5 minutes to collect the runlogs after a failure.
+- To collect: `python -m mrjob.tools.emr.fetch_logs --find-failure [cloud_job_id]`.
+- 
 
 
 
@@ -116,5 +124,7 @@ At a glance, the yield statement is used to define generators, replacing the ret
 - *Jaccard Coefficient*
 - *Apache YARN*
 
-## Reading List:
+## Reading List
+- mrjob Python documentation.
+- 
 
