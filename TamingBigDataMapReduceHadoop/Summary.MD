@@ -114,15 +114,62 @@ At a glance, the yield statement is used to define generators, replacing the ret
 
 - You have 5 minutes to collect the runlogs after a failure.
 - To collect: `python -m mrjob.tools.emr.fetch_logs --find-failure [cloud_job_id]`.
+
+## Apache Hive
+- "Datawarehouse"
+- Runs on top of Hadoop
+- Uses a SQL-like language called QL.
+- Allows MapReduce.
+- Can be used with Elastic MR
+```
+CREATE TABLE u_data(
+    userid INT,
+    movieid INT,
+    rating INT, 
+    unixtime STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY '\t'
+STORED AS TEXTFILE;
+
+LOAD DATA LOCAL INPATH '<path>/u.data'
+OVERWRITE INTO TABLE u_data
+```
+- Hive makes sense if you're always live.
+
+## Apache Pig
+- Runs on top of Hadoop
+- SQL-like language called "pig latin"
+- Also works with EMR.
+
+## Apache Spark
+- Works much different than MapReduce.
+- Still uses Hadoop.
+- Has built in support for graphs and Machine Learning.
+- Significantly fast; DAG engine?
+- Can be used with Scala, Java, Python, R.
+- Spark offers easy queries.
+- Uses HDFS, Cassandra, S3, Hbase, MongoDB, Sequoia DB
+
+- There are no reasons not to use Spark anymore; it's really taken over.
+- More expexnsive for small jobs.
 - 
-
-
 
 ## Research:
 *Item-Based Collaborative Filtering*
 - *Cosine Similarity*
 - *Jaccard Coefficient*
 - *Apache YARN*
+- *Apache Hive*
+- *Apache Pig*
+- *Apache Spark*
+- Cassandra
+- S3
+- Hbase
+- MongoDB
+- Sequoia DB
+- S3 Browser.
+
+
 
 ## Reading List
 - mrjob Python documentation.
