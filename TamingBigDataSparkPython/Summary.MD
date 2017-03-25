@@ -96,13 +96,40 @@ for key, value in sortedResults.items():
 	9. Cartesian
 
 - Nothing actually happens until you request what you want.
-- 
+- `spark-submit` allows you to submit pythong scripts to Spark.
+
+- There are many actions you can take:
+	1. `reduceByKey()`     : combine values with same key.
+	2. `groupByKey()`      : group values with same key.
+	3. `sortByKey()`       : Sort RDD by key values.
+	4. `keys()`, `values()`: extract only keys,values into an RDD.
+- You can do SQL-like joins.
+- If your query will not adjust the keys, then use `mapValues()` or `flatmapValues()`.
+- This is because it's faster. 
+
+- Filtering removes data that you don't care about.
+
+- Map has a one-to-one relationship, always.
+- Flatmap allows you to map from many-to-even-more.
+
+- Regular Expressions in python are quite unique.
+```python
+# compile the regex
+# using at least one word value
+	re.compile(r'\W+',
+# type.
+	re.UNICODE).split(
+# convert lower case verions
+	text.lower())
+```
+
+
+
 
 
 ## Research
 - Maybe pick up Scala.
+- Language processing: NLTK.
 - 
 
 ## Further Reading
-
-00150820
