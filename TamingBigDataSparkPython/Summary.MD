@@ -123,7 +123,20 @@ for key, value in sortedResults.items():
 	text.lower())
 ```
 
+- Spark auto-forwards objects, but this can be really slow.
+- This is called a broadcast object.
+- You invoke this using `sc.broadcast()`.
+- You use `sc.value()` to get the broadcast object back.
 
+
+- An Accumulator allows many executions to increment a shared variable. //MapReduce Counter equivalent
+
+- Any time you perform more than one action on an RDD, you must cache it.
+- To do this, use `rdd.cache()` or `rdd.persist()`.
+- The difference is that *persist* allows one to cache to disk.
+- `.setMaster("local[*]")` will tell Spark to use all your computer's cores.
+- You can save data to a file using `rdd.saveAsTextTile('name_of_file')
+- `rdd.take( count )` will peel of items off the data.
 
 
 
