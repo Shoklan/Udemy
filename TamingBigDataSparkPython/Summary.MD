@@ -138,11 +138,127 @@ for key, value in sortedResults.items():
 - You can save data to a file using `rdd.saveAsTextTile('name_of_file')
 - `rdd.take( count )` will peel of items off the data.
 
+## Elastic MapReduce
+- Spark is MUCH more expensive than MapReduce is via the EMR Amazon service.
+- When you set up a spark key, then it will download a sparkkey.pem file.
+- if you lose that combo, then you'll need to delete it and create a new one.
+- If you're on Windows, then you'll need a terminal application: putty?
+- Use Putty to import the .PEM file.
+- Select `Save Private Key` to save the .PEM file to a .PPK file.
+- Turn SSH off *AND* import the .ppk file for usage in putty.
+
+## Actually Running Script
+- Spark still isn't magic.
+- There is some level of work required to split up the jobs among clusters.
+- You can use `rdd.partitionBy()` to break the jobs up for executors.
+- **How do you know the *right* number of partitions?**
+	1. As many as you have cores.
+	2. As many as you have executors.
+	3. 100 is a good starting point.
+
+- An **s3n://** just means Amazon services.
+- Default memery budget is 512 MB.
+- You can pass a memory size request using flag `-executor-memory 1g`; 1 GB.
+- You can ask to use YARN using `-master yarn`.
+- EMR does this by default though.
+- *MAKE SURE YOU TURN THE CLUSTER OFF MANUALLY AFTER A JOB*
+
+## Troubleshooting
+- This can be quite challenging.
+- Spark runs a local console on port 4040
+- If on EMR, then you mind as well throw in the towel since Amazon is locked down.
+- In YARN, logs are distributed; which can be annoying.
+- Be careful how much you ask of your executors.
+- Be careful of dependency issues.
+- Absolute vs Relative paths; you can use broadcasts to mitigate.
+
+## Spark SQL
+- Extends RDD to a "DataFrame" object
+- Dataframes:
+	1. Contain Row Objects
+	2. Run SQL queries
+	3. Has a schema
+	4. R/W to JSON, Hive, parquet.
+	5. Communicate with JDBC/ODBC, Tableau // Oh?
+
+- To use in python: `from pyspark.sql import SQLContext, Row`.
+- 
+
+```python
+hiveContext - HiveContext(sc)
+inputData = spark.read.json(dataFile)
+inputData.createOrReplaceTempView("myStructuresStuff")
+myResultsDataFrame = haveContext.sql('""'SELECT foo FROM bar ORDER BY foobar'""')
+```
+- After Spark 2.0, there are now **DataSets**.
+- DataSets can also contain a class type along with the row object.
+- Since it more important with respect to Scala, Java.
+- DataFrame isa DataSet; not bidirectional.
+- Spark SQL allows for shell access via :10000
+- Create user defined types.
+
+- Spark 2.0 creates SparkSessions instead.
+- `spark.createDataFrame( data )` will convert data into workable DataFrame.
+- `df.createOrReplaceTempView( data )` will allow one to run SQL queries against the data.
+- Call `spark.sql( "command_string" )
+- There are also commands that behave like SQL queries.
+	1. `groupBy()`
+	2. `count()`
+	3. `orderBy()`
+	4. `show()`
+
+- Don't forget to stop the connection with `spark.stop()`.
+
+## MlLib
+- Feature Extraction
+- Basic Statistics
+	1. Chi-Squared
+	2. Pearson Correlation
+	3. Spearman Correlation
+	4. Min.
+	5. Max.
+	6. Mean.
+	7. Variance.
+- Linear, Logisitc Regression
+- Support Vector Machines.
+- Naive Bayes.
+- Decision Trees.
+- K-Means Clustering.
+- Principle Component Analysis.
+- Singular Value Decomposition.
+- Alternating Least Squares? //Netflix Competition winner.
+
+- Spark has a type called **Rating**.
+
 
 
 ## Research
 - Maybe pick up Scala.
 - Language processing: NLTK.
-- 
+- Alternating Least Squares
+- *You must explicitely import the ML stuff.*
+- The answers are not consistent with ALS.
+	* Very sensitive to parameters.
+	* I know about train/test.
+	* Putting your faith in a Black Box can be 'dodgy.'
+	* Small misteps will lead to mass spread issues.
+
+- `from pyspark.ml.regression import <LinearRegression>`
+- `from pyspark.ml.linalg import Vectors` to represent Feature data.
+- Features go in a **dense vector** using `Vectors.dense( value )`.
+- Spark includes a splitting function be default.
+	* `df.randomSplit( [.5, .5])`
+- SparkStreaming is for live data.
+	* process log data from a website.
+	* Includes **checkingpointing** in case of HDD failure.
+	* Support for Python,R incoming.
+	* Includes "Windowed Operations" which combine batches over a set duration.
+	* `updateStateByKey()` is saved across many batches globally.
+- GraphX is for Networking Models.
+	* These are graphs in the Computer Science terminology.
+	* 
+
 
 ## Further Reading
+- Advanced Analytics with Spark: Patterns for Learning from Data at Scale
+	1. [Purchase](https://www.amazon.com/Advanced-Analytics-Spark-Patterns-Learning/dp/1491912766) | [Download](dl.finebook.ir/book/6d/13700.pdf)
