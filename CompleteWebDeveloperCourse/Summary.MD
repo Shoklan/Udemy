@@ -20,6 +20,7 @@
 	3. Connect.
 - Cool site similar to codepen at [jsbin](http://www.jsbin.com).
 
+## Hypertext Mark Up Language
 - It's good convention to have a DOCTYPE to make it easier to parse for Web browsers.
 - Anything in french braces is called a **tag**.
 - Anything with `< >` is an opening tag
@@ -79,9 +80,77 @@
 - FRAMES ARE EVIL; ONLY USE AS A LAST RESORT.
 - Create a frame using `<iframe src="source_file_or_page" ></iframe>
 
+## Cascading Style Sheet
+- There are three kinds of styles:
+	1. External.
+	2. Internal.
+	3. Inline.
+
+- This is used to control how elements appear in a document.
+- You can add inline CSS using the attribute `style=""`.
+- Internal CSS is included in the header with the format:
+
+```html
+<style type= "text/css">
+	element_target{
+		attribute: value;
+	}
+</style>
+```
+
+- A *Class* is a descriptor that can be applied to elements of an HTML document.
+- This is identified in a CSS file using `.element_target`.
+- You apply the class by adding `class= "class_name"`.
+- **Id's** are similar to classes, but should be limited to a single element.
+- You can apply a class and an id to an element.
+- You can apply more than one class in the same attribute; e.g. `style= "large red"`.
+
+- You can float elements using `float: {left|right}`.
+- This causes the object to fill the area where you request it to fill.
+- Use `clear: both;` to ensure that no objects exist on either side of the div.
+- Declare an attribute `position: relative;` to allow one to move a div relative to it's normal position.
+- You can change the depth of an object using the `z-index`.
+- This does not have any impact unless you allow it to move via **position**; usually **relative**.
+- An **Absolute** position is removed from the document flow, but remains relative to the position in the document.
+- **Fixed** items are ignored by other elements by removing it from the docuemnt flow.
+- **Fixed** also holds the element in place in relation with the browser.
+
+- A **Margin** controls the space around an element.
+- You can assign a value to each side in one declaration: `margin: top right bottom left;`.
+- You can set only one side using `margin-{top|right|bottom|left}: value;`.
+- A **Padding** keep internal content of a div away from the walls of the div.
+- border is a thing.
+
+-**font-family** will change how letters are displayed. 
+- There are two kinds of fonts: serifs nad sans-serif.
+- Serifs contain the extra segments to assist with moving the eye to the next letter.
+- Websites mostly use Sans-serif fonts.
+- You should include extra fonts from most specific to general in case a browser does not fail to load.
+- **font-weight** controls  how heavy the stroke.
+- **font-style** is a thing.
+- You can add a class inline using **span**.
+
+- Elements inherit characteristics from their parent element.
+- **Align** changes the position in relation to the parent element.
+
+- You can force a link to open a new tab using `target="_blank"`.
+
+- `margin: 0 auto;` is awesome.`
+- Make sure to use an external css file using `<link rel= "stylesheet" type= "text/css" href= "styles.css" />`.
+
+## Summary of format:
+```html
+<style type= "text/css">
+	p{ font-size: 1.2em; }
+	.class_name { font-size: .2em; }
+	#id_name { font-size: .9em; }
+```
+
+## Javascript
+
 
 
 ## Investigate:
 - UPGRADE THE COURSE!
-
+- overflow-wrap?
 ## Further Reading:
