@@ -139,18 +139,47 @@
 - Make sure to use an external css file using `<link rel= "stylesheet" type= "text/css" href= "styles.css" />`.
 
 ## Summary of format:
+
 ```html
 <style type= "text/css">
 	p{ font-size: 1.2em; }
 	.class_name { font-size: .2em; }
 	#id_name { font-size: .9em; }
+</style>
 ```
 
 ## Javascript
+- javascript is for actively changing content on the page.
+- `alert("text")` does those annoying pop ups.
+- To insert any kind of javascript code into a website, then you use `<script></script>` blocks.
+- document refers to the totality of the page.
+- Javascript uses camel-case.
+- `document.getElementById("text").innterHTML()` will select element **text's** content.
+- Javascript uses `//` or "tilted poles" to mark comments.
+- " uses `/* */` or "facing streetlights".
+- `onclick=` is a thing.
 
+- `style.display=""` is a thing.
+- You define array using `var arrayName= new Array[];
+- Assignment is normal as per arrays in other languages like Python.
+- If you send output to console, it  will display information in a web browser's javascript console.
+- Do that using `console.log( value )`.
+- You can assign values by simply adding them to the array via `['value1', 'value2', 'value3']`.
+
+- **Push*8 to add a value; **splice(1, 1)** to remove a value from index. // ( index, times_to_remove )
+- To inset an item into an index, use `splice(1, 0, "hail")` // (index, times_to_remove, insert_items )
+- You can add more than one item in.
+- Return the length using `array.length`.
+
+- Javascript contains all the normal control structures; same as normal languages.
+- Functions are defined using `function func_name(varriable1, variabl2){ }`.
+
+## JQuery
+- 
 
 
 ## Investigate:
 - UPGRADE THE COURSE!
 - overflow-wrap?
+
 ## Further Reading:
