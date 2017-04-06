@@ -175,11 +175,115 @@
 - Functions are defined using `function func_name(varriable1, variabl2){ }`.
 
 ## JQuery
-- 
+- Visit the site [here](www.jquery.com).
+- Checkout [Tooltipster](http://iamceege.github.io/tooltipster/)
+- Checkout [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/)
+- Checkout [typeahead.js](http://twitter.github.io/typeahead.js/)
+
+- Select elements using `$("element-selector")`
+- Ex. is:
+```
+$("#circle").click( function(){
+	// functional code to use
+	alert("Circle Clicked");
+});
+```
+
+- These 'selectors' are called **CSS Selectors**.
+- Change text in an element using `.html("text you want changed to.")
+- If you submit to `.html()` with no contents, then you'll get the element's text instead.
+- You can use `.hover()` for a reaction when an element is hovered over.
+- You can retrieve an attribute for an element using `.attr("attribute_target")`.
+- If you wanted to change it, then you'd submit a second argument with the replacement value.
+- If we want to query a CSS element for one of its attributes, then we use `.css("attribute")`.
+- If we want to reference the element clicked, then we can use **this** since javascript appears to support OOP.
+- JQuery has a function to make something be hiddem using `.hide()`.
+- JQuery has a function to make something fade out using `.fadeOut()`.
+- You can pass a second parameter, a function called a **callback**, to `fadeOut()` or `fadeIn()`.
+- JQuery will run this after the fade is done.
+- Use `.animate()` to pass a set of requests for JQuery to run .
+- The format looks like:
+```
+.animate({
+	width: 1000px,
+	height: 10px,
+	background-color: blue
+}, 3000) // this is duration over which to animate.
+```
+- Javascipt terms remove the `-`'s and uses camelCase.
+- AJAX stands for Asyncronous Javascript and XML
+- AJAX does not work via the file protocol; `file:///`
+
+- `$.get("location_of_document");` will get the data from a file.
+- The second argument passed should be a callback function to use the data.
+- But, you shouldn't use **.get**, I guess.
+- You should be using **$.ajax**.
+```
+$.ajax({
+	url:"test.html"
+}).done( function(data){
+	alert(data)
+});
+```
+
+- Regex is amazing.
+- I know what regex is.
+- Create a regex using `var regex=/great/;
+- To check if regex in input, use `.match(regex);`
+- If there are no matches, then it will return null.
+- Regex is case sensitive, lest you add the **i** flag.
+- Setting **g** flag means to collect all matches; global.
+
+- JQuery UI has its own separate js file.
+- `.draggable()` is a thing.
+- `.resizable()` is a thing.
+```
+$("#target").droppable({
+	drop: function(ui, event){
+		$("#target").css("background-color", "red");
+	}
+})
+```
+
+- `.accordion();` to have the function to auto format headers into an accordians.
+- `.sortable();` allows users to drag a set of list items.
+
+## Bootstrap
+- The primary framework for *responsive webdesign*.
+- *Responsive Webdesign* is about keeping a uniform appearance across all visual devices.
+- Dark grey is better than black since it's contrast is too high.
+- Boostrap uses something called the "Grid System".
+- Bootstrap has 3 "breakpoints" - or expected device sizes.
+- Those occur at 768px, 992px, and 1200px.
+- The max number of colunms is 12.
+- The format to apply responsive design requires a nested **container->row**
+- The format for a block is `col-{xs, md, lg}-{1..12}`.
+- Bootstrap has already built a bunch of starter templates.
+- Giving a div the class **collapse** will allow the div to be shrunk tothe mobile icon.
+- If you don't give a **ul** element the class **navbar-nav** then issues arise with **collapse**.
+- **data-toggle** is used to implement an action via HTML5.
+- Giving an element the class **active** will highlight it to help with navigational information..
+
+- You should surround field inputs with a div that has the class **form-group**.
+- This will add proper spacing to it.
+- You should surround checkboxes with a div that has the class **checkbox**.
+- Bootstrap has a Date-picker; thank you so much~
+- `<input type= "date" class="form-control" />`
+- Adding a class of **table** to a table element will clean up the formatting.
+
+- Modals are really cool.
+- Use the class **modal** to create one.
+- The div nesting is modal->modal-dialog->modal-content->{modal-header, modal-body}
+
+- Scrollspy is what moves the highlights at he navigation bar level.
+- To do this, include `data-spy="scroll" data-target=".scrolling_class_target"`
+
 
 
 ## Investigate:
 - UPGRADE THE COURSE!
 - overflow-wrap?
+- JQuery UI
+- 
 
 ## Further Reading:

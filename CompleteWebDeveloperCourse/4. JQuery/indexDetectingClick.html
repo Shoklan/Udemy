@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+ <head>
+ <title>Learning JQuery - Detecting a Click</title>
+
+ <meta charset="utf-8" />
+ <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+ <style type="text/css">
+	
+	.green{
+		background-color: green;
+	}
+ 
+	.square{
+		width: 200px;
+		height: 200px;
+		background-color: red;
+		margin-top: 10px;
+		
+	}
+	
+	#circle{
+		width:  200px;
+		height: 200px;
+		border-radius: 100px;
+	}
+ </style>
+</head>
+
+<body>
+
+	<div id="circle" class="green"></div>
+	<p>This is some text</p>
+
+	<script>
+		/* These are for earlier in the lecture video.
+		$("#circle").click(function(){
+			alert("Circle Clicked!")
+		});
+		
+		$(".square").click(function(){
+			alert("Square Clicked!")
+		});
+		*/
+		
+		$("div").click(function(){
+			alert("Div Clicked!")
+		});
+	</script>
+</body>
+</html>
