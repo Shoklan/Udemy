@@ -278,6 +278,17 @@ $("#target").droppable({
 - Scrollspy is what moves the highlights at he navigation bar level.
 - To do this, include `data-spy="scroll" data-target=".scrolling_class_target"`
 
+## Wordpress
+- Wordpress is a **Content Management System** - or CMS.
+- Most websites allow you to install Wordpress via a script.
+- Posts are for durational updates.
+- Pages are static reference pages.
+- Themes are what control how content are displayed.
+- You can use sample content at [wpcandy](www.wpcandy.com).
+- How does wordpress have built in search?; find this!
+- Wordpress has lots of themes you can use for free.
+- Premium themes can be found at [themeforest](wwww.themeforest.net).
+
 
 
 ## Investigate:
