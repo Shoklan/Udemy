@@ -289,12 +289,20 @@ $("#target").droppable({
 - Wordpress has lots of themes you can use for free.
 - Premium themes can be found at [themeforest](wwww.themeforest.net).
 
+- You can install a wordpress ecommerce plugin using woocommerce.
+- This is the best one right now
+- Read the introduction guide [here](http://easywpguide.com/)
+
+## PHP
+- 
+
+
 
 
 ## Investigate:
 - UPGRADE THE COURSE!
 - overflow-wrap?
 - JQuery UI
-- 
+- X Theme
 
 ## Further Reading:
