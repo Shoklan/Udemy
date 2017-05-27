@@ -294,7 +294,75 @@ $("#target").droppable({
 - Read the introduction guide [here](http://easywpguide.com/)
 
 ## PHP
-- 
+- Php tags are of the form <?php ?>
+- Use `echo` to display text.
+- PHP uses the file `php.ini` to control its behavior
+	1. `display_errors = on`          // obv.
+	2. `display_startup_errors = on`  // obv.
+
+- Variables are declared using the format `$name="I'm a variable";`
+- Variables cannot start with a number.
+- Variable variabel is when you chain variables using multiple `$`.
+- This is rooted in linux for sure when you check out the format.
+- It basically uses substitution.
+- Escape characters using `\`.
+- Concatenation is done using the `.` operator.
+- Comments of the form /* */
+
+### Arrays
+- There are multiple ways to declare an array:
+	1. $myArray = array("pizza", "chocolate", "coffee");
+	2. Declare element by element.
+	3. Using PHP dictionary form: `array( "France" => "French", "USA" => "English", "Germany" => "German");`
+
+- Print the contents of an array using print_r( <array_name> ) //print recursive.
+- Arrrays use 0-indexing like C.
+- PHP is determined to finish running - even when you've entered erroneous output.
+- You delete elements using the `unset( array["value"])`.
+
+### Loops
+- Uses C style for loops
+- Also supports foreach : `foreach( $array as $key => $value){ ... }`
+
+- Send mail using `mail( $recipient, $subject, $body, $headers);`.
+- Variables passed via GET is an array called `$_GET`.
+- Variables passed via POST is `$_POST`; do this via `method="post"`.
+
+- PHP has built in filter function to validate input:`filter_var( <input>, FILTER_VALIDATE_EMAIL)`
+- If you're not sure whether the protocol is http/https then omit it and use //only
+- To center an image via CSS use: `background-position: center;`
+- `file_get_contents(<url>)` to pull website data.
+- The regex function in PHP is `preg_match(<pattern>, <string>, <save_to>)`
+
+## MySQL
+- Make sure to use mysqli_connect() as it's an updated function
+- `mysqli_connect( <address>, <username>, <password>, <database_name>)`
+- You can stop all commands by calling `die("Error message")`.
+- Build a query using a string; `$query = "SELECT * FROM table"`.
+- Send the query using `mysqli_query($conn, $query)`; returns boolean, not data.
+- Request the results of the query using `mysql_fetch_array( $result_object );`.
+- SQL has a 'LIKE' keyword.
+- `%` is the wildcard for SQL.
+- You can figure out how mnay results using `mysqli_num_rows( $result )
+- If you need to escape the different quotation marks in a string to submit, then use `mysqli_real_escape_string( $name )`
+- A **Session Variable** is a variable that only exists while the user is logged in.
+- To begin, use `session_start()`; must be right at the top of everything.
+- To create one, then use `$_SESSION['variable'] = 1;`.
+
+- To set a cookie, then use `setcookie('id', 'value', time());`.
+- To see the variables in the cookie, use `$_COOKIE['id'];`.
+- DO NOT STORE PASSWORDS IN PLAINTEXT
+- Making an MD5 hash using `md5( <value> )`.
+- Hashed only can still be broken using a rainbow table.
+- Create a salt and prepend that to the password to significantly increase security.
+- Do not store the salt in the database.
+- Finally, use a salt that is variable per user: `md5( md5(email).$password )`
+
+- You can include other php files using `include(<file>)`
+- To forward to a different page, use `header("Location:mainpage.php")`.
+- Delete a session using `session_destry()`.
+
+
 
 
 
