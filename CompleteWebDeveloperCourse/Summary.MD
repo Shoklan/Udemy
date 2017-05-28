@@ -366,6 +366,7 @@ $("#target").droppable({
 
 
 # Mobile Apps
+- Outdated: Use something like Weex instead.
 
 
 
