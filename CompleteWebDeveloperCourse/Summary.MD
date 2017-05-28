@@ -361,7 +361,11 @@ $("#target").droppable({
 - You can include other php files using `include(<file>)`
 - To forward to a different page, use `header("Location:mainpage.php")`.
 - Delete a session using `session_destry()`.
+- Protect against MYSQL Injection attacks using `mysqli_real_escape_string()`.
 
+
+
+# Mobile Apps
 
 
 
