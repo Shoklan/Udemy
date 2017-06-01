@@ -363,9 +363,13 @@ $("#target").droppable({
 - Delete a session using `session_destry()`.
 - Protect against MYSQL Injection attacks using `mysqli_real_escape_string()`.
 
+## APIs
+- Msot APIs have some kind of API key.
+- This is for tracking, etc.
+- 
 
 
-# Mobile Apps
+## Mobile Apps
 - Outdated: Use something like Weex instead.
 
 
