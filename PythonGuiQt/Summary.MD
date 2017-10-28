@@ -119,6 +119,28 @@ label.setWindow( Qt.SplashScreen )
 
 
 # Using QtDesigner
+- Most other frameworks don't have this, and it makes your like much easier.
+- It doesn't come independent and you'll need to install the full Qt SDK.
+- QtDesigner savs its output as *<filename>.ui*.
+- The files are actualy XML files.
+- `pyside-uic.exe <file_name.ui> -o showGui.py` or `pyuic4.exe <file_name.ui> -o showGui.py` to create the pythong version.
+- You can then import the ui using `class MainDialog( QDialog, showGui.Ui_mainDialog)`.
+- The Main Window is the normal format we're accustom to when using windowed applications.
+- To use the shortcut and buttons, then you use `.triggered()` instead.
+- a `.qrc` file is just a text file that tells Qt where to find resources.
+- It has a structure:
+```
+<DOCTYPE RCC><RCC version="1.0">
+<qresource>
+	<file>...</file>
+</qresource>
+</RCC>
+```
+- qrc is short for **Qt Resource Complied**.
+- Microsoft recommnds 48x48 resolution images for icons.
+- You going to need to use `pyside-rcc.exe <file_name>.qrc` to allow PySide to use them.
+- The file must be named `icons_rc.py`.
+- 
 
 # More In-Depth
 
