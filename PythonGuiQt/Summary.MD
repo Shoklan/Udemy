@@ -77,12 +77,46 @@ label.setWindow( Qt.SplashScreen )
 - We can also dynamically add predefined slots.
 - `QDial()` is a thing, but it's basically never used.
 
-- 
-
-
+- You can define your own signals using `atZero = Signal( int )`.
+- You can then send with `.emit()`.
+- `.emit()` does not need to send values to transmit.
 
 
 # Dialogs; the QDialog Class
+- Dialogs are conceptually like popups.
+- We can categorize them into two categories: Intelligence and Modality.
+- Intelligence:
+	1. Dumb
+	2. Standard
+	3. Smart
+- Modality:
+	1. Application modal: limited to only dialog.
+	2. Window modal: limited to anything put it's parents.
+	3. Modeless: free.
+- For Dumb dialogs:
+	* widgits are set by initial call
+	* is data unaware.
+- For Standard dialogs:
+	* initialized by methods.
+	* values are obtained via instance variables
+- For Smart dialogs:
+	* initialized based on data
+	* can update that data in real time
+	* Usually Modeless.
+- To create a button, use `QPushButton(<text_label>)`.
+- To request the file open dialog box use `QFileDialog.getOpenFilename(self, <label>, dir = <dir> )`.
+- You can also pass `filter = "Text files (*.txt)"` to limit what files show up.
+- It returns a tuple.
+- You can save files using a similar format, but replace `getOpenFilename` with `getSaveFilename`.
+- You can set the window name using `self.setWindowName( <name> )`.
+- An alternative layout is the `QGridLayout()`.
+- Since this allows you to specify how many, and where you place dialogs, it has more parameters.
+- So, `.addWidget( <obj>, 0, 0)` will place object in top left corner.
+- You can check is a checkbox is checked using `.isChecked()`.
+
+- You can create a checkbox using `QCheckBox()`.
+- To create a smart dialog, you just pass values to the constructor.
+
 
 # Using QtDesigner
 
@@ -96,4 +130,4 @@ label.setWindow( Qt.SplashScreen )
 - **Rapid GUI Development with Pythong and Qt**
 - [Qt Site Home](qt.digia.com)
 - [Pyside Home](www.Pyside.org)
-- 
+-
