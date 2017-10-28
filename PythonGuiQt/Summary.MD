@@ -43,7 +43,43 @@ label.setWindow( Qt.SplashScreen )
 - `app.exec_()` to run it.
 
 # Diving In
--
+- You can declare a form using `class Form(QDialog):`
+- A *Line Edit* is a single line box you can type text into.
+- `QTextBrowser()` will be for the input box.
+- `QLineEdit()` for the single line input.
+- All Qt forms inherit from the QtWidgit class.
+- To pull all the input from the `QLineEdit` use `self.resultsInput.selectAll()`
+- There are many layouts you can fall back on.
+- We're going to use `layout = QVBoxLayout()`.
+- Then, you add widgits using `layout.addWidgit( self.<name_of_widgit> )`
+- Don't forget to add the `.selectAll()` after adding the widgits.
+- `self.resultsInput.returnPressed.connect( self.compute )` watches for the user to press enter.
+- **Signals are basically events**.
+- `.setFocus()` does what it says.
+- You can access the user's input using `seld.resultsInput.text()`.
+- `QComboBox()`
+- You can add items to the combo box using `addItems( <rates> )`.
+- You can add a **Spin Box** using `QSpinBox()`
+- We'll be using `QDoubleSpinBox()` since it accepts floating point values.
+- You can limit the inputs using `.setRange(<n>, <m>)`.
+- You can set the default value using `.setValue()`.
+- Another layout you can use is `QGridLayout()`.
+- For the Grid Layout, you can set the indexes when adding widgets.
+- We're going to be using QtDesigner to avoid typing out all these boxes.
+
+- QWidgits emit signals.
+- **Signals** are events sent by the widgit.
+- They vary from `textChanged()` to `clicked()`.
+- By default, unhandled signals are thrown away.
+- By analogy, you need to catch the signals.
+- The other side to signals are **Slots**.
+- We connect signals to slots.
+- We can also dynamically add predefined slots.
+- `QDial()` is a thing, but it's basically never used.
+
+- 
+
+
 
 
 # Dialogs; the QDialog Class
