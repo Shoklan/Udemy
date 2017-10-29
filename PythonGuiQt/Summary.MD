@@ -146,8 +146,17 @@ label.setWindow( Qt.SplashScreen )
 
 
 # More In-Depth
+- Multithreading can use the space between waiting for responses to run other tasks.
+- `class WorkerThread( QThread )` can be used to initialize a thread for Qt.
+- Since it's a class, then you'll need to initialize it.
+- To use it, you use `self.workerThread.start()`.
+- You can define your own signal using `self.emit( SIGNAL( "<custom_name()"))`.
+- It is possible to miss responses from the worker thread.
+- To solve that, use a fourth parameter to a `connection()` call `Qt.DirectConnection`.
+- You could also use `QRunnable()` but it does not inherit from QObject.
+- QString is analogous to the Pyton String type.
+- To pass parameters messages, include QString like: `self.emit( SIGNAL( "threadDone(QString)"), "Confirmation that ...")`.
 - 
-
 
 # Building Our First Real-World Application
 
