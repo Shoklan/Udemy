@@ -140,9 +140,14 @@ label.setWindow( Qt.SplashScreen )
 - Microsoft recommnds 48x48 resolution images for icons.
 - You going to need to use `pyside-rcc.exe <file_name>.qrc` to allow PySide to use them.
 - The file must be named `icons_rc.py`.
-- 
+- You can adjust the ordering off buttons based on OS by inserting a **Button box**.
+- This will change the design.
+- Qt allows you to style buttons based on Cascading Style Sheets.
+
 
 # More In-Depth
+- 
+
 
 # Building Our First Real-World Application
 
