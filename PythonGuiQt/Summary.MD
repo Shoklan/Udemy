@@ -156,11 +156,38 @@ label.setWindow( Qt.SplashScreen )
 - You could also use `QRunnable()` but it does not inherit from QObject.
 - QString is analogous to the Pyton String type.
 - To pass parameters messages, include QString like: `self.emit( SIGNAL( "threadDone(QString)"), "Confirmation that ...")`.
-- 
 
 # Building Our First Real-World Application
+- We're now going to build an actual application with a puropse
+- We're going to call it PyDataMan.
+- Purpose: Store user data in a database and display in a table.
+- Creation steps:
+	1. Sketch the GUI.
+	2. Create the UI in QtDesigner.
+	3. Add some basic Python Code.
+	4. Add more code - complete your application.
+	5. Kill the bugs.
+	6. Package and distribute.
+- Make sure to use comments!
+- You should make sure to log what's happening in your application to troubleshoot it.
+- You use the base package `logger`.
+- You can connect to a SQlite3 database using the sqlite3 pacakge.
+- You initailize the connection using `sqlite3.connect(<filename>)`.
+- Please note that the filename should be a full path.
+- This class isn't really about databases; I already know about this, mostly.
+- I know what virtualEnv is.
+- Qt has a table widget.
+- To work with it, you need to tell it what row to insert in first.
+- Find current total rows: `currentRowCount = self.mainTable.rowCount()`.
+- Then, you have to insert the blank row using `self.mainTable.insertRow( currentRowCount )`.
+- Then you can set item values using `self.mainTable.setItem( currentRowCount, <n>, QTableWidgetItem(value))`.
+-
+
+
 
 # Distributing the Application
+- X
+
 
 # References:
 - **Rapid GUI Development with Pythong and Qt**
