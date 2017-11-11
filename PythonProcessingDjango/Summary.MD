@@ -139,10 +139,49 @@ send_mail( subject, message, emailFrom, emailTo, fail_silently=True)
 - This is an odd way to add Bootstrap to forms.
 
 # User Authentication
+- we're going to be using **django-allauth** to manage users.
+- You'll install it using `pip install django-allauth`.
+- Add to *settings.py*:
+```
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+```
+- You'll also want to install the apps:
+ * 'django.contrib.auth'
+ * 'django.contrib.sites'
+ * 'allauth'
+ * 'allauth.account'
+ * 'allauth.socialaccount'
+- Don't forget the `SITE_ID = 1` at the bottom.
+- You'll want to include in *urls.py* `url(r'^acccounts/', include('allauth.urls'))`.
+- The *Configuration* section has a lot of configuration settings you'll want to copy over.
+- Copy those settings and configure to your needs.
+- Add those copied settings and the below to the bottom of *settings.py*:
+```
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+```
+- You'll get the default page from the *AllAuth Github* page.
+- To check if a user is login or not, use `if not request.user.is_authenticated %}`
+- Django uses the login decorator like **Flask** does.
+- You will need to import `from django.contrib.auth.decorators import login_required`.
+- Tag views with `@login_required` when you want to force people to be logged in.
+
 
 # Charge Credit Cards with Stripe
+-
+
 
 # Deply Your Project Anywhere
+- Fin.
 
 # Research:
-- crispy-forms?
+
+# Reference:
+- [AllAuth](http://django-allauth.readthedocs.io/en/latest/)
+-
