@@ -130,12 +130,19 @@ emailFrom= form.cleaned_data['email']
 emailTo = [settings.EMAIL_HOST_USER]
 send_mail( subject, message, emailFrom, emailTo, fail_silently=True)
 ```
-- 
-
-
+- You can create a context for a form using `title = 'Context'; context = {'title': title, 'form': form, }`
+- A passed empty context does not harm a page without a context.
+- To install **crispy-forms** use `pip install --upgrade django-crispy-forms`.
+- Then, make sure to add `crispy_forms` to *INSTALLED_APPS* in *settings.py*
+- Add `CRISPY_TEMPLATE_PACK = 'bootstrap3` to *setings.py*
+- Add `{% laod crispy_forms_tags %}` to templates that will be using the forms.
+- This is an odd way to add Bootstrap to forms.
 
 # User Authentication
 
 # Charge Credit Cards with Stripe
 
 # Deply Your Project Anywhere
+
+# Research:
+- crispy-forms?
