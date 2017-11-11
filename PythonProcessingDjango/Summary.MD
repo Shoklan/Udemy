@@ -174,14 +174,36 @@ LOGIN_REDIRECT_URL = '/'
 
 
 # Charge Credit Cards with Stripe
--
+- To install stripe to django type `pip install stripe`
+- You will want a new app for Stripe; `python manage.py startapp checkout`.
+- You will need to make an account on stripe.
+- Add *checkout* and *stripe* to *INSTALLED_APPS*.
+- Don't forget to collect your static files.
+- You're going to want to copy the *stripe.js* reference into your page.
+- You'll need to set your public key from the documents.
+- **Don't forget the csrf_token**!
+- Stripe has a *JQuery* block of scripts to do pretty much all the work.
 
+## Stripe
+- Place in *settings.py*:
+```
+STRIPE_PUBLISHABLE_KEY = ''
+STRIPE_SECRET_KEY = ''
+```
+- Make sure to `form django.conf import settings` with your new *views.py*
+- Context can be passed between front-back ends.
+- Don't forget to import stripe in your *views.py*
+- We can track a user's order with **Django Signals**.
+- When adding the user model, `user = models.OneToOneField( settings.AUTH_USER_MODEL, null=True, Blank=True)`.
+- Study Signals in detail outside this class.
 
 # Deply Your Project Anywhere
 - Fin.
 
 # Research:
+- Signals?
+
 
 # Reference:
 - [AllAuth](http://django-allauth.readthedocs.io/en/latest/)
--
+- [Stripe](www.stripe.com)
