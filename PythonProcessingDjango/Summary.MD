@@ -61,11 +61,78 @@ def home(request):
   return render( request, template, context)
 ```
 - But, to allow *urls.py* to see the view requires `from <app_name> import views`.
+- Static files can be images, css, or javascript
+- You're add the paths to the *settings.py* file.
+- Afterwards, you need to tell Django how to find them in the *urls.py* file.
+- Add:
+```python
+from django.conf import settings
+from django.conf.urls.static import static
+# ...
 
-
-
+if settings.DEBUG:
+  urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+  urlpatterns += static(settings.MEDIA_URL, documentt_root=settings.MEDIA_ROOT)
+```
+- `{% load staticfiles %}` must be included at the top of the html page to include static content.
+- As always, you'll need to run `python manage.py collectstatic` after changes.
+- The correct way to build sites is to have a *base.html* that all pages will need and inherit from that.
+- You'll want to pull in the *base.html* contents with `{% extends 'base.html' %}`.
+- Adding pages usually is of the format: `url(r'^<page>/$', views.<page>, name='<page>')`.
+- We're going to use Bootstrap to help manage mobile usage.
+- I'm not going to copy over and re-do Bootstrap for the 6th time.
+- You can conditionally insert html with `{% if request.path == home %} class = "active" {% endif %}`
 
 # Add a Contact Form
+- You can include form fields in your projects and are already built into Django.
+- To create them, you will need *forms.py* file in your app directory.
+```
+from django import forms
+
+class contactForm(forms.Form):
+  name = forms.CharField(required=False, max_length=100, help_text='100 characters max.')
+  email = forms.EmailField(required=True)
+  comment = forms.CharField(required=True, widget=forms.Textarea)
+```
+- Once the form is defined, you will need to import it into the *views.py* file.
+- `from .forms import contactForm` should be added.
+- Then, add `form = contactForm(request.POST or None)`.
+- You'll want to check if the input is valid using:
+```
+if form.is_valid():
+  print request.POST
+```
+
+```
+<form method='POST' action =''> {% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="submit form" class ='btn btn-default' />
+</form>
+```
+- You can print the contents of a form cleanly using `form.cleaned_data['email']`.
+- To send emails, you will need to configure the email settings in `settings.py`.
+```
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'target_email@gmail.com'
+EMAIL_HOST_PASSWORD = 'GOOD TRY BOYO'.
+EMAIL_USE_TLS = True
+```
+- You'll want to add the next block of code in *views.py*
+```
+from django.core.mail import send_mail
+from django.conf import settings
+
+name = form.cleaned_data['name']
+comment = form.cleaned_data['comment']
+subject='Messgae from MySite.com'
+message='%s %s' % (comment, name)
+emailFrom= form.cleaned_data['email']
+emailTo = [settings.EMAIL_HOST_USER]
+send_mail( subject, message, emailFrom, emailTo, fail_silently=True)
+```
+- 
+
+
 
 # User Authentication
 
