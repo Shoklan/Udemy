@@ -27,14 +27,46 @@
 - To start a new project use `django-admin startproject ecommerce .`.
 - You can start the development server using `django-admin startserver`
 - Inside of *src/ecommerce* create a file called **views.py**.
-```python3
+```python
+# views.py
 from django.http import HttpResponse
 from django.shortcuts import render
 
 def home_page( request ):
   return HttpResponse("Hello World")
-
 ```
+- And, then import in *urls.py*:
+```python
+# urls.py
+from .views import home_page
+
+#...
+
+urlpatterns = [
+  url(r'^$', home_page)
+  # ...
+]
+```
+- You can also insert html into the response and it will work.
+- Triple quotes allow you to have multiline strings.
+- **Bootstrap** has a class called `text-cente` to center text.
+- *render* is what allows us to use html instead of just text.
+- You can add templates using:
+```python
+# settings.py
+'DIRS': [os.path.join(BASE_DIR, 'templates')],
+```
+- Inside *src/templates* we're going to make *home_page.html*.
+- We're going to insert the html from the bootstrap page
+- Now we can pass the *home_page.html* page using:
+```python
+# views.py
+def home_page( request ):
+  return render( request, 'home_page.html', {})
+```
+- Now you can just write as many templates as you you need; ensuring that you import them in *urls.py*.
+- 
+
 
 # Products Component
 
@@ -75,3 +107,4 @@ def home_page( request ):
 ## Reference:
 - [Try Django](www.joincfe.com/youtube)
 - [Coding For Open Source Github](www.github.com/codingforentrepreneurs)
+- [Bootstrap](www.getbootstrap.com)
