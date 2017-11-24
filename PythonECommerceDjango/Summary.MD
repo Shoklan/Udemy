@@ -13,11 +13,11 @@
   * Angular
   * Ionic
 - It's a good idea to watch the Try Django videos.
-- 
-
-
+- Email address: **team@joincfe.com**.
 
 # Hello World
+- 
+
 
 # Products Component
 
@@ -57,4 +57,4 @@
 
 ## Reference:
 - [Try Django](www.joincfe.com/youtube)
--
+- [Coding For Open Source Github](www.github.com/codingforentrepreneurs)
