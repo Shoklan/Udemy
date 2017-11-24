@@ -16,8 +16,25 @@
 - Email address: **team@joincfe.com**.
 
 # Hello World
-- 
+- To create a new **virtualenv** you:
+  1. Make a directory with a fitting name.
+  2. `virtualenv -p python3 .`
+  3. `source bin/activate`
+- `pip freeze` will show you what the dependencies are.
+- The key reason for using *virtualenv* is to control software dependencies.
+- To install Django `pip install Django ==1.11.4`
+- We're going to make a directory call *src* to hold the source files.
+- To start a new project use `django-admin startproject ecommerce .`.
+- You can start the development server using `django-admin startserver`
+- Inside of *src/ecommerce* create a file called **views.py**.
+```python3
+from django.http import HttpResponse
+from django.shortcuts import render
 
+def home_page( request ):
+  return HttpResponse("Hello World")
+
+```
 
 # Products Component
 
