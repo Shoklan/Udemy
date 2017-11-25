@@ -251,7 +251,9 @@ def get_context_data(self, *args, **kwargs):
 {{ obj.title }} <br />
 {% endfor %}
 ```
-
+- You can  look up an item using `Product.objects.get(pk=pk)`.
+- You can pass a 404 when you import `get_object_or_404 from django.shortcuts`.
+- Then, instead of `.get()` you can use `get_object_or_404( Product, pk=pk)`.
 
 
 
@@ -293,3 +295,5 @@ def get_context_data(self, *args, **kwargs):
 - [Try Django](www.joincfe.com/youtube)
 - [Coding For Open Source Github](www.github.com/codingforentrepreneurs)
 - [Bootstrap](www.getbootstrap.com)
+- [Django Regular Expressions](www.kirr.co/plugin)
+-
