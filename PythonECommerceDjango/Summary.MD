@@ -65,8 +65,127 @@ def home_page( request ):
   return render( request, 'home_page.html', {})
 ```
 - Now you can just write as many templates as you you need; ensuring that you import them in *urls.py*.
-- 
+- One way to change the data on the page is to pass **Template Context** via the python dictionary in the call.
+- You can insert variables in a template using `{{ <var_name> }}`.
+- If you don't pass a variable that's on that page, then it wont show up.
+- The default submit to the backend is *GET*.
+- To change that, you'll want to include `method = 'POST'` inside the `<form>` tag.
+- You will be given an error if you don't include `{% csrf_tokeen %}` after the openning `form` tag.
+- This is to prevent **Cross Site Request Forgeries**.
+- Since a submit is a type of navigation, you can catch form inputs in the same view.
+```
+if request.method = "POST":
+  print( request.POST.get( <form_name> ))
+```
+- This wont display any errors without **Django Forms**.
+- So, you'll want to create file *forms.py*:
+```python
+from django import forms
 
+class ContactForm(forms.Form):
+  fullname = forms.CharField()
+  email    = forms.EmailField()
+  content  = forms.CharField()
+```
+- Don't forget to import the forms into your views:
+```python
+# views.py
+from .forms import ContactForm
+# ...
+contact_form = ContactForm()
+# ...
+
+context = {
+  # ...
+  "form": contact_form
+}
+```
+- This wont allow you to pass class without some hassle:
+```python
+forms.CharField( widget = forms.TextInput( attrs = {"class": "form-control"}) )
+```
+- You'll want to pass data to the form using `ContactForm(request.POST or None)`.
+- *ContactForm* allows you to define ways to clean the input data.
+```python
+def clean_email(self):
+    email = self.cleaned_data.get('email')
+    if not "gmail.com" in email:
+        raise forms.ValidationError("Email has to be gmail.com")
+    return email
+```
+- You can access the cleaned data using `contact_form.cleaned_data`.
+- You can check if a form is valid using `form.is_valid()`.
+- You can check if a user is authenticated using `request.user.is_autenticated()`.
+- This will require a database to be setup.
+- To do this, use:
+  1. `python manage.py migrate`
+  2. `python manage.py createsuperuser`
+  3. Fill in credentials
+- To mark a field as a *password* field, you'd add `widget=form.PasswordInput` to function.
+- You're going to want to include:
+```python
+# views.py
+from django.contrib.auth import authenticate, login
+
+user = authenticate( request, username = username, password=password)
+if user is not None:
+  login(request, user)
+  return redirect('/login') # import redirect from django.shortcuts
+else:
+  context['form'] = LoginForm()
+```
+- You can insert conditional web content using `{% if premium_content %} ...  {% endif %}`
+- You can change the label of a field using `label='Confirm password'`.
+- If you wnat fields to compare against one another:
+```python
+def clean(self):
+  data = self.cleaned_data
+  password = self.cleaned_data.get('password')
+  password2 = = self.cleaned_data.get('password2')
+  if password2 != password:
+    raise forms.ValidationError("Passwords must match.")
+```
+- To create users, you'll:
+```python
+# views.py
+from django.contrib.auth.models import User
+# ...
+
+user = User.Objects.create_user('<name>', '<email>', 'password')
+```
+- You'll want to make sure that a user doesn't already exist:
+```python
+# forms.py
+from django.contrib.auth import get_user_model
+User = get_user_model()
+# ...
+
+qs = User.object.filter( username=username )
+if qs.exists():
+  raise forms.ValidationError("User already exists.")
+```
+- You wont really deal with static content since this should be mostly taken care of by something else.
+- But, for testing create folder *static_cdn*.
+- You're going to add the directory in *settings.py*:
+```python
+STATICFILES_DIRS =[
+  os.path.join(BASE_DIR, 'static_my_proj')
+]
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn')
+```
+- Make sure to import in urls!
+```python
+from django.conf import settings
+from django.conf.urls.static import static
+# ...
+ if settings.DEBUG:
+   urlpatterns = urlpatterns + static( settings.STATIC_URL, document_root = settings.STATIC_ROOT)
+```
+- DO NOT USE IN PRODUCTION CODE!
+- To add static files use `python manage.py collectstatic`
+- You can load static files using `{% load static %}`
+- Now you can insert files from the static directoy using `{% static "css/main.css" %}`.
 
 # Products Component
 
