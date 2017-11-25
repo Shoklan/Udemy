@@ -254,7 +254,75 @@ def get_context_data(self, *args, **kwargs):
 - You can  look up an item using `Product.objects.get(pk=pk)`.
 - You can pass a 404 when you import `get_object_or_404 from django.shortcuts`.
 - Then, instead of `.get()` you can use `get_object_or_404( Product, pk=pk)`.
+- You can refere to a file using `models.FileField(upload_to='products/')`
+- You can combine text using `'<new_filename}.{ext}'.format(new_filename=new_filename, ext = ext)`
+- Or, `f'<new_filename}.{ext}'` if you're using python 3.6.
+- This will still allow any file to be uploaded though.
+- To prevent non-image uploads:
+  1. Change `FileField()` to `ImageField()`.
+  2. Run `pip install pillow` to install the dependency.
+  3. Run the migrations as per normal.
+- When you attempt to reference the images uploaded, you'll need to use `{{ object.image.url %}}` to get the full url.
+-
 
+
+- Django acts like *objects* is a model.
+- To override the default model manager, we'll need to write one in *models.py*.
+- Add:
+```python
+class ProductManager(models.Manager):
+  def get_by_if(self, id):
+    return self.get_queryset(id=id)
+
+# or
+
+qs = self.get_queryset().filter(id=id)
+if qs.count() == 1:
+  return qs.first()
+return None
+```
+- You can also make sure to return a proper error using:
+```python
+if instance is None:
+  raise Http404("Product doesn't exist.")
+```
+- To create a checkbox field, use `models.BooleanField(default=False)`.
+- Don't forget to check to make sure fields exist before inserting them into a template.
+```python
+class ProductQuerySet( models.query.QuerySet):
+  def featured(self):
+    return self.filter(featured = True)
+```
+- Don't forget to overwrite `ProductManager` with the new function:
+```python
+def get_queryset( self ):
+  return ProductQuerySet( self.model, using=self._db)
+```
+- A **Slug Field** is a short label for an item or object.
+- You insert one using `models.SlugField()`.
+- In *admin.py*, you can control the displayed fields using:
+```python
+class ProductAdmin(admin.modelAdmin):
+  list_display = ['__str__', 'slug']
+  class Meta:
+    model = Product
+```
+- Now we want to update our urls to handle slug fields
+- To do that add to *urls.py*:
+```python
+url(r'^products/(?P<slug>[\w-]+)/$', ProductDetailView.as_view()),
+```
+- To use slugs, you'll want to make sure that the field is unique.
+- You force this by adding `unique=True` in `models.SlugField()`.
+- Signals preemptively alter content when changes are trying to be made.
+- You import signals using `from django.db.models.signals import pre_save, post_save`.
+```python
+def product_pre_save_receiver( sender, instance, *args, **kwargs):
+  if not instance.slug:
+    instance.slug = 'abc'
+
+pre_save.connect( product_pre_save_receiver, sender = Product)
+```
 
 
 # Templates
@@ -296,4 +364,4 @@ def get_context_data(self, *args, **kwargs):
 - [Coding For Open Source Github](www.github.com/codingforentrepreneurs)
 - [Bootstrap](www.getbootstrap.com)
 - [Django Regular Expressions](www.kirr.co/plugin)
--
+- [Large File Uploads in Django](www.kirr.co/e1133t)
