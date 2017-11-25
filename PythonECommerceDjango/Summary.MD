@@ -25,7 +25,7 @@
 - To install Django `pip install Django ==1.11.4`
 - We're going to make a directory call *src* to hold the source files.
 - To start a new project use `django-admin startproject ecommerce .`.
-- You can start the development server using `django-admin startserver`
+- You can start the development server using `python manage.py startserver`
 - Inside of *src/ecommerce* create a file called **views.py**.
 ```python
 # views.py
@@ -188,6 +188,72 @@ from django.conf.urls.static import static
 - Now you can insert files from the static directoy using `{% static "css/main.css" %}`.
 
 # Products Component
+- Django is a web application that is comprised of a bunch of **Apps**.
+- To creat an app you use `python manage startapp <appname>`; in this case *products*.
+- An *app* handles on thing, and only one thing well.
+- **CRUD*** stands for *Create, Retreive, Update, Delete*
+- In *products*, create the file *models.py*:
+```python
+from django.db import models
+
+# create your models here
+class Product( models.Model ): # try and name them as a single tense Item
+  title = models.CharField(max_length=120)
+  description = = models.TextField()
+```
+- Make sure to add *products* in *INSTALLED_APPS* in *settings.py*
+- After ever single model change, run:
+  1. `python manage.py makemigrations`
+  2. `pythong manage.py migrate`
+- If you try and migrate a field without required parameters then you'll be warned about it.
+- If a field is required but does not have a default value, then you can tell it `null = True` to insert *null* as the default
+- Or, you can use `default = <value>` to actually set the value.
+- To register your model with django, you'll open *admin.py* and:
+```python
+from .models import Product
+
+admin.site.register(Product)
+```
+- Without `__str__()` there wont be a proper description
+```python
+def __str__(self):
+  return self.title
+```
+- This interface is useful for small teams but not usable for large usersets.
+- Edit *products/views.py*:
+```python
+from django.views.generic import ListView
+from .models import Product
+
+# class based view
+class PoductListView( ListView ):
+  queryset = Product.objects.all()
+
+# function based view
+def product_list_view(request):
+  queryset = Product.objects.all()
+  context = {
+    'object_list': queryset
+  }
+  return render( request, "product/product_list_view.html", context)
+```
+- Make sure to import them into *urls.py*
+- You can create templates inside of the app folder too.
+- Every single class based view has:
+```python
+def get_context_data(self, *args, **kwargs):
+  context = super(ProductListView, self).get_context_data(*args, **kwargs)
+  return context
+```
+- You can interate over values using a for loop:
+```python
+{% for obj in object_list %}
+{{ obj.title }} <br />
+{% endfor %}
+```
+
+
+
 
 # Templates
 
