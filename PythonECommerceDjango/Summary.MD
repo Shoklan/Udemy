@@ -329,9 +329,17 @@ def product_pre_save_receiver( sender, instance, *args, **kwargs):
 
 pre_save.connect( product_pre_save_receiver, sender = Product)
 ```
-
-
--
+- For apps, you can centralize all the views by adding a *products/urls.py*.
+- Then, copy the url maps into that file.
+- Then, just import from the file using:
+  1. `from django.conf.urls import static, include`
+  2. `url(r'^products/', include("products.urls"))`.
+  3. Delete the unnecessary leading parts in *products/urls.py*.
+- Now you can return based on the slug using:
+```python
+def get_absolute_url(self):
+  return "/products/{slug}".format(slug=self.slug)
+```
 
 # Templates
 - The point of templates is to reduce the amount of redundant code to present pages.
