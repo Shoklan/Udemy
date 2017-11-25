@@ -263,9 +263,15 @@ def get_context_data(self, *args, **kwargs):
   2. Run `pip install pillow` to install the dependency.
   3. Run the migrations as per normal.
 - When you attempt to reference the images uploaded, you'll need to use `{{ object.image.url %}}` to get the full url.
--
-
-
+- To have accsss to django in a shell, you're going to want to use `python manage.py shell`.
+- You can use `.filter()` with *queries* to return less results.
+- To use `like` as if in SQL use `title__contains='shirt'`.
+- To do the same thing but ignore case, use `title__icontains=` instead.
+- If you want to filter on more, then just pass more arguments to the function.
+- You could use `.get()` but if it's not found then you'll get an error response.
+- You can wrap the call in a `try: expect Product.DoesNotExist:` to catch the error.
+- Don't forget you can `from django.http import Http404` to use `Http404()`.
+- You can return the top result from a query using `.first()`.
 - Django acts like *objects* is a model.
 - To override the default model manager, we'll need to write one in *models.py*.
 - Add:
@@ -325,7 +331,33 @@ pre_save.connect( product_pre_save_receiver, sender = Product)
 ```
 
 
+-
+
 # Templates
+- The point of templates is to reduce the amount of redundant code to present pages.
+- You'll usually but them in *templates/base*.
+- It is proper nomenclature to use *base.html* for the main file that all templates derive from.
+- You can also insert different sections into different files based on what they are:
+  * css
+  * javascript
+  * pieces of the product
+- To include a template, use `{% extends "base.html" %}`
+- To control where the part is added, use `{% block <content> %}...{% endblock %}`.
+- You insert that in both the initial template as well as the extended template.
+- Anything that is outside of the block will not be rendered.
+- You can also simply insert code anywhere using `{% include 'base/css.html'}`; or whatever file you want.
+- You can also pass context dictionaries within `include`.
+```python
+{% include 'base/navbar.html' with brand_name="eCommerce" %}
+```
+- That is then a usable variable in the next page.
+- For loops look like: `{% for obj in object_lists %} ... {% endfor %}`.
+
+
+
+-
+
+-
 
 # Bootstrap Framework
 
