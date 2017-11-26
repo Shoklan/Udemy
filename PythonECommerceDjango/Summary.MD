@@ -397,11 +397,43 @@ return reverse("detail", kwargs={'slug': self.slug})
 - Pagination is supported in **Django** but we're not covering it right now.
 
 # Bootstrap Framework
+- Bootstrap is for cross-browser support and focuses on making the UI uniform across all devices.
+- This works using nexted content inside a `container` or `container-fluid` class.
+- **Container Fluid** has full width no matter the browser size while **Container** adjusts itself based on pre-configured sizes.
+- It's advised to use *container* when it'll be used on both PC and mobile while *container-fluid* is for PC mostly.
+- Bootstrap conceptually breaks the content up into 12 columns spread horizontally across the webpage.
+- This follows from the design: Declare container, declare row, declare column.
+- `col-1` is the minimum size.
+- If you only list `col` then it uses all possible remaining space.
+- So, if you use `col-8` and `col` then it will be the same as `col-4`.
+- Class `no-gutters` will remove the space between the columns.
+- To snap cloumn sets use class `ml-auto`; *margin-left automatic*.
+- You can do the same but for the right using `mr-auto`.
+- If you include both then you'll get centered content.
+- You can make forms clean using class `form-control`.
+- Don't forget that you can put a placeholder in.
+- You can change the locations using `order-<n>`.
+- Bootstrap is a *mobile first* library.
+- You can tell it when to trigger break points using `col-<bp>-<n>`, where
+  * `bp` means break point from `sm, md, lg, xl`
+  * `n` means size from `1, 2, .., 12`.
+- You can set different sizes and include all of them.
+- You can also add size-dependent margins with `m<l|r>-<bp>-auto`.
+- **Check out the margin, padding sections in Bootstrap Docs**.
+- Use the clas `navbar` to get the expected navbar configuration and behavior.
+- To get the shrinking options to symbolic-lines:
+  1. Add `<button class="navbar-toggler" type='button' data-toggle='collapse' data-target='#navbar-collapseLinks' aria-expanded='false' aria-label='Toggle Navigation'>..</button>`
+  2. Inside the button: `<span class='navbar-toggler-icon'></span>`.
+  3. Surround the items with `<div class="collapse navbar-collapse" id="navbar-collapseLinks">`
+  4. Use class `navbar-nav` in `<ul>`.
+  5. Don't forget to add `<li class='nav-item'>..</li>`.
+  6. Finally, add `navbar-expand-md` to the *navbar* div class.
+
+# Search Component
 - 
 
 
 
-# Search Component
 
 # Cart Component
 
