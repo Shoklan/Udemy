@@ -395,10 +395,11 @@ return reverse("detail", kwargs={'slug': self.slug})
 - You can use the filter `divisibleby:<n>` to check for modularity.
 - You can also use the *if-elif-else* inside templates; just don't forget the `endif`.
 - Pagination is supported in **Django** but we're not covering it right now.
--
-
 
 # Bootstrap Framework
+- 
+
+
 
 # Search Component
 
