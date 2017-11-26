@@ -360,9 +360,20 @@ def get_absolute_url(self):
 ```
 - That is then a usable variable in the next page.
 - For loops look like: `{% for obj in object_lists %} ... {% endfor %}`.
-
-
-
+- Now we're going to discuss reverse urls.
+- You can pass `name = 'detail'` in a *urls.py* urlpattern to be used as a shortcut to get to that page.
+- Then, you can insert that into a template: `{% url 'detail' slug=instance.slug %}`
+- These allow you to change the paths and it will still be reference-able.
+- To include reverse, use:
+```python
+# models.py
+from django.urls import reverse
+# ...
+return reverse("detail", kwargs={'slug': self.slug})
+```
+- But, that will break if we need to have multiple views.
+- So, we'll need to pass `namespace='products'` with the *urls.py* urlpattern.
+- Then, you'll need to add `products:details` in *models.py* to scope it properly.
 -
 
 -
