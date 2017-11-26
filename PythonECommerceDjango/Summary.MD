@@ -374,9 +374,29 @@ return reverse("detail", kwargs={'slug': self.slug})
 - But, that will break if we need to have multiple views.
 - So, we'll need to pass `namespace='products'` with the *urls.py* urlpattern.
 - Then, you'll need to add `products:details` in *models.py* to scope it properly.
+- You can conditionally insert based on the current page using:
+```python
+# navbar.html; please not url-reversing must be configured
+{% url 'home' as home_url}
+# ...
+
+{% if request.path == home_url %} active {% endif %}
+#...
+```
+- You can use a **filter** to truncate text.
+- This is done with `{{ instance.description|truncatewords:<n> }}`.
+- You can chain filters together as well.
+- You can use `linebreaks` to insert line breaks after paragraphs.
+- You can also insert a title using the filter `title`.
+- You can insert a timestamp to a model using `models.DateTimeField( auto_now_add=True)`.
+- Now you can use the filter `timesince` to calculate the different between now and the time listed.
+- You can cycle through inputs using `{% cycle "" "" ""}` where each section will be used until no more elements remain.
+- Every for loop has a `forloop.counter` variable.
+- You can use the filter `divisibleby:<n>` to check for modularity.
+- You can also use the *if-elif-else* inside templates; just don't forget the `endif`.
+- Pagination is supported in **Django** but we're not covering it right now.
 -
 
--
 
 # Bootstrap Framework
 
