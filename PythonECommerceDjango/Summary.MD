@@ -430,12 +430,45 @@ return reverse("detail", kwargs={'slug': self.slug})
   6. Finally, add `navbar-expand-md` to the *navbar* div class.
 
 # Search Component
-- 
+- Since you're going to want to be able to search more than just a single project, you'll want a new app.
+- Make sure to set up the namespaces correctly.
+- You can also use `__iextact` to check for  the exact value.
+- Now we're going to be learning about how to implement **GET** urls.
+- You can check those using `reqeust.GET`.
+```python
+query = reqeust.GET.get('q')
+if query is not None:
+  return Product.objects.filter(title__icontains=query)
+return Products.objects.none()
+```
+- You can also set the default in `get()` as a second argument.
+- You should pass `action={% url "search:query" %}` in the form to tell it where to go.
+- *Django* has it's own package to manage queries:
+```python
+# in Search/views.py
+from django.db.models import Q
+# ...
 
-
-
+lookups = Q(title__icontains=query) | Q(description__icontains=querry) # pipe in python?
+return Products.objects.filter(lookups).distinct()
+```
+- But, in actuality you'll want to move this into the model itself.
+- We'll be using something called **Tags** having its own app, that will assist users in find what they're after during search.
+- So, we generate a new model.
+- Import the product models: `from products.models import Product`.
+- We're going to create a foreign key to the prouduct:
+```python
+# Tags/models.py
+products = models.ManyToManyField(Product, blank=True)
+```
+- The **ManyManager** on the *Products* uses the field *object.tag_set*.
+- So, you can get all tags associated with an object using `object.tag_set.all()`.
+- No we can search tags in our search field.
+- I prefer to call them keywords
 
 # Cart Component
+-
+
 
 # Checkout Process
 
