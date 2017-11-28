@@ -467,8 +467,38 @@ products = models.ManyToManyField(Product, blank=True)
 - I prefer to call them keywords
 
 # Cart Component
--
+- **Sessions** are a store of the time that a user is on the site.
+- By default, sessions are stored in the database.
+- Django attaches the session to the request by default.
+- You can access is using `request.session`.
+- `dir()` will display all methods for a python module.
+- Since *session* is just a dictionary, you can save values to it.
+- You cannot save request objects to the session, but you can save variables.
+- You can reference a **Foreign Key** using `models.ForeignKey(User, null=True, blank=True)`.
+- `isinstance()` will compare a variable against a type; `isinstance(12, int)` is True.
+```python
+# models.py
+pre_save_cart_receiver(sender, instance, *args, **kwargs):
+  products = instance.products.all()
+  total = 0
+  for x in products:
+    total += x.price
+  print( total )
+  car_obj.total = total
 
+pre_save.connect(pre_save_cart_receiver, sender = Cart)
+```
+- This doesn't necessary change it though so we'll need to use the **Many-To-Many** signal.
+- This is imported from `django.db.models.signals import m2m_changed`
+- You just need to add action to the list of passed arguments.
+- To have it update it, you need to pass the field that will be changing: `Cart.products.through`
+- The actions will be denoted by what changes are being made to the items.
+```python
+if action == 'post_add' or action == 'post_remove' or action == 'post_clear':
+  # normal CODE
+  instance.save()
+```
+- 
 
 # Checkout Process
 
@@ -495,6 +525,8 @@ products = models.ManyToManyField(Product, blank=True)
 # Thank You
 
 ## Research:
+- What are signals?
+-
 
 ## Reference:
 - [Try Django](www.joincfe.com/youtube)
