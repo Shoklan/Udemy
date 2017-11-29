@@ -535,11 +535,66 @@ def name(self):
 - Redirects are based on what the app directory is.
 
 # Fast Track to JQuery
+- Make sure to the CDN's for JQuery.
+- You can launch a webserver in python3 using `python3 -m http.server`.
+- You can launch a webserver in python using `python SimpleHTTPServer`.
+- You can test if JQuery is installed using:
+```js
+$(document).ready(function(){
+  alert("Hello")
+})
+```
+- The item in the parenthesis is called the **Selector**.
+- **Document** refers to the full webpage.
+- You can change an attribute using `$('body').css("background-color", "red")`.
+- You can delay a change in a webpage using `setTimeout(func(){}, <n>)`.
+- You can change the text in a tag using `$('h1').text('Hello Again!')`.
+- You can target a specific child tag using `$('h1:nth-child(2)')`.
+- You can also use id's as well: `$('#header-3')`.
+- You can select classes using `$('.header')`.
+- You can also chain `.css()` calls.
+- JQuery nomenclauture prefers that variables are prepended with **$**.
+- You can print to the console using `console.log()`.
+- The iterator in *JQuery* is `$.each( function(index, obj){})`.
+- JQuery will need you to reference `$(this)` since it's dealing with an object at a time.
+- To reference the attribute height use `item[0].scrollHeight`; each object contains tons of referencable variables.
+- You can assign and catch events using:
+```js
+var header3 = $('#header-3')
+header3.click(function(event){
+  var $this = $(this)
+
+})
+```
+- You can change the current tab using `window.location.href = <url_here>`.
+- *Selectors* are just like the selectors used in other languages; they accept `".description a"`.
+- You can prevent what the event using to do using `event.preventDefault()`.
+```js
+content.submit(function(event){
+  event.preventDefualt()
+  console.log(contentForm.serialize())           // for sending to backend
+  console.log(textAreaContent.attr('name'))
+  console.log(textAreaContent.val())
+
+  var textAreaContent = $(this).find('textarea') // find tag 'textarea'.
+  var formMethod = $this.attr('method')
+  var formAction = $this.attr('action')
+
+
+  var data = {
+    'content': textAreaContent.val(),
+    'method': formMethod,
+    'action': formAction
+  }
+
+  $('.formDataSubmitted').text("Stuff")
+})
+```
+
+# Products & Async
 -
 
 
-
-# Products & Async
 
 # Custom User Model
 
