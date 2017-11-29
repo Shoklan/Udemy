@@ -592,8 +592,36 @@ content.submit(function(event){
 ```
 
 # Products & Async
--
+- **Synchronous** is when the page requires a response from the web server and must wait.
+- **Asynchronous** is whne the page doesn't require the web server to respond and refresh.
+- *Ajax* stands for **Asynchcronous Javascript And XML**.
+- It's a great idea to add a unique class or id to a form.
+- The *slim* version of *JQuery* doesn't have *ajax*.
+```js
+$(document).ready(function(){
+  var productForm = $('.form-product-ajax')
 
+  productForm.submit(function(e){
+    event.preventDefault();
+    console.log("Form is not sending")
+    var thisForm = $(this)
+
+    var actionEndpoint = thisForm.attr('action');
+    var httpMethod = thisForm.attr('method');
+    var formData = thisForm.serialize();
+
+    $.ajax({
+      url: actionEndpoint,
+      method: httpMethod,
+      data: formData,
+      success: function(data){},
+      error: function(errorData){}
+    })
+  })
+})
+```
+- Since the endpoint is returning html, then we get html response back.
+- To solve this, use `if request.is_ajax()`
 
 
 # Custom User Model
@@ -617,6 +645,8 @@ content.submit(function(event){
 ## Research:
 - What are signals?
 - `is_safe_url()`?
+- Javascript *integrity* attribute?
+- Javascript *crossorigin* attribute?
 
 ## Reference:
 - [Try Django](www.joincfe.com/youtube)
