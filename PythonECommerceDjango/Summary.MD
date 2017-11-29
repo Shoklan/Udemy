@@ -498,9 +498,22 @@ if action == 'post_add' or action == 'post_remove' or action == 'post_clear':
   # normal CODE
   instance.save()
 ```
-- 
+- `redirect()` accepts namespaces.
+- You can add or remove objects using
+- Reverse lookups can be used in forms - and just process the form data in that view.
+- You can rename variables using:
+```python
+# models.py
+@property
+def name(self):
+  return self.title
+```
+- **Font Awesome** allows developers to use icons in developmnt for free.
+- You can add one using `<i class="fa <icon_to_reference" aria-hidden"true"></i>`.
 
 # Checkout Process
+- 
+
 
 # Fast Track to JQuery
 
@@ -534,3 +547,4 @@ if action == 'post_add' or action == 'post_remove' or action == 'post_clear':
 - [Bootstrap](www.getbootstrap.com)
 - [Django Regular Expressions](www.kirr.co/plugin)
 - [Large File Uploads in Django](www.kirr.co/e1133t)
+- [FontAwesome.io](www.fontawesome.io)
