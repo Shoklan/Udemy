@@ -672,8 +672,130 @@ function performSearch(){
 - Make sure to actually read the *CSRF Token* primer at the bottom.
 
 # Custom User Model
+- You can't use `models.Model` for authentication since it's a special kind of model.
+```python
+# in accounts/models.py
+from django.contrib.auth.models import (
+  AbstractBaseUser
+)
+
+# when migrated, empty default fields are [ id, password, last_login]
+
+class User(AbstractBaseUser):
+  # pass
+  email = models.EmailField(unique = True, max_length = 255, )
+  full_name = models.CharField(max_length = 255, blank = True, null=True)
+  active = models.BooleanField( default = True)
+  staff = models.BooleanField( default = False)
+  admin = models.BooleanField( default = False)
+
+
+  USERNAME_FIELD = 'email'
+  REQUIRED_FIELDS = []
+
+  def __str__(self):
+    return self.email
+
+  def get_full_name(self):
+    return self.email
+
+  def get_short_name(self):
+    return self.email
+
+  @property
+  def is_staff(self):
+    return self.staff
+
+  @property
+  def is_active(self):
+    return self.active
+
+  @property
+  def is_sadmin(self):
+    return self.admin
+```
+- You can extend off the *User* model that you created.
+- This is safer since there can be very extreme consequences to changing the *User* model.
+- To replace the default account, you'll need to import `BaseUserManager` from the same place as before.
+```python
+
+class UserManager(BaseUserManager):
+  def create_user(self, email, password = None, is_active = True, is_staff = False, is_admin = False):
+    if not email:
+      raise ValueError("Users must have an email address.")
+    if not password:
+      raise ValueError("Users must have a password.")
+
+    user_obj = self.model(
+      email = self.normalize_email(email) # does exactly what you'd think.
+    )
+    user_obj.set_password(password) # as well as change it too.
+    user_obj.staff  = is_staff
+    user_obj.admin  = is_admin
+    user_obj.active = is_active
+    user_obj.save( using = self._db)
+    return user_obj
+
+  def create_staffuser(self, email, password = None):
+    user_obj = self.create_user(
+      email,
+      password = password,
+      is_staff=True,
+    )
+    return user_obj
+
+  def create_superuser(self, email, password = None):
+    user_obj = self.create_user(
+      email,
+      password = password,
+      is_staff=True,
+      is_admin = True
+    )
+    return user_obj
+
+```
+- You'll want to add `objects  = UserManager()` to your *AbstractBaseUser* model after.
+- To now use this model for logging in, you add `AUTH_USER_MODEL = 'accounts.User'` to *settings.py*.
+- **Fixtures** allow us to update our database while keeping important data we don't wish to lose.
+- Run `python manage.py dumpdata --format json --ident 4`.
+- You can pass `pproducts.Product` between *dumpdata* and *--format* to specify which ones.
+- You can output the data using the previous code appended with `> products/fixtures/products.json`.
+- Then, after dumping the backups run `python manage.py loaddata products/fixtures/products.json`
+- There are default functions *Django* expects:
+```python
+# don't forget these
+def has_perm(self, perm, obj=None):
+  return True
+
+def has_module_perms( self, app_label):
+  return True
+```
+- This will clear the error.
+- Now modify *admin.py* with:
+```python
+from django.contrib import admin
+from django.contrib.auth import get_user_model
+# other stuff
+
+User = get_user_model()
+admin.site.register(User)
+```
+- The forms for this look pretty terrible though.
+```python
+class UserAdmin(admin.ModelAdmin):
+  search_fields = ['email']
+
+  class Meta:
+    model = User
+
+admin.site.register(User, UserAdmin)
+```
+- Review the guide on Custom User Models below.
+- Class based views are a lot better.
 
 # Custom Analytics
+- 
+
 
 # Stripe Integration
 
@@ -704,4 +826,4 @@ function performSearch(){
 - [Large File Uploads in Django](www.kirr.co/e1133t)
 - [FontAwesome.io](www.fontawesome.io)
 - [Primer on CSRF Token with Django](www.kirr.co/58ewx3)
--
+- [Custom User Models](www.kirr.co/ygijli)
