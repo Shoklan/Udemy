@@ -512,10 +512,32 @@ def name(self):
 - You can add one using `<i class="fa <icon_to_reference" aria-hidden"true"></i>`.
 
 # Checkout Process
-- 
-
+- **Checkout Process**
+  1. Cart -> Checkout View
+    * Login/Register or Enter an Email ( as Guest)
+    * Shipping Address
+    * Billing Info
+      * Billing Address
+      * Credit Card / Payment
+  2. Billing App
+    * Billing Profile
+      * For user or email ( Maybe Guest Email )
+      * Generate Payment Processor Token (Stripe of Braintree)
+3. Orders / Invoices App
+  * Connecting the Billing Profile
+  * Shipping / Billing Address
+  * Cart
+  * Status -- Shipped?
+- You can limit a field using `choices = <tuple_of_choices>` in model creation.
+- You can't add type *decimal/int* with type *flaot*.
+- You can use `fsum([])` to sum decimal and float numbers; *float sum*
+- You can force a number to a *float* using `float()`.
+- Redirects are based on what the app directory is.
 
 # Fast Track to JQuery
+-
+
+
 
 # Products & Async
 
@@ -539,7 +561,7 @@ def name(self):
 
 ## Research:
 - What are signals?
--
+- `is_safe_url()`?
 
 ## Reference:
 - [Try Django](www.joincfe.com/youtube)
