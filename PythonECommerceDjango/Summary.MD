@@ -622,7 +622,54 @@ $(document).ready(function(){
 ```
 - Since the endpoint is returning html, then we get html response back.
 - To solve this, use `if request.is_ajax()`
+- We're going to return the data as **Javascript Object Notation** or *JSON*.
+- *Django* already has a way to do this with `from django.http import JsonResponse`.
+- And, the example code is:
+```python
+json_data = {
+  'added': added,
+  'removed': not added,
+}
+```
+- You can post data using `.html()`.
+- You could also use an API endpoint instead.
+- We're going to use an anonymous function now: `products = [{'name':x.name, 'price':x.price} for x in cart.obj.projects.all()]`.
+- You can prepend data to html using `.prepend()`.
+- Now we're going to add autosearch.
+```js
+var searchForm = $('.search-Form')
+var searchInput = searchForm.find('[name='q']')
 
+// prepare to modify input
+var typingTimer;
+var typingInterval = 1500;
+
+searchInput.keyup(function(e){
+  clearTimeout(typingTimer) // clear the timer
+  typingTimer = setTimeout(performSearch, typingInterval)
+})
+
+searchInput.keydown(function(e){
+  clearTimeout(typingTimer) // clear the timer
+})
+
+function performSearch(){
+  var query = searchInput.val()
+  window.location.href = '/search/?q=' + query
+}
+```
+- A similar function called `.keydown()` exists for when a key is pressed down.
+- To add a class to a selection use `.addClass()`.
+- *Auto-Saving* would be very similar to this.
+- You need to tell users when an error occured.
+- You can send an status code using `JsonResponse( <data>, status = 404)`
+- We want a consistent experience across all browsers so we're going to use **JQuery-Confirm**.
+- After installing it, you just use `$.alert("Message")` and it's much cleaner.
+- You can adjust the *title*,*content*,*theme* by passing an array with those keys.
+- To empty a form use `thisForm[0].reset()`.
+- You can convert the fields in a form into JSON using `as_json()`.
+- AJAX is not safe without the *csrf_token*
+- Make sure to actually read the *CSRF Token* primer at the bottom.
 
 # Custom User Model
 
@@ -647,6 +694,7 @@ $(document).ready(function(){
 - `is_safe_url()`?
 - Javascript *integrity* attribute?
 - Javascript *crossorigin* attribute?
+- JQuery-Confirm?
 
 ## Reference:
 - [Try Django](www.joincfe.com/youtube)
@@ -655,3 +703,5 @@ $(document).ready(function(){
 - [Django Regular Expressions](www.kirr.co/plugin)
 - [Large File Uploads in Django](www.kirr.co/e1133t)
 - [FontAwesome.io](www.fontawesome.io)
+- [Primer on CSRF Token with Django](www.kirr.co/58ewx3)
+-
