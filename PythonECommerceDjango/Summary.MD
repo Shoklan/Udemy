@@ -888,7 +888,7 @@ user_logged_in = Signal(providing_args=['instance', 'request'])
 ```
 
 # Stripe Integration
-- 
+-
 
 
 
