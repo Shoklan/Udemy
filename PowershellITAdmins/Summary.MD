@@ -58,11 +58,40 @@
 - To save an alias `Export-Alias -Path my_aliases.txt -Name j`.
 
 # Variables
-- 
-
-
+- All variables in Powershell have a **Data Type**.
+- This is just to formulate how variables should be stored.
+- Powershell is what is called a **Dynamically Typed** or **Losely Typed** language.
+- Variables start with `$`.
+- It follows the normal assignment structure as other languages.
+- It is saved for the lifetime of the current console.
+- You can cast to a different data type using `[string]`.
+- You can get the type of an object using `x.GetType()`.
+- To get rid of a variable you assign `$null` to it.
+- There are a few different data types:
+  1. bool
+  2. string
+  3. int
+  4. array
+  5. hashtable
+- To check for equality use `-eq`; which is similar to linux.
+- `[string]` is the most common type of data type you'll encounter.
+- Single Quotes are treated as a string literal.
+- Double Quotes allow for variable expansion inside of them.
+- An **Array** Powershell is not contained to a single type.
+- You declare it with `@(item1, item2, item3)`
+- To push an item onto the array, you use `+=` insted of a method.
+- The array elements can be accessed with their index; 0 indexing.
+- **Hash Tables** are powershells version of dictionaries.
+- You declare theem with `@{'key1' = item1; 'key2' = item2}`.
+- You can return an element using `$ht.Get_Item('key1')` to get `item1`.
+- Or, you could use `$ht.key1` for the same effect.
+- You can add items using `$ht.add('key3', item3)`.
+- To replace a value, use `$ht.Set_Item('key1', item6)`.
+- You can remove an item using `$ht.Remove(key2)`.
 
 # Conditional Logic
+- 
+
 
 # Loops
 
