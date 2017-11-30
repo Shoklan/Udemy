@@ -164,13 +164,32 @@ $annie | Add-Member -type NoteProperty -name Sex -value 'Female'
 - There is also an external GUI to look over attributes using `Out-GridView`.
 
 # Powershell & WMI
-- 
-
+- WMI stands for **Windows Management Implementation**.
+- It is inteded to allow a user to do anything that could be done with a GUI.
+- *WMI* is broken down into **Namespaces**, **Classes**, **Properties**.
+- To use it you just need to call `Get-WMIObject`.
+- To get all *namespaces* use `gwmi -Namespace root -Class __Namespace | select name`.
+- Class **cimv2** is the most popular and most commonly used.
+- You can chain conditions using `-and` or `-or`.
+- Powershell defaults to the *root* namespace if not specified.
+- There is a *SQL* access format too: `gwmi -Query 'SELECT * Model FROM Win32_ComputerSystem'`.
+- `%` is the alias stand in instead of `For Each`.
+- The format is: `% { <item> has <conditions> }`; `% {"Drive $($_.DeviceID) has $($_.Freeespace/1GB) GB Free"}`.
+- Substitiution in strings is of the format `$()` like Linux.
+- `"{0:N0}" -f ($_.Freespace/1GB)"` is one way to format the output.
 
 # Modules: A Brief Overview
+- 
+
 
 # Providers: A Brief Overview
 
 # Active Directory
 
 # Creating Your First Script
+
+# Research:
+- WQL?
+
+# Reference:
+-
