@@ -116,10 +116,27 @@ switch($a){
 - You can also pass wildcards and regex using parameter `-wildcard` and catch with `'d*'`.
 
 # Loops
+- Loops are for iterating over multiple values.
+- **For Loops** are typically when you know how many items you're going to iterate over.
+- **ForEach Loops** are for iterating over a list when we don't know how many items are in it.
+- The format for a *for loop* is `for( init; condition; repeat){}`.
+- Avoid infinite loops.
+- You can get the length of an array using `array.Count`.
+- The *forEach loop* has the form `foreach($item in $array){}`.
+- The **Do Loop** has the format `do{ <code> } while( <condition> )`.
+- You can check the name of a process using `Get-Process <process_name> -ErrorAction SilentlyContinue`.
+- You can get the current time using `Get-Date`.
+- The keyword **break** will move up a level of looping.
+- You can actually pass a number to *break* to move up more than one level.
+- The keyword **continue** will move to the next line to execute it.
+- Try not to nest loops.
+- The parameter `-contains` checks is somethings exists inside a variable/string.
+- You can get the contents of a file using `Get-Contents`.
+
+# Objects & The Pipeline
 - 
 
 
-# Objects & The Pipeline
 
 # Powershell & WMI
 
