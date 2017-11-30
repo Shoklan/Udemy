@@ -90,10 +90,34 @@
 - You can remove an item using `$ht.Remove(key2)`.
 
 # Conditional Logic
-- 
+- The most common way to evaluate conditions is the `if/then/else/elseif` clauses.
+```
+$x = 5
+if ( $x -eq 1){
+  Write-Host 'x is equal to 1'
+} elseif( $x -eq 2){
+  Write-Host 'x is equal to 2'
+} else{
+  Write-Host 'x is not equal to 1'
+}
+```
+- You can use `if($var)` to check if a variable exists.
+- A **Switch Statement** looks like:
+```
+$a = 5
 
+switch($a){
+  1 {'option 1'}
+  2 {'option 2'}
+  default {'option default'}
+}
+```
+- Code could go inside the brackets; not just strings
+- You can also pass wildcards and regex using parameter `-wildcard` and catch with `'d*'`.
 
 # Loops
+- 
+
 
 # Objects & The Pipeline
 
