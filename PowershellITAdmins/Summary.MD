@@ -186,10 +186,14 @@ $annie | Add-Member -type NoteProperty -name Sex -value 'Female'
 - To remove one simply use `Remove-Module <module_name>`.
 
 # Providers: A Brief Overview
-- 
-
+- **Providers** are common methods for interacting with data stores.
+- You can check which *providers* are on your system using `Get-PSProvider`.
+- To use it, you navigate to it like it's a drive: `cd navigate:`.
+- `Get-PSDrive` lists all the *mounted* drives.
 
 # Active Directory
+- 
+
 
 # Creating Your First Script
 
