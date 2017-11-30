@@ -179,10 +179,15 @@ $annie | Add-Member -type NoteProperty -name Sex -value 'Female'
 - `"{0:N0}" -f ($_.Freespace/1GB)"` is one way to format the output.
 
 # Modules: A Brief Overview
-- 
-
+- **Modules** are an easy way to share code.
+- You can check what *modules* are installed using `Get-Module -All`; loaded ones.
+- You can check what *modules* you have but don't have installed in the session use `Get-Module -ListAvailable`.
+- You can load a new module using `Import-Module <module_name>`.
+- To remove one simply use `Remove-Module <module_name>`.
 
 # Providers: A Brief Overview
+- 
+
 
 # Active Directory
 
@@ -190,6 +195,7 @@ $annie | Add-Member -type NoteProperty -name Sex -value 'Female'
 
 # Research:
 - WQL?
+- Modules?
 
 # Reference:
 -
