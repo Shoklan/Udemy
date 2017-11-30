@@ -18,10 +18,21 @@
 - Exchange software is built on top on Powershell.
 
 # Installation/Configuration
- -
-
+- You can tell what version you're on using `$psversiontable.psversion`
+- To get v3, you'd visit Microsoft's site and install **Windows Maangement Framework 3.0**
+- Typing `get-help` is the main help system.
+- To update the help system to the latest version use `update-help`
+- You're also going to want to adjust the **Execution Policy**.
+- This is Windows version of permissions.
+- You can check what it is using `Get-ExectutionPolicy`.
+- The default is *AllSigned*; meaning the script must have a cert.
+- You can run a script in the present directory using `.\<script_name>.ps1`.
+- Powershell also includes *tab completion*.
+- To set the policy, use `Set-ExecutionPolicy unrestricted`.
 
 # The Interactive Console
+- 
+
 
 # Cmdlets
 
