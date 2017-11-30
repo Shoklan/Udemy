@@ -31,10 +31,18 @@
 - To set the policy, use `Set-ExecutionPolicy unrestricted`.
 
 # The Interactive Console
-- 
-
+- Make sure to be running Powershell as *Administrator*.
+- You can cycle through your old history using the *Up Arrow* and *Down Arrow*.
+- If you hold down *CTRL* you can scroll left and right by words.
+- The Powershell editor is called **ISE**.
+- If you enter `$profile` then it will return the current profiles location.
+- The profile is not there by default.
+- Use `Set-Location` to move to that directory.
+- You can create *aliases* using `Set-Alias <alias_name> 'command_alias_code'`.
 
 # Cmdlets
+- 
+
 
 # Variables
 
