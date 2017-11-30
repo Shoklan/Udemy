@@ -41,10 +41,26 @@
 - You can create *aliases* using `Set-Alias <alias_name> 'command_alias_code'`.
 
 # Cmdlets
+- CMDlets are the replacement for batch files.
+- There are two kinds of *aliases*:
+  1. **User-Defined**
+  2. **Default**
+- The `Get-Command` cmdlet is the one that gives you the list of all commands.
+- The standard naming nomenclature in Powershell is **Verb-Noun**.
+- Powershell will try and limit your names if you try and break this expectation.
+- You can get the list of acceptable verbs using `Get-Verb`.
+- You can also use `Get-Command` to filter on type using parameters `-Verb Get`.
+- You can get help with a specific cmdlet using `Get-Help <cmdlet-name>`.
+- You can also get examples by passing `-Examples` to the above.
+- You can see a list of all aliases using `Get-Alias`.
+- You can list the current directory contents using `Get-ChildItem`.
+- Microsoft included aliases for both *Windows* and *Linux*.
+- To save an alias `Export-Alias -Path my_aliases.txt -Name j`.
+
+# Variables
 - 
 
 
-# Variables
 
 # Conditional Logic
 
