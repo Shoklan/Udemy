@@ -192,8 +192,20 @@ $annie | Add-Member -type NoteProperty -name Sex -value 'Female'
 - `Get-PSDrive` lists all the *mounted* drives.
 
 # Active Directory
-- 
-
+- If you are working on a server with the **Active Directory Role** installed then it's already there.
+- You can find it in the *Remote Server Administration Tools for Windows 7 with Service Pack 1* from Microsoft.
+- To get computers in the domain use `Get-ADComputer`.
+- If you want all the properties, then pass `-Properties *` to the above command.
+- You can also get user details using `Get-ADUser <acct_name>`.
+- You can write to them too using the `Set-` commands.
+- Sometimes you'll have to use `-Replace` if it doesn't let you change it.
+- You can add conditions to a query using `-Filter {condition}`.
+- For the present time, use `[DateTime]::Now`.
+- There is an alias of `Where-Object` which is `?`.
+- You can use `Test-Path <path>` to confirm that the path exists.
+- You can import a csv file using `Import-Csv`.
+- You can change a password using `Set-ADAccountPassword '<acct_name>' -Reset -NewPassword (ConvertTo-SecureString -AsPlainText "the_password" -Force)`.
+- It must be of type *SecureString* for the command to accept it.
 
 # Creating Your First Script
 
