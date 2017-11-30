@@ -208,6 +208,7 @@ $annie | Add-Member -type NoteProperty -name Sex -value 'Female'
 - It must be of type *SecureString* for the command to accept it.
 
 # Creating Your First Script
+- You can ping another computer using `Test-Connection <target> -Quiet`.
 
 # Research:
 - WQL?
