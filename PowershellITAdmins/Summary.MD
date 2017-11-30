@@ -134,11 +134,38 @@ switch($a){
 - You can get the contents of a file using `Get-Contents`.
 
 # Objects & The Pipeline
-- 
+- The sixth data type is **Object**.
+- An *object* is a variable that contains methods and properties.
+- The Powershell **Pipeline** is for passing objects around.
+- If you pipe an object to `Get-Member` then you'll see all the attributes of the object.
+- You can check for all the attributes of an object using `<object> | Select-Object *`.
+- You can check the status of a service on using `$service.Status`.
+- You can stop the service using `$servie.Stop()`.
+- The `$service` will still show it as *running* though since the variables is a snapshot.
+- You can use `Compare-Object` without any difficulties.
+- If you want to know what's equal then pass the parameter `-includeEqual`.
+```
+$properties = @{Hair='Brown'; Eyes = 'Blue'; Weight = 130; Sex = 'Female'} # declare.
+$person = New-Object -TypeName PSObject -Property $properties; # create an object out of declared properties
+$person
 
-
+# another way to create them
+$annie = New-Object System.Object
+$annie | Add-Member -type NoteProperty -name Hair -value 'Brown'
+$annie | Add-Member -type NoteProperty -name Eyes -value 'Blue'
+$annie | Add-Member -type NoteProperty -name Weight -value 130
+$annie | Add-Member -type NoteProperty -name Sex -value 'Female'
+```
+- You can sort based on attributes using `Sort-Obect <attr>`.
+- You can sort descending using the parameter `-Descending`.
+- You can select object attributes using `Select-Object <attr1>,<attr2>`.
+- You can filter objects using `Where-Object {$_.Color -eq 'Brown'}`.
+- You can tell powershell to use columnar data using `Format-Table`.
+- There is also an external GUI to look over attributes using `Out-GridView`.
 
 # Powershell & WMI
+- 
+
 
 # Modules: A Brief Overview
 
