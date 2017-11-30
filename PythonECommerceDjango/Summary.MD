@@ -794,10 +794,103 @@ admin.site.register(User, UserAdmin)
 - Class based views are a lot better.
 
 # Custom Analytics
+- We're going to make our own App to manage our analytics.
+- You could use *Google Analytics* but then you'd be giving up control of the data.
+```python
+# models.py
+from django.db import models
+from django.conf import settings
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+
+User = settings.AUTH_USER_MODEL
+
+class ObjectView(models.Model):
+  user = models.ForeignKey( User, blank = True, null = True)
+  ip_address = = models.CharField(max_length = 220, blank = True, null = True) # There is an IpField but we're not using it.
+  content_type = models.ForeignKey(ContentType) # this stands in for ANY of our models: User, Product, Order, Cart, etc..
+  object_id = models.PositiveIntegerField()
+  content_object = GenericForeignKey('content_type', 'object_id')
+  timestamp = models.DateTimeField(auto_add_now = True)
+
+  def __str__(self):
+    return "%s views %s" %(self.content_object, self.timestamp)
+
+  class Meta:
+    ordering = [-timestamp] # most recent saved show first.
+    verbose_name = 'Object viewed'
+    verbose_name_plural = 'Objects viewed'
+```
+- This does the mappings that other *Foreign Keys* usually do but at a more abstract level.
+- Make sure to add the app to *settings.py*
+- Add it to *admin.py*
+```python
+# admin.py
+from .models import ObjectViewed
+
+admin.site.register( ObjectViewed )
+```
+- Craete a *utils.py* and then add:
+```python
+def get_client_ip(request):
+  x_forwarded_for = request.META.get('HTTP_X_FORWAREDED_FOR')
+  if x_forwarded_for:
+    ip = x_forwarded_for.split(',')[0]
+  else:
+    ip = request.META.get('REMOTE_ADDR')
+  return ip
+```
+- Now we're going to create custom signal in *signals.py*
+```python
+from django.dispatch import Signal
+
+object_viewed_signal = Signal(providing_args = ['instance', 'request'])
+```
+- You send a *signal* using `object_viewed_signal.send(instance.__class__, instance = instance, request = request)`.
+- When you using class based views, you can create something called a **Mixin**.
+- You're going to create a new file called *mixins.py*.
+```python
+class ObjectViewedMixin(object):
+  context = super(ObjectViewedMixin, self).get_context_data(*data, **kwargs))
+  request = self.request
+  instance = context.get('object')
+  if instance:
+    object_viewed_signal.send( instance.__class__, instance = instance, request = request)
+  return context
+```
+- Then, you can just pass `ObjectViewedMixin` to any Class views you want to use the signal.
+- In the *models.py* file:
+```python
+def object_viewed_receiver(sender, instance, request, *args, **kwargs):
+  c_type = ContentType.objects.get_for_model(sender) # this will tell you the content type.
+
+  new_view_obj = ObjectViewed.objects.create(
+    user = request.user,
+    content_type = c_type,
+    object_id = instance.id,
+    ip_address = get_client_ip(request)
+  )
+object_viewed_signal.connect( object_viewed_receiver ) # you don't have to pass the sender because it's already defined.
+```
+- Now we're going to create a signal for sessions:
+```python
+# models.py
+from django.contrib.sessions.models import Session
+from django.db.models.signals import pre_save, post_save
+# ...
+```
+- Now in *signals.py*
+```python
+# signal.py
+from django.dispatch import Signal
+
+user_logged_in = Signal(providing_args=['instance', 'request'])
+```
+
+# Stripe Integration
 - 
 
 
-# Stripe Integration
 
 # Mailchimp Integration
 
@@ -827,3 +920,4 @@ admin.site.register(User, UserAdmin)
 - [FontAwesome.io](www.fontawesome.io)
 - [Primer on CSRF Token with Django](www.kirr.co/58ewx3)
 - [Custom User Models](www.kirr.co/ygijli)
+- [Custom Analytics](www.kirr.co/mh9shf)
