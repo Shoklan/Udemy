@@ -10,10 +10,16 @@
 - Break and fix stuff yourself.
 
 # Powershell Background
-- 
-
+- Powershell can be used as a drop-in replacement for CMD.
+- Based on .NET; written in .NET
+- There are 4 versions.
+- Powershell v1 was called monad.
+- It started in 2005.
+- Exchange software is built on top on Powershell.
 
 # Installation/Configuration
+ -
+
 
 # The Interactive Console
 
