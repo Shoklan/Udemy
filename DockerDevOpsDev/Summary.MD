@@ -75,10 +75,63 @@
 - **Public Docker Images** require the *<user_acct>/<image>* format to pull them down.
 
 # Building a Dockerized Web App
-- 
-
+- Create a folder for you the project files.
+- The name of the whale in the Docker logo is *Moby Dock*.
 
 # Dockerized Flask App
+- Creating the skeleton folder structure is a good tip.
+- You're going to need the files:
+  1. requirements.txt
+  2. .gitignore
+  3. Dockerfile
+  4. docker-compose.yaml
+  5. .dockerignore
+  6. *<project_dir>*
+  7. *<config_dir>*
+  8. *<instance_dir>*
+  9. *config/__init__.py*
+  10. *config/settings.py*
+  11. *instance/__init__.py*
+  12. *instance/settings.py*
+  13. *mobydock/app.py*
+  14. *mobydock/__init__.py*
+  15. *mobydock/templates*
+  16. *mobydock/static*
+  17. *mobydock/static/style.css*
+- Download a Moby Dock image and place it in the static folder.
+- The **Docker File** is a blue print or recipe list for the Docker image.
+```
+FROM python:2.7-slim                               # use the OS information and
+                                                   # setup from this docker container
+MAINTAINER Collin Mitchell  <email.addr@email.com> # Your name here
+
+RUN apt-get update &&        # ensure update to date
+    apt-get install -qq -y   # install in quiet mode with prompts
+    build-essential          # ?
+    libpq-dev                # communicate with postgres
+    postgresql               # obv
+    --fix-missing            # catch all
+    --no-install-recommends
+
+ENV INSTALL_PATH /mobydock   # set default dir
+RUN mdir -p $INSTALL_PATH    # create it.
+
+WORKDIR $INSTALL_PATH                   # start here for cmds
+COPY requirements.txt requirements.txt  # copy the necessary reqs for this
+                                        # container from our work station
+RUN pip install -r requirements.txt     # use the files in the file and install
+COPY . .                                # copy everything into docker
+
+VOLUME ["static"]                       # set folder this as a distinct volume
+
+CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and listen on 8000
+```
+- Docker will only change thee container when lines are different.
+- So keeping `COPY` lines separate can reduce compile time.
+- The structure of lines in the *requirements.txt* is `<program_name>==<version_number>`.
+- The *.dockerignore* file does the same thing as the *.gitignore* file.
+- You would have a third party tool read the logs from docker.
+- 
 
 # Dockerized Rails App
 
@@ -100,6 +153,6 @@
 
 # Research:
 - What is *Ansible*?
-
+- What is gunicon?
 
 # Reference:
