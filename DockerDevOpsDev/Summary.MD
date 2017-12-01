@@ -140,10 +140,13 @@ CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and list
 - You can use `docker-compose stop` to finish the job.
 
 # Dockerized Rails App
+- Just watching, but no notes.
 
 # Spinning up a Staging Server
+-
 
-# Crash Course with SystemD
+
+# Crash Course with systemd
 
 # Adding nginx Into the Mix
 
