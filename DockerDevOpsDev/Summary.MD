@@ -44,9 +44,14 @@
 - To install using shell use `sudo dpkg -i <file_name>`.
 - To check if it's installed, use `docker --version`.
 - To make sure you don't get permision issues use `sudo usermod -aG docker nick`.
-
+- Download **Docker Compose** and move it to */usr/local/bin*; make sure to allow execution.
 
 # Docker Basics
+-
+
+
+
+
 
 # Building a Dockerized Web App
 
