@@ -47,13 +47,36 @@
 - Download **Docker Compose** and move it to */usr/local/bin*; make sure to allow execution.
 
 # Docker Basics
--
-
-
-
-
+- What does Docker do?:
+  * Packages a service into a standardized unit.
+  * Everything is included to make it run.
+  * Runs teh same way on multiple machines.
+- A **Docker Image** is what contains everything you'll need to run a service.
+- A **Docker Container** is the actual instance of the service running.
+- A virtual machine does something similar to what Docker does.
+- The containers are based on Open Standards.
+- Benefits:
+  1. Scale up quickly.
+  2. Expand your developmeent team painlessly.
+  3. Use Whatever technology fits best.
+  4. Cross Environment consistency.
+  5. Docker is also a framework.
+- The classic hello world: `docker run --rm busybox:latest /bin/echo "Hello World"`.
+- **Busybox** is a very tiny linux distro that's useful for demos.
+- You can see all the commands in Docker using `docker --help`.
+- You can check what images you have downloaded using `docker images`.
+- You can check the running docker containers using `docker ps`.
+- You can stop a container using `docker rm <docker_id_or_partial`.
+- The flag `-rm` means remove after commands are completed.
+- The flags `-it` will place you in *Interactive mode* where you're now inside the shell at the terminal.
+- You can stop and delete an image using `docker -rmi <image_name>`.
+- Make sure to create a Dockerhub account.
+- You can download an image from the hub using `docker pull <image>:<version>`; version is optional.
+- **Public Docker Images** require the *<user_acct>/<image>* format to pull them down.
 
 # Building a Dockerized Web App
+- 
+
 
 # Dockerized Flask App
 
