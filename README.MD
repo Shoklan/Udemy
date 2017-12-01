@@ -10,4 +10,5 @@
 | Learning Python GUI Programming Using Qt Framework | [\PythonQtFramework]             | {2017/10/28}   |
 | Learn Python and Django: Payment Processing        | [\PythonProcessingDjango]        | {2017/11/10}   |
 | Python ECommerce; Build a Django eCommerce Site    | [\PythonECommerceDjango]         |                |
-| Powershell: A Getting Started Guide for IT Admins  | [\PowershellItAdmins]            |                |
+| Powershell: A Getting Started Guide for IT Admins  | [\PowershellItAdmins]            | {2017/11/30}   |
+| Docker for DevOps: Development to Production       | [\DockerDevOpsDev]               |                |
