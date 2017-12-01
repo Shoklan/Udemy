@@ -131,7 +131,13 @@ CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and list
 - The structure of lines in the *requirements.txt* is `<program_name>==<version_number>`.
 - The *.dockerignore* file does the same thing as the *.gitignore* file.
 - You would have a third party tool read the logs from docker.
-- 
+- *Docker-Compose.yaml* defines all the different service configurations and images that your container will be using.
+- To get the software you'll need to use `docker-compose up` and it will install Posgres, redis, python
+- The `links:` section will define the names the other containers will be called at compilation.
+- To run a command agaisnt a container, you use `docker exec`.
+- Everything updates live when you makes changes to anything.
+- Sometimes, if you hit **CTRL+C** it doesn't always exit correctly.
+- You can use `docker-compose stop` to finish the job.
 
 # Dockerized Rails App
 
@@ -154,5 +160,6 @@ CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and list
 # Research:
 - What is *Ansible*?
 - What is gunicon?
+- Flask Procfile?
 
 # Reference:
