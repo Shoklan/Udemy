@@ -9,10 +9,32 @@
 - Prizes, or whatever.
 
 # Mimcrosoft Excel - Quick Introduction
-- 
-
+- The top part of the excel screen is called **The Ribbon**.
+- On the bottom is **The Workspace**.
+- The default number of columns is 16384.
+- The default number of rows is 1048576.
+- The plus button adds 'as many sheets as we like'.
+- Below the *ribbon* and above the *workspace* are the **Name Box** and the **Formula Bar**.
+- The *formula bar* will give you suggestions.
+- Entering data requires selecting it, obv.
+- To tell Excel that you're done entering data you can use *Tab*, *Enter*, or the *arrow keys*.
+- Text is aligned left; numbers to the right.
+- You can cancel an entry by pressing `ESC`.
+- Pressing *F2* will move you to the *formula bar*.
+- Pressing *DEL* will delete the contents of the selection.
+- You can find **Formating** either by rightt clicking or in the *Ribbon*.
+- You can press *CTRL+SPCBAR* to select a whole column.
+- You can press *SHFT+SPCBAR* to select a whole row.
+- Excel can also act as a calculator.
+- To start a formula, you must start the box with eihter `=` or `+`.
+- You can use **Cell References** to make formulas easier to understand.
+- A window opens when you click on the **Function Button** which lists all functions broken down by category.
+- **Paste Special** allows for detialed configuration of what precisely you want to copy.
+- You can press *ALT+E+S* to do this.
 
 # Microsoft Excel - Useful Tools
+- 
+
 
 # Microsoft Excel - Best Practices
 
