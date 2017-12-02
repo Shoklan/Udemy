@@ -207,8 +207,13 @@ binascii.b2a_hex(os.urandom(128))
 ```
 
 # Registering a Domain Name
+- You really want a domain name.
+- Mentors prefered choice is [Internetbs](www.internetbs.net).
+- They give you free whois protection.
 
 # Obtaining an SSL Certificate
+- 
+
 
 # Where to Go Next
 
@@ -223,3 +228,4 @@ binascii.b2a_hex(os.urandom(128))
 - Floating IPs?
 
 # Reference:
+- [Internetbs](www.internetbs.net)
