@@ -212,10 +212,16 @@ binascii.b2a_hex(os.urandom(128))
 - They give you free whois protection.
 
 # Obtaining an SSL Certificate
-- 
-
+- I already know about Certificate Authorities.
+- Options:
+  1. StartSSL; free, but scammy.
+  2. SSLMate; cheap, but awesome.
+  3. Let's Encrypt; unknown.
+- You can test you SSL setup using [ssllabs](www.ssllabs.com).
 
 # Where to Go Next
+- 
+
 
 # Bonus Lectures
 
@@ -229,3 +235,4 @@ binascii.b2a_hex(os.urandom(128))
 
 # Reference:
 - [Internetbs](www.internetbs.net)
+- [ssllabs](www.ssllabs.com)
