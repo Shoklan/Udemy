@@ -143,10 +143,52 @@ CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and list
 - Just watching, but no notes.
 
 # Spinning up a Staging Server
--
-
+- The benefit of a staging server is to test for issues.
+- Debian is very stable and most everyone supports it.
+- CoreOS is newer and designed with the intent to run Containers.
+- CentOS is the same as Debian, in features.
+- Ubuntu Snappy and Red Hat Atomic are newer but not ready, as per this video's date.
+- Create a new virtual machine to act as the staging server.
+- Make sure SSH is installed during setup.
+- `sudo` is not installed by default for Debian; you will need to install it.
+- To do that, change to root and then type `apt-get install sudo`.
+- To add yourself to the sudoer's list, enter `adduser <your_acct_name> sudo`.
+- To allow the user to not require typing their password change the */etc/sudoers* file line to:
+```bash
+%sudo ALL=(ALL:ALL) NOPASSWD:ALL
+```
+- There is a risk that the network settings will change at each start up.
+- To force it static in Debian, edit file */etc/network/interfaces*.
+```
+iface eth0 inet static
+  address <ip_addr>
+  netmask <netmask>
+  gateway <gateway>
+```
+- To generate a public/private key pairing use `ssh-keygen -t rsa -b 4096`.
+- Share the *.pub* but guard the other one.
+- To add it to your keyring, type `ssh-add`.
+- To ssh to it, you use `<acct_name>@<ip_addr>`.
+- You can pass commands after the above to execute those commands on the remote server.
+- Run `cat id_rsa.pub | ssh <acct_name>@<ip_addr> 'cat >> .ssh/authorized_keys'` to append your public key to the server.
+- We're going to make the server more secure: `nano /etc/ssh/sshd_config`.
+- Now change the line to `PasswordAuthentication no`.
+- Install Docker on on the staging server.
+- It is good practice to keep you deploy information separate from the application.
+- You can set up multiple remote sites in git using `git remote add staging ssh://<ip_to_server>`.
+- The first line of a firewall configuration file needs to be `*filter`.
+- Lines starting with `#` are comments.
+```
+:INPUT DROP [0:0]     # for chain input, drop on all ports
+:FORWARD DROP [0:0]   # for chain forward, drop on all ports
+:OUTPUT ACCEPT [0:0]  # for chain output, allow all.
+```
+- You can see all current **iptables** rules using `sudo iptables -L`
+- You can import the rules file using `sudo iptables-restore < /var/lib/iptables/rules-save`.
 
 # Crash Course with systemd
+- 
+
 
 # Adding nginx Into the Mix
 
@@ -164,5 +206,7 @@ CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and list
 - What is *Ansible*?
 - What is gunicon?
 - Flask Procfile?
+- What is Vagrant?
+- `shift` command?
 
 # Reference:
