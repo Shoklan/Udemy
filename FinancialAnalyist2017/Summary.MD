@@ -123,8 +123,18 @@
 - There is some crazy formula on the screen that I am not going to copy.
 
 # Microsoft Excel - Building Professional Charts
+- To add a chart, Select the data then navigate to *Insert > Select Chart Type*.
+- Excel 2016 includes a **Recommended Charts** button.
+- If you don't like the choice, you can **Right+CLK** and select **Change Chart**.
+- When a chart is selected, the **Chart Tools Ribbon** shows up.
+- A **Bridge Chart** shows how an initial value is affected by a series of intermediate positive values.
+- The **Treemap Chart** helps us to visualize multiple categories against a numeric value.
+- The **Sparklines** are miniature charts in a cell that helps you spot trends in data.
+- You cannot use the *DLT* key to remove a sparkline and will need to delete the row or clear the cell.
 
 # Microsoft Excel - Working with Pivot Tables
+-
+
 
 # Pivot Tables & Slicers in Practice
 
