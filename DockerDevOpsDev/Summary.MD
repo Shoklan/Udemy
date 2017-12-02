@@ -189,7 +189,22 @@ openssl req -newkey rsa:2048 # request RSA key of length 2048
 - `-v` stands for volume in the unit file.
 
 # Creating a Production Server
-- 
+- We're going to be using *Digital Ocean* for our example.
+- There is a reference code for Digital Ocean here.
+- Creating a droplet:
+  1. Select *Create Droplet*
+  2. Name it.
+  3. Select the size of the droplet.
+  4. Select your region.
+  5. Select your distribution to include.
+  6. Enable *Private Networking*.
+  7. Create and add an SSH Key.
+- You can create a secure token in python using:
+```python
+import os
+import binascii
+binascii.b2a_hex(os.urandom(128))
+```
 
 # Registering a Domain Name
 
@@ -205,5 +220,6 @@ openssl req -newkey rsa:2048 # request RSA key of length 2048
 - Flask Procfile?
 - systemd unit files
 - */lib/systemd/system/docker.service*?
+- Floating IPs?
 
 # Reference:
