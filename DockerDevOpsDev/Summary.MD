@@ -187,26 +187,136 @@ iface eth0 inet static
 - You can import the rules file using `sudo iptables-restore < /var/lib/iptables/rules-save`.
 
 # Crash Course with systemd
-- 
-
+- **Systemd** is a drop in replacement for systemV; also called init.d.
+- Advantages:
+  * Concise 'unit files'
+  * Process dependencies
+  * Unified toolset.
+- Unit files are broken up into sections:
+  1. Unit
+  2. Service
+  3. Install
+- You can list all the unit files with `sudo systemctl list-unit-files`.
+- **ExecStartPre** are commands to be run before the function.
+- To see which unit files are run with *multi-user.target* then type `sudo systemctl show -p "Wants" multi-user.targer`.
+- You can reload the unit files using `systemctl daemon-reload`.
+- You can check the log files using `journalctl -u <service>`.
+- You can pass parameter `--reverse` so that the newest log lines are on the top.
 
 # Adding nginx Into the Mix
+- **nginx** is a web server focused on concurrency and performance.
+- It is defined as a **reverse proxy**.
+- It is very effficient at serving static assets.
+- It's also fantastic at handling SSL.
+- It can also rewrite URLs.
+- It also supports Virtual hosts so that it can handle multiple applications at once.
+- Also can load balance well.
+- nginx includes a default index file.
+- In nginx, you can access certain variables using the `$` like normally in linux.
+- The line `ENTRYPOINT ["/docker-entrypoint"]` controls allowing access to the application.
+- Example Cert generation:
+```
+openssl req -newkey rsa:2048 # request RSA key of length 2048
+ -nodes                      # don't require password to access.
+ -sha256                     # encryption strength
+ -keyout certs/productionexample.key`  # output file
+ -x509                       # Certificate
+ -days 365                   # no longer valid past a year
+ -out certs/productionexample.crt      # certificate itself
+ -subj "/C=US/ST=NewYork/L=NewYork/O=IT/CN=productionexample.com"
+```
+- `openssl dhparam -out certs/dhparam.pem 2048` is the command for generating the Difffie Helman Key.
+- `-v` stands for volume in the unit file.
 
 # Creating a Production Server
+- We're going to be using *Digital Ocean* for our example.
+- There is a reference code for Digital Ocean here.
+- Creating a droplet:
+  1. Select *Create Droplet*
+  2. Name it.
+  3. Select the size of the droplet.
+  4. Select your region.
+  5. Select your distribution to include.
+  6. Enable *Private Networking*.
+  7. Create and add an SSH Key.
+- You can create a secure token in python using:
+```python
+import os
+import binascii
+binascii.b2a_hex(os.urandom(128))
+```
 
 # Registering a Domain Name
+- You really want a domain name.
+- Mentors prefered choice is [Internetbs](www.internetbs.net).
+- They give you free whois protection.
 
 # Obtaining an SSL Certificate
+- I already know about Certificate Authorities.
+- Options:
+  1. StartSSL; free, but scammy.
+  2. SSLMate; cheap, but awesome.
+  3. Let's Encrypt; unknown.
+- You can test you SSL setup using [ssllabs](www.ssllabs.com).
 
 # Where to Go Next
+- You can scale in two directions:
+  1. Horizontal; mutiple servers.
+  2. Vertically Scaling; more computing power.
+- You need to figure out where your bottlenecks are.
+- Most of the time, it's IO.
+- A **Canary Deploy** is when you mix in one new version to test it in production.
+- Use the Docker Swarm.
+- Kubernetes is done by Google.
+- Mesos is done by Apache.
+- Tutum is now been bought and integrated into Docker as its cloud service.
+- Debugging a system helps you see errors.
+- You can monitor a docker container using the built in `docker stats`.
+- Google has written a program called **cadvisor** that will do something similar.
+- A service that can monitor your services is **Datadog**.
+- You can also use something simple like **Uptime Robot** to send alerts to you.
+- CI stands for **Continuous Integration**.
+- A great docker container for managing logs is **logspout**.
+- The ELK stack is the best choice, I think.
+- **Configuration Management** is configuration is defined in one place.
+- Servers each have their own unique configuration.
+- Configuration implementation is not duplicated.
+- Ignore puppet of Chef since they're not up to the task anymore.
+-
 
 # Bonus Lectures
+-
+
 
 # Research:
 - What is *Ansible*?
 - What is gunicon?
 - Flask Procfile?
+<<<<<<< HEAD
 - What is Vagrant?
 - `shift` command?
+=======
+- systemd unit files
+- */lib/systemd/system/docker.service*?
+- Floating IPs?
+- Flask Celery?
+- Rails Sidekick?
+- Weave for Docker?
+- Flannel for Docker?
+- What is Deis; Platform as a Service?
+- What is tutum?
+- What is travisci?
+- What is circleci?
+- What is jenkins?
+- What is gitlab?
+- What is papertrail?
+- What is loggly?
+- What is kibana?
+- What is Ansible?
+- What is Saltstack?
+- What is Terraform?
+>>>>>>> origin/master
 
 # Reference:
+- [Internetbs](www.internetbs.net)
+- [ssllabs](www.ssllabs.com)
