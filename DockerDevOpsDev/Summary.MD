@@ -147,10 +147,49 @@ CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and list
 
 
 # Crash Course with systemd
+- **Systemd** is a drop in replacement for systemV; also called init.d.
+- Advantages:
+  * Concise 'unit files'
+  * Process dependencies
+  * Unified toolset.
+- Unit files are broken up into sections:
+  1. Unit
+  2. Service
+  3. Install
+- You can list all the unit files with `sudo systemctl list-unit-files`.
+- **ExecStartPre** are commands to be run before the function.
+- To see which unit files are run with *multi-user.target* then type `sudo systemctl show -p "Wants" multi-user.targer`.
+- You can reload the unit files using `systemctl daemon-reload`.
+- You can check the log files using `journalctl -u <service>`.
+- You can pass parameter `--reverse` so that the newest log lines are on the top.
 
 # Adding nginx Into the Mix
+- **nginx** is a web server focused on concurrency and performance.
+- It is defined as a **reverse proxy**.
+- It is very effficient at serving static assets.
+- It's also fantastic at handling SSL.
+- It can also rewrite URLs.
+- It also supports Virtual hosts so that it can handle multiple applications at once.
+- Also can load balance well.
+- nginx includes a default index file.
+- In nginx, you can access certain variables using the `$` like normally in linux.
+- The line `ENTRYPOINT ["/docker-entrypoint"]` controls allowing access to the application.
+- Example Cert generation:
+```
+openssl req -newkey rsa:2048 # request RSA key of length 2048
+ -nodes                      # don't require password to access.
+ -sha256                     # encryption strength
+ -keyout certs/productionexample.key`  # output file
+ -x509                       # Certificate
+ -days 365                   # no longer valid past a year
+ -out certs/productionexample.crt      # certificate itself
+ -subj "/C=US/ST=NewYork/L=NewYork/O=IT/CN=productionexample.com"
+```
+- `openssl dhparam -out certs/dhparam.pem 2048` is the command for generating the Difffie Helman Key.
+- `-v` stands for volume in the unit file.
 
 # Creating a Production Server
+- 
 
 # Registering a Domain Name
 
@@ -164,5 +203,7 @@ CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and list
 - What is *Ansible*?
 - What is gunicon?
 - Flask Procfile?
+- systemd unit files
+- */lib/systemd/system/docker.service*?
 
 # Reference:
