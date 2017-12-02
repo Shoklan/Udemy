@@ -66,10 +66,42 @@
 - You can also access that same bar using *ALT+[n]*, where n is the icons position in the title bar.
 
 # Microsoft Excel - Beginner, Intermediate, Adv. Functions
--
-
+- The function `SUM()` is self evident.
+- The function `SUMIF(range; criteria; [range])` uses the range to check, the criteria as the condition, and range to sum.
+- The function `SUMIFS([range], range_1, criteria_1, ...)` is like `sumif()` but it accepts more than one condition or set of cells.
+- The fucntion `COUNT()` counts which cells are numbers.
+- The fucntion `COUNTA()` counts which cells have text.
+- The fucntion `COUNTIF([range]; condition)` will conditionally count items in the range.
+- The fucntion `COUNTIFS()` counts cells that meet conditions where the input is of form `[range]; condition; ...`.
+- The function `AVERAGE()` does what you think it does.
+- The function `AVERAGEIF()` does what you think it does but with a condition.
+- You can slice a string and take only the first `<n>` characters using teh function `LEFT(Cell, Letters)`.
+- The function `RIGHT()` does the same thing but from the end of the string.
+- The function `MID(Cell, Start, N)` splices the text from `Cell` starting at `Start` and copies `N` characters.
+- The function `UPPER()` will convert a string to all upper case letters.
+- The function `LOWER()` will convert a string to all lower case letters.
+- The function `PROPER()` will convert a string to proper case letters.
+- The symbol `&` is the string concatination function in excel.
+- The function `MAX()` does what you think it does.
+- The function `MIN()` does what you think it does.
+- The function `ROUND()` does what you think it does.
+- The function `VLOOKUP()` filters data based on what is passed first.
+- The arguments are:
+  1. `value`; what to find.
+  2. `table`; table to pull data from.
+  3. `index`; the column index to get the data from.
+  4. `regex_bool`; Should the lookup allow for similar values.
+- The function `HLOOKUP()` does the same thing but for rows instead of columns.
+- The function `INDEX()` takes a selection area and returns the `x`,`y` values in relation to the table.
+- The function `MATCH()` takes a value and a selection table to return the row location.
+- The function `IFERROR()` will substitute a value when an error is detected.
+- The function `CHOOSE()` allows us to pass which row to substitute values for.
+- **Sensitivity Analysis** allows you to explore the effects of multiple different parameters on a result.
+- Fill in the hypotheitcal numbers and then navigate to *Data Tab > "What-If Analysis" > Data Table*.
 
 # Microsoft Excel - Financial Functions
+-
+
 
 # Microsoft Excel - Practical Exercise
 
