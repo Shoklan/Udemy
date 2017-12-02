@@ -33,8 +33,15 @@
 - You can press *ALT+E+S* to do this.
 
 # Microsoft Excel - Useful Tools
-- 
-
+- You can push text onto a new row but inside the same cell using *ALT+ENTER*.
+- **Text-Tto-Columns** *Data Tabular > Text To Columns*
+- You can set up a **Print Selection Area** under the *Print Tabular*.
+- To insert a *hyperlink* you'll navigate to *Insert > Hyperlink*.
+- You can link to a location in the same document as an option.
+- A **Freeze Pane** will hold some rows or columns in place while you scroll.
+- Excel 2016 contains a search bar to seek functions, etc.
+- A **Pivot Table** is used to summarize or simplify a table in a sheet.
+- You can access this feature by navigating to *Insert > Pivot Table*.
 
 # Microsoft Excel - Best Practices
 
