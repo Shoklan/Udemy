@@ -44,8 +44,30 @@
 - You can access this feature by navigating to *Insert > Pivot Table*.
 
 # Microsoft Excel - Best Practices
+- I hate their formatting.
+- To enable the **Developer Tab**, you navigate to *Right click View > Select "Customize the Ribbon"* and add it.
+- An **Excel Macro** is a set of instructions that can be triggered by a shortcut, toolbar button or an icon.
+- After naming and enacting it, you can rerun it by navigating to *Developer Tab > Macros* and selecting the one you want.
+- To Enable **Fast Scrolling** use *CTRL + ARROW_KEYS*.
+- You can **Quick Select** by doing that but also holding down *shift*.
+- If you want the reference to remain fixed, then add `$` before it.
+- This needs to be applied per row/column if you never want it to move.
+- **Special Select** allows you to select based on conditions.
+- To use it, you select an area and then press *F5*.
+- **Dynamic Naming** allows one field and have it updated elsewhere.
+- You can do this using `="Text_here" & <Cell_Name>`
+- You can name cells by selecting a set and then typing the reference name in the *Name Box*.
+- Then, you can use that name in formulas.
+- To create a **Drop Down Menu** you navigate to *Data Tab > Data Validation*.
+- To create sorting on all columns in a table, navigate to *Sort & Filter > Custom Sort*.
+- You can nagivate the *Ribbon* by first pressing *ALT*; letters will be listed for each option.
+- Example: *ALT+A+T* creates a filter.
+- The **Quick ACtion Toolbar** allows you to add common commands to the title bar.
+- You can also access that same bar using *ALT+[n]*, where n is the icons position in the title bar.
 
 # Microsoft Excel - Beginner, Intermediate, Adv. Functions
+-
+
 
 # Microsoft Excel - Financial Functions
 
