@@ -2,8 +2,15 @@
 ## 365 Careers, Org
 
 # Welcome! Course Introduction
+- First we'll be working with Microsoft Excel.
+- Then, we'll learning about Accounting.
+- Then, we'll be going over Finance 101 topics.
+- Finally, we'll discuss Powerpoint.
+- Prizes, or whatever.
 
 # Mimcrosoft Excel - Quick Introduction
+- 
+
 
 # Microsoft Excel - Useful Tools
 
