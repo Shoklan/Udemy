@@ -116,8 +116,11 @@
 
 # Microsoft Excel - Practical Exercise
 - To Left Align text using the keyboard press *ALT+H+L*.
-- 
-
+- To remove duplicate selections, navigate to *Data > Remove Duplicates*.
+- Good formatting allows for users to understand the data faster.
+- You can **Paste Special Formatting** using *CTRL+E+S+T*.
+- The function `COUNTIF()` is a good way to test your work.
+- There is some crazy formula on the screen that I am not going to copy.
 
 # Microsoft Excel - Building Professional Charts
 
@@ -166,5 +169,12 @@
 # Powerpoint - Tips and Tricks
 
 # Research:
+- Recharges?
+- Direct Costs?
+- EBITDA?
+- EBIT?
+-
+
+
 
 # Reference:
