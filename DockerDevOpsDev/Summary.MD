@@ -220,10 +220,33 @@ binascii.b2a_hex(os.urandom(128))
 - You can test you SSL setup using [ssllabs](www.ssllabs.com).
 
 # Where to Go Next
-- 
-
+- You can scale in two directions:
+  1. Horizontal; mutiple servers.
+  2. Vertically Scaling; more computing power.
+- You need to figure out where your bottlenecks are.
+- Most of the time, it's IO.
+- A **Canary Deploy** is when you mix in one new version to test it in production.
+- Use the Docker Swarm.
+- Kubernetes is done by Google.
+- Mesos is done by Apache.
+- Tutum is now been bought and integrated into Docker as its cloud service.
+- Debugging a system helps you see errors.
+- You can monitor a docker container using the built in `docker stats`.
+- Google has written a program called **cadvisor** that will do something similar.
+- A service that can monitor your services is **Datadog**.
+- You can also use something simple like **Uptime Robot** to send alerts to you.
+- CI stands for **Continuous Integration**.
+- A great docker container for managing logs is **logspout**.
+- The ELK stack is the best choice, I think.
+- **Configuration Management** is configuration is defined in one place.
+- Servers each have their own unique configuration.
+- Configuration implementation is not duplicated.
+- Ignore puppet of Chef since they're not up to the task anymore.
+-
 
 # Bonus Lectures
+-
+
 
 # Research:
 - What is *Ansible*?
@@ -232,6 +255,22 @@ binascii.b2a_hex(os.urandom(128))
 - systemd unit files
 - */lib/systemd/system/docker.service*?
 - Floating IPs?
+- Flask Celery?
+- Rails Sidekick?
+- Weave for Docker?
+- Flannel for Docker?
+- What is Deis; Platform as a Service?
+- What is tutum?
+- What is travisci?
+- What is circleci?
+- What is jenkins?
+- What is gitlab?
+- What is papertrail?
+- What is loggly?
+- What is kibana?
+- What is Ansible?
+- What is Saltstack?
+- What is Terraform?
 
 # Reference:
 - [Internetbs](www.internetbs.net)
