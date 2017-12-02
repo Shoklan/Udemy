@@ -100,10 +100,23 @@
 - Fill in the hypotheitcal numbers and then navigate to *Data Tab > "What-If Analysis" > Data Table*.
 
 # Microsoft Excel - Financial Functions
--
-
+- A Dollar earned now is not the same as a dollar earned in the future.
+- The **Net Present Value** is `Present_Value1 + .... Present_ValueN - Initial_Investment`.
+- Excel has a function `NPV(interst_rate, [cashflow_range], )` to do this for you.
+- Make sure to take the `SUM( init_invest, NPV(..))` to correctly calculate it.
+- The **Internal Rate of Return** is a discount rate used for measuring the profitability of a potential investment.
+- The acronym for **Internal Rate of Return** is IRR.
+- The function `IRR()` is how you would do that.
+- The **Future Value** is `Present_Value x (1 + i)`.
+- The `PMT()` function will calculate the consistent monthly payment that is necesary to extinguish a loan in `<n>` periods.
+- You can extract parts of dates using the functions `YEAR()`, `MONTH()`, `DAY()`.
+- You can then use `DATE()` to convert numbers back into a date format.
+- The function `EOMONTH()` takes a date and returns the last day after `<n>` months.
+- The function `EDATE()` takes a date and returns the date after `<n>` months.
 
 # Microsoft Excel - Practical Exercise
+- 
+
 
 # Microsoft Excel - Building Professional Charts
 
