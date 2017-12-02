@@ -115,6 +115,7 @@
 - The function `EDATE()` takes a date and returns the date after `<n>` months.
 
 # Microsoft Excel - Practical Exercise
+- To Left Align text using the keyboard press *ALT+H+L*.
 - 
 
 
