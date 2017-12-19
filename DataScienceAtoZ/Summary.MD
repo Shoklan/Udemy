@@ -47,30 +47,29 @@
 - Open a .CSV file `Left Side > Text File > Select File`
 - If you add more than one file, Tableau will try to join them.
 
-- Dimensions are Independant Variables; Measures are Dependant Variables.
-
-Going to be really hard to translate visual data into textual data.
+- Dimensions are Independent Variables; Measures are Dependent Variables.
+- Going to be really hard to translate visual data into textual data.
 
 ### Problem: Who gets a bonus?
 - Kirill is correct; UI is amazingly intuitive.
 - You can use `Right Click > Calculated Fields` to create new variables in Tableau
 - Dragging a variable onto marks will allow you apply that mark to the variable and it will be added.
 - If you `CTRL + drag` the variable onto the mark, that will work too.
-- "Tableau has the capacity to make visualizations, but also to make them reasy to understand."
+- "Tableau has the capacity to make visualizations, but also to make them easy to understand."
 - If you `Right CLK Worksheet > Copy > Image` then you can export the image; only if paid version though.
 
 - Type can be changed on a 'Dimension' using `Right CLK`.
 - Tableau is AMAZING at dealing with geo data.
-- Convert Meaures in a calculated field using `STR()`.
+- Convert Measures in a calculated field using `STR()`.
 - Slice strings from the right using `Right(STR, count )`.
 
 - You can have multiple charts in one 'graph.'
 
 ### Chi-Squared.
-- Data MUST be in aboslute terms: not percentage.
+- Data MUST be in absolute terms: not percentage.
 - Build an expected table; using the 20% as the multiplier.
 - Multiplier is based on left_percentage / total_count in data.
-- If leaving company is independant of gender, then ~20% of both should leave.
+- If leaving company is independent of gender, then ~20% of both should leave.
 - Chi-Squared is a test designed to test the prop. of independence.
 
 - ALT ++  for excel ?
@@ -119,7 +118,7 @@ Going to be really hard to translate visual data into textual data.
 
 
 - Ordinary Least Square.
-- The model line tells us were they should be, as per the model.
+- The model line tells us where they should be, as per the model.
 - Actual point is yi.
 - yi^ is the Predeicted point
 
@@ -135,15 +134,14 @@ Going to be really hard to translate visual data into textual data.
 	1. Linearity
 	2. Homoscedasticity
 	3. Multivariate normality
-	4. Idependence of errors
+	4. Independence of errors
 	5. Lack of Multicollinearity
 
-- Goe-demographic Segmentaition Model? (Logistic Regression) // Different Assumptions
+- Goe-demographic Segmentation Model? (Logistic Regression) // Different Assumptions
 - Logistic most used.
-
 - Dummy Variables are features encoded as interporable values.
 
-- If mosre than one dummy variablke are included causes multicollinearity.
+- If more than one dummy variable are included causes multicollinearity.
 - I know about forward, backword step-wise model building.
 
 - False positive is when you predict something is true, but it's not.
@@ -156,7 +154,6 @@ Going to be really hard to translate visual data into textual data.
 - CAP is not ROC.
 
 - I guess I need to know about excel.
-
 - Take the area under the good model, then divide that by the area under the perfect model.
 - AR = aR / aP.
 - As AR -> 1, better model.
@@ -171,7 +168,7 @@ Going to be really hard to translate visual data into textual data.
 - If odds are $11, then you're winning $10 + $1 that you spent.
 - Losing to winning odds: 10:1; reverse them.
 - Win:Lose odds = p / ( 1 - p)
-- Increasing and independant variable xi by one unit will increase the odds by a multiplicative factor of e^(bi)
+- Increasing and independent variable xi by one unit will increase the odds by a multiplicative factor of e^(bi)
 
 ### Model Maintenance
 - Models will deteriorate over time as the underlying reality changes.
@@ -181,7 +178,7 @@ Going to be really hard to translate visual data into textual data.
 	4. Changes in Existing Factors
 	5. Competitors.
 	6. Changes in the Industry
-	7. Chnages in regulation.
+	7. Changes in regulation.
 	8. Changes in Product.
 	9. Depletion
 	10. Spontaneous changes.
@@ -213,7 +210,7 @@ VALUES("Matt", 35), ("James", 45), ("Helan", 26)
 - ETL stands for Extract - Transform - Load
 - Move data from source to Warehouse via this process.
 - "SSIS via SSDT-BI with MSVS Shell" what?
-- MSVS = Microsfot Visual Studio Shell.
+- MSVS = Microsoft Visual Studio Shell.
 - Only using BI package
 - SSDT-BI = SQL Server Data Tools - Business Intelligence.
 - Used to be called "Business intelligence Studio"
@@ -234,9 +231,9 @@ VALUES("Matt", 35), ("James", 45), ("Helan", 26)
 - Sublime Text 3 FTW.
 - Excel will hide changes to dates.
 - The conversions are based on local date settings and will sometimes make mistakes
-- Excel also alters numbers that could be irreversable!
+- Excel also alters numbers that could be irreversible!
 - Setting extension type to .txt and then force Excel to use Data Import Wizard via open.
-- Have Excel interperate data as Text to protect data integrity.
+- Have Excel interpret data as Text to protect data integrity.
 - To Safely alter column, select column and go to `Data Ribbon > Text to Column`.
 - Text Qualifier is what is treated as a container for text to be treated as a block.
 - Set A	SQL do the heavy lifting of the analysis.

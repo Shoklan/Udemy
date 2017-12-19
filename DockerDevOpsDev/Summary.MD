@@ -2,7 +2,7 @@
 ## Nick Janetakis
 
 # Introduction
-- *Art of DDebugging Code*:
+- *Art of Debugging Code*:
   1. Check what the error is.
   2. Check code against mentors.
   3. Google it, moron.
@@ -261,7 +261,7 @@ binascii.b2a_hex(os.urandom(128))
 
 # Where to Go Next
 - You can scale in two directions:
-  1. Horizontal; mutiple servers.
+  1. Horizontal; multiple servers.
   2. Vertically Scaling; more computing power.
 - You need to figure out where your bottlenecks are.
 - Most of the time, it's IO.
@@ -292,10 +292,8 @@ binascii.b2a_hex(os.urandom(128))
 - What is *Ansible*?
 - What is gunicon?
 - Flask Procfile?
-<<<<<<< HEAD
 - What is Vagrant?
 - `shift` command?
-=======
 - systemd unit files
 - */lib/systemd/system/docker.service*?
 - Floating IPs?
@@ -315,7 +313,6 @@ binascii.b2a_hex(os.urandom(128))
 - What is Ansible?
 - What is Saltstack?
 - What is Terraform?
->>>>>>> origin/master
 
 # Reference:
 - [Internetbs](www.internetbs.net)

@@ -398,7 +398,7 @@ return reverse("detail", kwargs={'slug': self.slug})
 
 # Bootstrap Framework
 - Bootstrap is for cross-browser support and focuses on making the UI uniform across all devices.
-- This works using nexted content inside a `container` or `container-fluid` class.
+- This works using nested content inside a `container` or `container-fluid` class.
 - **Container Fluid** has full width no matter the browser size while **Container** adjusts itself based on pre-configured sizes.
 - It's advised to use *container* when it'll be used on both PC and mobile while *container-fluid* is for PC mostly.
 - Bootstrap conceptually breaks the content up into 12 columns spread horizontally across the webpage.
@@ -407,7 +407,7 @@ return reverse("detail", kwargs={'slug': self.slug})
 - If you only list `col` then it uses all possible remaining space.
 - So, if you use `col-8` and `col` then it will be the same as `col-4`.
 - Class `no-gutters` will remove the space between the columns.
-- To snap cloumn sets use class `ml-auto`; *margin-left automatic*.
+- To snap column sets use class `ml-auto`; *margin-left automatic*.
 - You can do the same but for the right using `mr-auto`.
 - If you include both then you'll get centered content.
 - You can make forms clean using class `form-control`.

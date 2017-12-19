@@ -70,7 +70,7 @@ for key, value in sortedResults.items():
 
 ### RDD
 - It is an abstraction for a giant set of data.
-- Resiliance and Distributed can be treated as a black box.
+- Resilience and Distributed can be treated as a black box.
 - A Sparkcontext is what allows you to create a RDD.
 - The Spark shell will create one for you.
 - sc.textFile(...):
@@ -86,7 +86,7 @@ for key, value in sortedResults.items():
 	6. JSON, CSV, etc
 - Transform RDDs:
 	1. map
-	2. flatmap. // can produce multiple valaues
+	2. flatmap. // can produce multiple values
 	3. filter
 	4. distinct
 	5. sample
@@ -96,7 +96,7 @@ for key, value in sortedResults.items():
 	9. Cartesian
 
 - Nothing actually happens until you request what you want.
-- `spark-submit` allows you to submit pythong scripts to Spark.
+- `spark-submit` allows you to submit python scripts to Spark.
 
 - There are many actions you can take:
 	1. `reduceByKey()`     : combine values with same key.
@@ -105,7 +105,7 @@ for key, value in sortedResults.items():
 	4. `keys()`, `values()`: extract only keys,values into an RDD.
 - You can do SQL-like joins.
 - If your query will not adjust the keys, then use `mapValues()` or `flatmapValues()`.
-- This is because it's faster. 
+- This is because it's faster.
 
 - Filtering removes data that you don't care about.
 
@@ -118,7 +118,7 @@ for key, value in sortedResults.items():
 # using at least one word value
 	re.compile(r'\W+',
 # type.
-	re.UNICODE).split(
+	re.UNICODE.split()
 # convert lower case verions
 	text.lower())
 ```
@@ -135,7 +135,7 @@ for key, value in sortedResults.items():
 - To do this, use `rdd.cache()` or `rdd.persist()`.
 - The difference is that *persist* allows one to cache to disk.
 - `.setMaster("local[*]")` will tell Spark to use all your computer's cores.
-- You can save data to a file using `rdd.saveAsTextTile('name_of_file')
+- You can save data to a file using `rdd.saveAsTextTile('name_of_file')`
 - `rdd.take( count )` will peel of items off the data.
 
 ## Elastic MapReduce
@@ -157,8 +157,8 @@ for key, value in sortedResults.items():
 	3. 100 is a good starting point.
 
 - An **s3n://** just means Amazon services.
-- Default memery budget is 512 MB.
-- You can pass a memory size request using flag `-executor-memory 1g`; 1 GB.
+- Default memory budget is 512 MB.
+- You can pass a memory size request using flag `--executor-memory 1g`; 1 GB.
 - You can ask to use YARN using `-master yarn`.
 - EMR does this by default though.
 - *MAKE SURE YOU TURN THE CLUSTER OFF MANUALLY AFTER A JOB*
@@ -182,34 +182,31 @@ for key, value in sortedResults.items():
 	5. Communicate with JDBC/ODBC, Tableau // Oh?
 
 - To use in python: `from pyspark.sql import SQLContext, Row`.
-- 
-
 ```python
 hiveContext - HiveContext(sc)
 inputData = spark.read.json(dataFile)
 inputData.createOrReplaceTempView("myStructuresStuff")
-myResultsDataFrame = haveContext.sql('""'SELECT foo FROM bar ORDER BY foobar'""')
+myResultsDataFrame = hiveContext.sql('""'SELECT foo FROM bar ORDER BY foobar'""')
 ```
 - After Spark 2.0, there are now **DataSets**.
 - DataSets can also contain a class type along with the row object.
 - Since it more important with respect to Scala, Java.
-- DataFrame isa DataSet; not bidirectional.
+- DataFrame is a DataSet; not bidirectional.
 - Spark SQL allows for shell access via :10000
 - Create user defined types.
 
 - Spark 2.0 creates SparkSessions instead.
 - `spark.createDataFrame( data )` will convert data into workable DataFrame.
 - `df.createOrReplaceTempView( data )` will allow one to run SQL queries against the data.
-- Call `spark.sql( "command_string" )
+- Call `spark.sql( "command_string" )`
 - There are also commands that behave like SQL queries.
 	1. `groupBy()`
 	2. `count()`
 	3. `orderBy()`
 	4. `show()`
-
 - Don't forget to stop the connection with `spark.stop()`.
 
-## MlLib
+## MLLib
 - Feature Extraction
 - Basic Statistics
 	1. Chi-Squared
@@ -227,21 +224,18 @@ myResultsDataFrame = haveContext.sql('""'SELECT foo FROM bar ORDER BY foobar'""'
 - Principle Component Analysis.
 - Singular Value Decomposition.
 - Alternating Least Squares? //Netflix Competition winner.
-
 - Spark has a type called **Rating**.
-
-
 
 ## Research
 - Maybe pick up Scala.
 - Language processing: NLTK.
 - Alternating Least Squares
-- *You must explicitely import the ML stuff.*
+- *You must explicitly import the ML stuff.*
 - The answers are not consistent with ALS.
 	* Very sensitive to parameters.
 	* I know about train/test.
 	* Putting your faith in a Black Box can be 'dodgy.'
-	* Small misteps will lead to mass spread issues.
+	* Small missteps will lead to mass spread issues.
 
 - `from pyspark.ml.regression import <LinearRegression>`
 - `from pyspark.ml.linalg import Vectors` to represent Feature data.
@@ -256,7 +250,7 @@ myResultsDataFrame = haveContext.sql('""'SELECT foo FROM bar ORDER BY foobar'""'
 	* `updateStateByKey()` is saved across many batches globally.
 - GraphX is for Networking Models.
 	* These are graphs in the Computer Science terminology.
-	* 
+	*
 
 
 ## Further Reading

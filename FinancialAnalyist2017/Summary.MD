@@ -97,7 +97,7 @@
 - The function `IFERROR()` will substitute a value when an error is detected.
 - The function `CHOOSE()` allows us to pass which row to substitute values for.
 - **Sensitivity Analysis** allows you to explore the effects of multiple different parameters on a result.
-- Fill in the hypotheitcal numbers and then navigate to *Data Tab > "What-If Analysis" > Data Table*.
+- Fill in the hypothetical numbers and then navigate to *Data Tab > "What-If Analysis" > Data Table*.
 
 # Microsoft Excel - Financial Functions
 - A Dollar earned now is not the same as a dollar earned in the future.
@@ -133,10 +133,20 @@
 - You cannot use the *DLT* key to remove a sparkline and will need to delete the row or clear the cell.
 
 # Microsoft Excel - Working with Pivot Tables
--
-
+- **Pivot Tables** are excel's dynamic tables.
+- Useful to summarize data.
+- They're useful when dealing with data files over 20 MBs.
+- The tables will not give acess to the actual formulas.
+- They don't update automatically when cell contents change.
+- To refresh the Pivot Table after changes, right click and select *Refresh*.
+- Excel generates the table using the function `GETPIVOTDATA()`
+- You don't have to use hard values in the function; you can use a cell's contents instead.
+- **Slicers** are filters than can be applied on top of a pivot table.
+- You can use them by navigating to *Insert Ribbon > Slicers*.
 
 # Pivot Tables & Slicers in Practice
+- 
+
 
 # Modeling in Excel - Building a Complete 3-Statement Model
 
