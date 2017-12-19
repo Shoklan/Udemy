@@ -34,7 +34,7 @@
 
 # Microsoft Excel - Useful Tools
 - You can push text onto a new row but inside the same cell using *ALT+ENTER*.
-- **Text-Tto-Columns** *Data Tabular > Text To Columns*
+- **Text-To-Columns** *Data Tabular > Text To Columns*
 - You can set up a **Print Selection Area** under the *Print Tabular*.
 - To insert a *hyperlink* you'll navigate to *Insert > Hyperlink*.
 - You can link to a location in the same document as an option.
@@ -69,10 +69,10 @@
 - The function `SUM()` is self evident.
 - The function `SUMIF(range; criteria; [range])` uses the range to check, the criteria as the condition, and range to sum.
 - The function `SUMIFS([range], range_1, criteria_1, ...)` is like `sumif()` but it accepts more than one condition or set of cells.
-- The fucntion `COUNT()` counts which cells are numbers.
-- The fucntion `COUNTA()` counts which cells have text.
-- The fucntion `COUNTIF([range]; condition)` will conditionally count items in the range.
-- The fucntion `COUNTIFS()` counts cells that meet conditions where the input is of form `[range]; condition; ...`.
+- The function `COUNT()` counts which cells are numbers.
+- The function `COUNTA()` counts which cells have text.
+- The function `COUNTIF([range]; condition)` will conditionally count items in the range.
+- The function `COUNTIFS()` counts cells that meet conditions where the input is of form `[range]; condition; ...`.
 - The function `AVERAGE()` does what you think it does.
 - The function `AVERAGEIF()` does what you think it does but with a condition.
 - You can slice a string and take only the first `<n>` characters using teh function `LEFT(Cell, Letters)`.
@@ -145,10 +145,10 @@
 - You can use them by navigating to *Insert Ribbon > Slicers*.
 
 # Pivot Tables & Slicers in Practice
-- 
-
+- **Enterprise Resource Planning**
 
 # Modeling in Excel - Building a Complete 3-Statement Model
+- 
 
 # Modeling in Excel - Let's Build a Flexible Model
 
@@ -193,7 +193,7 @@
 - Direct Costs?
 - EBITDA?
 - EBIT?
--
+- SAP?
 
 
 
