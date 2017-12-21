@@ -8,7 +8,7 @@
 - Finally, we'll discuss Powerpoint.
 - Prizes, or whatever.
 
-# Mimcrosoft Excel - Quick Introduction
+# Microsoft Excel - Quick Introduction
 - The top part of the excel screen is called **The Ribbon**.
 - On the bottom is **The Workspace**.
 - The default number of columns is 16384.
@@ -108,7 +108,7 @@
 - The acronym for **Internal Rate of Return** is IRR.
 - The function `IRR()` is how you would do that.
 - The **Future Value** is `Present_Value x (1 + i)`.
-- The `PMT()` function will calculate the consistent monthly payment that is necesary to extinguish a loan in `<n>` periods.
+- The `PMT()` function will calculate the consistent monthly payment that is necessary to extinguish a loan in `<n>` periods.
 - You can extract parts of dates using the functions `YEAR()`, `MONTH()`, `DAY()`.
 - You can then use `DATE()` to convert numbers back into a date format.
 - The function `EOMONTH()` takes a date and returns the last day after `<n>` months.
@@ -153,8 +153,20 @@
 - **Cost of Goods** is what *cogs* stands for.
 
 # Modeling in Excel - Let's Build a Flexible Model
+- The function `choose` will select an index based on the conditional values.
+- **Days Sales Outstanding** = DSO
+  * The average number of days a company takes to collect revenue after a sale has been made.
+  * Trade Receivables / Revenue * 360
+- **Days Payable Outstanding** = DPO
+  * How long it takes for a company to pay its invoices from trade creditors.
+  * Trade Payables / Cogs * 360.
+- **Days Inventory Outstanding** = DSO
+  * How long it takes for a company to turn its inventory into sales.
+  * Inventory / Cogs * 360
 
 # Modeling in Excel - Completing the 3-Statement Model
+- 
+
 
 # Accounting - introduction to Acct. & Bookkeeping
 
