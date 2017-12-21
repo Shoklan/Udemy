@@ -148,7 +148,9 @@
 - **Enterprise Resource Planning**
 
 # Modeling in Excel - Building a Complete 3-Statement Model
-- 
+- You should always manually edit the **Conditional Formatting** rules.
+- You can hide hilighted columns using *ALt + SHIFT + Right Arrow*.
+- **Cost of Goods** is what *cogs* stands for.
 
 # Modeling in Excel - Let's Build a Flexible Model
 
