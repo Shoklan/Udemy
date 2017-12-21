@@ -165,10 +165,17 @@
   * Inventory / Cogs * 360
 
 # Modeling in Excel - Completing the 3-Statement Model
-- 
-
+- **Accounting** is an information science that is used to collect and organize financial data for organizations and individuals.
+- Four Main Areas of Accounting:
+  1. Bookkeeping: Collection of Information.
+  2. Financial Accounting: Prepared for External Stakeholders.
+  3. Managerial Accounting: Strategic Information available to insiders.
+  4. Tax Accounting: Calculation of Income Taxes.
+- Modern society cannot function without Bookkeeping.
+- Financial statements are how a bank knows whether to lend money to a company.
 
 # Accounting - introduction to Acct. & Bookkeeping
+- 
 
 # Accounting - The Three Main Statements in Financial Accounting
 
