@@ -175,7 +175,23 @@
 - Financial statements are how a bank knows whether to lend money to a company.
 
 # Accounting - introduction to Acct. & Bookkeeping
-- 
+- The three core statements are:
+  1. Income Statement.
+  2. Balance Sheet.
+  3. Cash Flow.
+- **Revenue**, or net sales, is an inflow of economic resources.
+- The top line is *Total Revenue*; which is Net Sales + Other revenue.
+- Most common expenses are:
+  1. Cost of Goods sold.
+  2. Selling, General, Administrative.
+  3. Depreciation and Amortization.
+  4. Interest Expenses.
+- **Gross Product** = Total Revenue - Cost of Goods.
+- The main balance sheet items:
+  1. Assets.
+  2. Liabilities.
+  3. Equity.
+- Assets stand on the left; Liabilities and Equity on the right.
 
 # Accounting - The Three Main Statements in Financial Accounting
 
