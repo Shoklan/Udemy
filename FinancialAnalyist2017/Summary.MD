@@ -197,19 +197,49 @@
 - Companies will be expected to report their revenues in an consistent and unbiased manor.
 - **Financial Accounting Standards Board** ; *FASB*
 - **International Accounting Standards Board** ; *IASB*
-- Rules:
-  * *Revenue* is recognized in the *Income Statement* when it is realized and earned.
-- There is also a set of rules that govern Expenses Recognition.
-- The **Matching Principle** that expenses incurred to generate revenue are recognized in the same period as the revenue.
-- **Period Costs** are ones that may be excluded.
-- Companies are allowed to choose between historic or current evaluated value; must be consistent though.
 
 # Accounting - Understanding the Big Picture: Why, What, When, How Much.
-- 
+- The amount of sales a company makes is a measure of how large its business is and how it performed compared to previous periods.
+- Questions:
+  1. Did the company grow?
+  2. Did it grow faster than other competing businesses?
+  3. Is the business slowing down?
+  - Rules:
+    * *Revenue* is recognized in the *Income Statement* when it is realized and earned.
+  - There is also a set of rules that govern Expenses Recognition.
+  - The **Matching Principle** that expenses incurred to generate revenue are recognized in the same period as the revenue.
+  - **Period Costs** are ones that may be excluded.
+  - Companies are allowed to choose between historic or current evaluated value; must be consistent though.
 
 # Accounting - The Core Principles of Accounting
+- The **Accounting Equation**; Assets = Liabilities + Equity.
+- Both sides of this equation must be equal.
+- A **General Ledger Account** is an account that allows us to organize the information about a firm's balance sheet or income statemnt items.
+- *General Ledgers* usually have subsidiary legders.
+- The elements of a **T Account**:
+  * The Title at the top.
+  * Debit is the left.
+  * Credit is the right.
+- The portion of an asset per year that is used up is called **Depreciation**.
+- It is shown as an expense in the income statment.
+- There are two methods of *Depreciation*:
+  1. Straight Line.
+  2. Depreciation Based on Use.
+- *Straight Line*:
+  * Collect the Initial Cost, the *Salvage Value*, Amount to be Depreciated.
+  * Collect how long the asset will be used for.
+  * Divide the Depreciation Amount by the Usage Years.
+- *Usage Method*:
+  * Collect the Initial Cost, the *Salvage Value*, Amount to be Depreciated.
+  * Decide on a metric that can be reasonably measured over the duration of use.
+  * Divide the Depreciation Amount by the Metric.
+- **Intangible Assets** are assets that are not physical in nature.
+- The equivalent to *Depreciation* for them is **Amortization**.
+- **Double Entry Bookkeeping**: Every transaction has an equal and opposite effect in at least two accounts.
 
 # Accounting - Practical Exercise
+- 
+
 
 # Accounting - Preparing a Cash Flow Statement: Understanding
 
