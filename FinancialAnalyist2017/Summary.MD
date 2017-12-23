@@ -194,8 +194,18 @@
 - Assets stand on the left; Liabilities and Equity on the right.
 
 # Accounting - The Three Main Statements in Financial Accounting
+- Companies will be expected to report their revenues in an consistent and unbiased manor.
+- **Financial Accounting Standards Board** ; *FASB*
+- **International Accounting Standards Board** ; *IASB*
+- Rules:
+  * *Revenue* is recognized in the *Income Statement* when it is realized and earned.
+- There is also a set of rules that govern Expenses Recognition.
+- The **Matching Principle** that expenses incurred to generate revenue are recognized in the same period as the revenue.
+- **Period Costs** are ones that may be excluded.
+- Companies are allowed to choose between historic or current evaluated value; must be consistent though.
 
 # Accounting - Understanding the Big Picture: Why, What, When, How Much.
+- 
 
 # Accounting - The Core Principles of Accounting
 
