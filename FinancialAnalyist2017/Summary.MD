@@ -241,8 +241,20 @@
 - ...
 
 # Accounting - Preparing a Cash Flow Statement: Understanding
-- 
-
+- Cash flow generation and liquidity are vital to all businesses. A company must be able to measure the actual amount of money it makes and estimate its future capital needs.
+- The **Cash Flow Statement** indicates whether cash is made to service existing debt.
+- It shows the amount of money that is being invested.
+- It shows whether the firm can invest in new opportunities when they arise.
+- Types of **Cash Flow Activities**:
+  1. Operations: affecting the firms Net Income.
+  2. Investing: affecting Fixed Assets and long term Investments.
+  3. Financing: affecting firms capital structure.
+- Two methods of presenting *Net Cash Flow*:
+  1. Direct: all cash payments the firm has made in the period.
+  2. Indirect: Net Income is converted to cash flow that affect Net income but no immediate cash effect.
+- **Earnings Before Interest, Taxes, Depreciation, Amortization** or EBITDA.
+- **Capital Expendetures** or *CAPEX*.
+- Beginning Cash + Net Cash Flow must be equal to Ending Cash.
 
 # Accounting - The Importance of Timing
 
