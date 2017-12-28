@@ -253,12 +253,17 @@
   1. Direct: all cash payments the firm has made in the period.
   2. Indirect: Net Income is converted to cash flow that affect Net income but no immediate cash effect.
 - **Earnings Before Interest, Taxes, Depreciation, Amortization** or EBITDA.
-- **Capital Expendetures** or *CAPEX*.
+- **Capital Expenditures** or *CAPEX*.
 - Beginning Cash + Net Cash Flow must be equal to Ending Cash.
 
 # Accounting - The Importance of Timing
+- Sometimes a firm may recognize revenues or expenses at a time taht is different than the time when the actual payment has been made.
+- **Revenue Recognition** is realized when the product is delivered irrespective of whether it was paid at that time.
+- **Accrual Accounting** is when *Revenues* are not always recorded at the same time as the exchange of cash.
 
 # Accounting - Introduction to Financial Statement Analysis
+-
+
 
 # Accounting - Subtleties of Financial Statement Analysis
 
