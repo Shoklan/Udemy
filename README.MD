@@ -12,7 +12,8 @@
 | Python ECommerce; Build a Django eCommerce Site    | [\PythonECommerceDjango]         |                |  F  |
 | Powershell: A Getting Started Guide for IT Admins  | [\PowershellItAdmins]            | {2017/11/30}   |     |
 | Docker for DevOps: Development to Production       | [\DockerDevOpsDev]               |                |  F  |
-| The Complete Financial Analyst Course 2017         | [\FinancialAnalyist2017]         |                |     |
+| The Complete Financial Analyst Course 2017         | [\FinancialAnalyist2017]         |                |  F  |
+| Elasticsearch 6 and Elastick Stack                 | [\ElasticSearch6]                |                |     |
 
 R: Redo.
 F: Frozen.
