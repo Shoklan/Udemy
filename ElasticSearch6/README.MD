@@ -15,11 +15,11 @@
   4. Kibana
 - Install Virtualbox.
 - Install Ubuntu.
-- Add portforwarding:
+- Add port forwarding:
   * Elastic Search 9200.
   * Kibana 5601.
   * Don't forget ssh 22.
-- Install Elasticsearch
+- Install Elastic search
   1. Install Java.
     * `sudo apt-get install default-jdk`
   2. Make sure to update the repos.
@@ -123,7 +123,7 @@ curl -H 'Content-type: application/json' -XGET '127.0.0.1:9200/shakespeare/_sear
 # Searching with Elasticsearch
 - There is a "Query Lite" which is a simpler interface to searching as per our earlier examples.
 - It would looks something like `/movies/movie/_search?q=title:star`.
-- The limitiation is that you need to encode the url for the server since it doesn't accept spaces.
+- The limitation is that you need to encode the url for the server since it doesn't accept spaces.
 - Cons:
   * cryptic to debug.
   * security issue.
@@ -183,11 +183,50 @@ curl -H 'Content-type: application/json' -XGET '127.0.0.1:9200/shakespeare/_sear
 - Look up a custom analyzer since that's how this is implemented; too much code atm.
 - You can also upload a list of all possible completions ahead of time using *completion suggesters*.
 
-
-
 # Importing Data Into YOur Index - Big or Small
+- You can import form just about anything at this point.
+- Stand-alone scripts can submit bulk documents via REST APIs.
+- Logstash and beats can stream data from logs, S3, databases, and more.
+- AWS systems can stream in data via lambda or kinesis Firehose.
+- Kafka, Spark and more have Elasticsearch integration add-ons.
+- Languages with libraries:
+  * Java.
+  * Python : `elasticsearch`.
+  * Ruby: `elasticsearch-ruby`.
+  * Scala.
+  * Perl: `elasticsearch.pm`.
+- At base, **Logstash** is a channel to conform and push textualar data into other data storage solutions.
+- It goes beyond just moving data.
+- It can also parse, filter, and transform data that passes through it.
+- It can derive structure from unstructured data.
+- It can anonymize personal data or exclude it entirely.
+- It can do geo-location lookups.
+- It can scale across many nodes.
+- It can guarantees at-least-once delivery.
+- It absorbs throughput from load spikes.
+- Typical path:
+  * Beats/Files -> Logstash -> Elastic Search.
+- Installing Logstash:
+  1. `sudo apt-get install logstash`.
+  2. Config file `/etc/logstash/conf.d/logstash.conf`.
+- To run *logstash*, use `sudo /usr/share/bin/logstash -f <path/to/config/file>`.
+- You can *cat* with Elasticsearch using the interface `_cat`.
+- To have *Logstash* work with MYSQL, you will need a JDBC driver.
+- Then, configure *Logstash* to use the driver.
+- You can load data locally into a MYSQL database using:
+```sql
+LOAD DATA LOCAL INFILE '<file_location>'
+INTO TABLE <table_name> FIELDS TERMINATED BY '|'
+(movieID, title, @var3)
+set releaseDate = STR_TO_DATE(@var3, '%d-%M-%Y');
+```
+- **S3** stands for Simple Storage Solution.
+- Hosted by Amazon web services.
+- You will need to use the `elasticsearch-spark` library to connect Spark to Elastic Search.
 
 # Aggregation
+-
+
 
 # Using Kibana
 
@@ -202,3 +241,4 @@ curl -H 'Content-type: application/json' -XGET '127.0.0.1:9200/shakespeare/_sear
 # Reference:
 - [Elastic Search Instructions](www.sundog-education.com/elasticsearch).
 - [Data](www.movielens.org)
+- [MYSQL Driver](https://dev.mysql.com/downloads/connector/j/)
