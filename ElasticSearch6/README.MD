@@ -90,8 +90,100 @@ curl -H 'Content-type: application/json' -XGET '127.0.0.1:9200/shakespeare/_sear
 - This cannot be changed later.
 
 # Mapping and Indexing Data
+- Extended setup:
+  1. Install openssh-server on the server.
+  2. Install Putty - if you don't already have an ssh client.
+  3. Login.
+- A **Mapping** is a schema definition.
+- Common *Mapping* uses:
+  * Field Types.
+  * Field Index.
+  * Field Analyzer.
+- Analyzers can:
+  * do character filters.
+  * do tokenizing.
+  * do token filtering.
+- Typs of Analyzers:
+  * standard
+  * simple
+  * whitespace
+  * language
+- If you want to check a mapping, then send a query to `server:port/document/_mapping/target`.
+- If you want to bulk upload the data, then you'll want to use the `_bulk` interface.
+- Elastic Search maintains an `_version` field which will allow you to update the record; the old is marked for deletion.
+- It's a new entry since the old entry is copied and then marked to be deleted after.
+- To do this, you would use the `_update` interface.
+- To delete an item, simply send a `-XDELETE` request along with the document path `/movies/movie/58559`.
+- You can request the specific version using `?version=3`.
+- You can request that it retry updates on conflicts using `_update?retry_on_conflict=5`.
+- In ES6, you'll need to make a decision whether a field should be keyword or text.
+- You can submit a search using `_search?pretty` and then a `{ "query": { "match": { <terms in here> }}}`.
+- You can set up a relationship using `"film_to_franchise": { "type": "join", "relations": {"franchise" : "film" }}`.
 
 # Searching with Elasticsearch
+- There is a "Query Lite" which is a simpler interface to searching as per our earlier examples.
+- It would looks something like `/movies/movie/_search?q=title:star`.
+- The limitiation is that you need to encode the url for the server since it doesn't accept spaces.
+- Cons:
+  * cryptic to debug.
+  * security issue.
+  * fragile: one mistake and query fails.
+- Officially called **URI Search**.
+- You can send either a filter or a query.
+- Filters are yes or no questions - and are cacheable.
+- Queries return data in terms of relevance.
+- Filters have the nested structure: `"query"{ "bool": { "must":{}, "filter":{}}}` for v6.
+- Some other kinds of filters:
+  * term.
+  * terms.
+  * range.
+  * exists.
+  * missing.
+  * bool
+- Some queries:
+  * match_all.
+  * match.
+  * multi_match.
+  * bool  
+- **Phrase Match** must find all the terms in the right order.
+- **Slop** is where an option to *phrase search* where you can about order, but allow the terms to deviate away.
+- You can simulate pagination using `from` and `size` arguments; not that ES is 0 indexed.
+- Deep pagination can kill performance.
+- You can sort of field using sort.
+  * URI version is `sort=<field>`.
+- A text field that is analyzed for full-text search can't be used to sort documents.
+- If you want to do that, include the request to keep a raw version as per the mappings.
+```js
+...
+"type": "text",
+"field": {
+    "raw": {
+        "type": "keyword"
+    }
+}
+```
+- You then can sort on that field using `title.raw`.
+- The **Levenshtein Edit Distance** is how it accounts for mispellings and types.
+  * Substitutions.
+  * Insertions.
+  * Deletions.
+- You can also set an `auto` so that the allowed *fuzziness* will vary based on length.
+- To alter that in a query, change `match` to `fuzzy` and include a `"fuzziness": <n>` inside the target.
+```
+"fuzzy":{
+    "title": {"value": "intersteller", "fuzziness": 1}
+}
+```
+- You can do a prefix search by passing `"prefix"`.
+- You can do a wildcard search by passing `"wildcard"`.
+- You can do a regexp search by passing `"regexp"`.
+- ES allows for search as you type.
+- This is done using the `match_phrase_prefix` coin.
+- It is computationally safer to use N-grams at index time.
+- Look up a custom analyzer since that's how this is implemented; too much code atm.
+- You can also upload a list of all possible completions ahead of time using *completion suggesters*.
+
+
 
 # Importing Data Into YOur Index - Big or Small
 
@@ -109,4 +201,4 @@ curl -H 'Content-type: application/json' -XGET '127.0.0.1:9200/shakespeare/_sear
 
 # Reference:
 - [Elastic Search Instructions](www.sundog-education.com/elasticsearch).
--
+- [Data](www.movielens.org)
