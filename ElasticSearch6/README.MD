@@ -225,10 +225,35 @@ set releaseDate = STR_TO_DATE(@var3, '%d-%M-%Y');
 - You will need to use the `elasticsearch-spark` library to connect Spark to Elastic Search.
 
 # Aggregation
--
-
+- Elastic Search is for more than just Searching now.
+- Sometimes these aggregations can take the place of Hadoop or even Spark.
+- You can even nest aggregations.
+- structure:
+```js
+"aggs":{
+    "ratings":{
+      "terms": {
+        "field": "rating"
+      }
+    }
+}
+```
+- You can make a query first, and then call an `aggs` to calculate on that subsection.
+- You'll need to take on `size=0` if you don't want the results from the query but only the aggregation.
+- You can generate a histogram of values.
+- Elastic Search already knows about time: i.e. it knows what 'year' and 'month' mean.
 
 # Using Kibana
+- **Kibana** is a powerful web ui that sits on top of Elastic Search.
+- Intallation:
+  1. `sudo apt-get install kibana`
+  2. Alter config file at */etc/kibana/kibana.yml* change line to `server.host 0.0.0.0`.
+  3. start up and enable services
+- Kibana uses port 5601.
+- Make sure that your versions match up between ES and Kibana.
+- After adding the index you care about, you can use the *Discover* tab to explore the data.
+- You can use the form `field:content` to restrict your search to specific fields.
+
 
 # Analyzing Log Data with the Elastic Stack
 
