@@ -254,10 +254,31 @@ set releaseDate = STR_TO_DATE(@var3, '%d-%M-%Y');
 - After adding the index you care about, you can use the *Discover* tab to explore the data.
 - You can use the form `field:content` to restrict your search to specific fields.
 
-
 # Analyzing Log Data with the Elastic Stack
+- *Filebeats* is a lightweight shipper of logs.
+- Filebeats can talk directly to ES.
+- It can communicated and slow down sending by communicating with Logstash.
+- It maintains a read pointer on the log and treats the file like a queue.
+- This is the *ELK Stack*: Elastic Search Logstash, Kibana.
+- Also, called the Elastic Stack due to introduction of Filebeats..
+- Installing Filebeats:
+  1. `sudo apt-get install filebeat`.
+  2. ```bash
+    cd /usr/share/elasticsearch
+    sudo bin/elasticsearch-plugin install ingest-geoip
+    sudo bin/elasticsearch-plugin install ingest-user-agent
+    ```
+  3. Restart the elastic search service.
+  4. `sudo vi /etc/filebear/modules.d/apache2.yml`
+  5. Alter the configuration to point to a different directory.
+  6. Start the filebeat service.
+- You can visit the *Dashboard* tab to check and build visualizations.
+
+# Elastic Search Operations
 
 # Elasticsearch in the Cloud
+
+
 
 # Research:
 - Lucene?
