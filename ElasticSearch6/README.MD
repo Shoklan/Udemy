@@ -183,7 +183,7 @@ curl -H 'Content-type: application/json' -XGET '127.0.0.1:9200/shakespeare/_sear
 - Look up a custom analyzer since that's how this is implemented; too much code atm.
 - You can also upload a list of all possible completions ahead of time using *completion suggesters*.
 
-# Importing Data Into YOur Index - Big or Small
+# Importing Data Into Your Index - Big or Small
 - You can import form just about anything at this point.
 - Stand-alone scripts can submit bulk documents via REST APIs.
 - Logstash and beats can stream data from logs, S3, databases, and more.
@@ -275,14 +275,91 @@ set releaseDate = STR_TO_DATE(@var3, '%d-%M-%Y');
 - You can visit the *Dashboard* tab to check and build visualizations.
 
 # Elastic Search Operations
+- *how many shards do I need?*
+- You can't add more shards later without re-indexing.
+- Shards are not free.
+- You want to over allocate, but not too much.
+- Consider scaling out in phases, so you have time to re-index before you hit the next phase.
+- The *right* number of shards depends on your data and your application.
+- Stress-test a single shard until it breaks.
+- You can add replica shards without re-indexing.
+```
+PUT /new_index
+{
+  "settings":{
+      "number_of_shards": 10,
+      "number_of_replicas": 1
+  }
+}
+```
+- You can check your current settings on an index by submitting `GET <index_name>/_settings`.
+- You don't only have to add new shards.
+- You could create new indices and then spread the requests across them using **Index Aliases**.
+- Example of aliasing:
+```
+POST /_aliases
+{
+  "actions":[
+    {"add": {"alias": "<alias_name>", "index": "<sub_index_name>"}},
+    {"remove": {"alias": <alias_name>", "index": "<old_sub_index_name"}},
+    ...
+  ]
+}
+```
+- RAM is likely the bottleneck.
+- You'll want to prefer machines with 64GB of RAM.
+- If you exceed 32GB for Elastic Search then you'll force it to deal with large pointers.
+- Faster disks are obviously better.
+- CPU is not that important.
+- Fast network.
+- Don't use NAS.
+- The Heap Size is supposed to be 1GB.
+- You can control it using two possible envir variables:
+  1. `export ES_HEAP_SIZE=10g`.
+  2. `ES_JAVA_OPTS="-Xms10g -Xmx10g"`; then call ES.
+- *X-pack* is an elastic stack extension.
+- It mostly manages the integrity of the system.
+- Not completely free.
+- **Watchers** are always running checking for errors on the clusters.
+- You can query them using the interface `.watcher-history*/_search?pretty`.
+- Go read the documentation for it since it's quite specific to an individuals uses.
+- It is good standard to simulate failure under controlled conditions.
+- When creating a cluster, you'll need to create a `cluster.name:` in the configuration file..
+- You'll also need to add node names using `node.name:`.
+- To gain permission to run multiple nodes on the same machine add `node.max_local_storage_nodes: 2`.
+- To run multiple of them, you'll need a second folder with a copy of the files and an updated node name.
+- *Don't forget to change the port number!*
+- ES will auto copy its shard data to new systems when you spin up the new nodes.
+- Snapshots let you backup what has changed since the last version.
+- The snapshot uses the terminology of a repo.
+- You configure this in the *elasticsearch.yml* file by adding `path.repo: ["/path/to/repo"]`.
+- Or, you can submit these settings to the interface `_snapshot/backup-repo`.
+```
+PUT _snapshot/backup-repo
+{
+  "type": "fs",
+  "settings": {
+    "location": "/path/to/repo"
+  }
+}
+```
+- To create a new one simply submit to the URL `PUT _snapshot/backup-repo/<name-snapshot>`.
+- You can send a GET request to retreive info about the snapshot.
+- To restore a snapshot, use:
+```
+PUT _all/_close # prevents writes
+PUT _snapshot/backup-repo/snapshot-1/_restore
+```
+- When updating the underlying OS, you'll want to stop index reallocation.
+- Disable **Shard Allocation**: `_cluster/settings{ "transient": { "cluster.routing.allocation.enable": "none"}}`
 
 # Elasticsearch in the Cloud
-
+- 
 
 
 # Research:
 - Lucene?
-
+- Index Templates?
 
 # Reference:
 - [Elastic Search Instructions](www.sundog-education.com/elasticsearch).
