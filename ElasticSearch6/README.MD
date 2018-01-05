@@ -354,8 +354,7 @@ PUT _snapshot/backup-repo/snapshot-1/_restore
 - Disable **Shard Allocation**: `_cluster/settings{ "transient": { "cluster.routing.allocation.enable": "none"}}`
 
 # Elasticsearch in the Cloud
-- 
-
+- AWS as well as Elastic.co can be paid to host them for you.
 
 # Research:
 - Lucene?
