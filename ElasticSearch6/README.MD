@@ -24,7 +24,7 @@
     * `sudo apt-get install default-jdk`
   2. Make sure to update the repos.
   3. ```
-      wget -qO - https://artifacts.elasticsearch.co/GPG-KEY-elasticsearch | sudo apt-key add -
+      wget -qO - https://artifacts.elasticsearch.co/GPG-KEY-elasticsearch | sudo apt-key add - # this address changed to artifacts.elastic.co/*
       sudo apt-get install apt-transport-https
       echo 'deb https://artifacts.elasticsearch.co/packages/6.x/apt stable main' | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
       sudo apt-get update && sudo apt-get install elasticsearch
