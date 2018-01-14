@@ -14,6 +14,7 @@
 | Docker for DevOps: Development to Production       | [\DockerDevOpsDev]               |                |  F  |
 | The Complete Financial Analyst Course 2017         | [\FinancialAnalyist2017]         |                |  F  |
 | Elasticsearch 6 and Elastick Stack                 | [\ElasticSearch6]                | {2018/01/05}   |     |
+| The Ultimate Hands-On Hadoop - Tame Your Big Data  | [\UltimateHandsonHadoop]         |                |     |
 
 R: Redo.
 F: Frozen.
