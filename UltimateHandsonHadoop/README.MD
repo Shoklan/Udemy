@@ -50,8 +50,53 @@
   * HUE
 
 # Using Hadoop's Core: HDFS and MapReduce
+- HDFS is made for very large files across a cluster.
+- It breaks them into blocks.
+- This allows you to process files in parallel.
+- Stores them across multiple servers for redundancy.
+- HDFS Architecture:
+  * Name Nodes: keeps track of what is on the data nodes.
+  * Data Nodes: store the data.
+- If the namenode fiales:
+  1. Back up the metadata to local file.
+  2. Run a secondary Namenode; which is really just an edit log.
+- **HDFS Federation** is when each namenode manages a specific namespace volume.
+- **HDFS High Availability** is when you have a second Namenode that is in standby until a failure occurs.
+  * Zookeeper will detect and load balance requests.
+- There are multiple ways to navigate the HDFS:
+  1. UI: Ambari.
+  2. CMD.
+  3. HTTP/HDFS Proxies.
+  4. Java Interface.
+  5. NFS Gateway.
+- You can also access Ambari using port 8080.
+- You can select multiple files and then *Concatinate* them to return a single file from the UI.
+- The default ssh login for this image is maria_dev@127.0.0.1:2222.
+- **MapReduce**:
+  * Discributes the processing of data on your cluster.
+  * Divides data into partitions that are Map/Reduced.
+  * Resilient to failure.
+- Mappers are to extract and organize the data we care about.
+- The keys are then *Shuffled and Shorted* and then aggregates them together.
+- Reducers then aggregate the data to a result.
+- MapReduce is written in Java.
+- Streaming allows interfacing to other languages.
+- To run a MapReduce job in python, you will need:
+  1. Python installed.
+  2. Python package `mrjob`.
+- It's best to test the code locally before send it off to the Cluster.
+  * `python <scriptname.py> <data>`
+- To run on a cluster:
+```python
+python RatingsBreakdown.py # use python to run this.
+-r hadoop                  # run in hadoop
+--hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar # load this jar to use the streaming interface.
+u.data
+```
+- You can nest `MRStrp()` calls within one another.
 
 # Programming Hadoop with Pig
+- 
 
 # Programming Hadoop with Spark
 
