@@ -96,9 +96,74 @@ u.data
 - You can nest `MRStrp()` calls within one another.
 
 # Programming Hadoop with Pig
-- 
+- Ambari can be used to install services.
+- The default maria_dev is not actually an admin/root user.
+- Steps:
+  1. You will ssh to the image
+  2. type `ambari-admon-password-reset`
+  3. Fill out the prompts
+- **Pig** is intended to write code to remove having to write mappers/reducers.
+- *Pig* introduces **Pig Latin** which is a SQL-like syntax language to define a map and reduce steps.
+- Can be extended with **User Defined Functions** - *UDFs*.
+- *Pig* rean on *Tez* will be much faster than *MapReduce*.
+- Example:
+```
+ratings = LOAD '/user/maria_dev/ml-100k/u.data' AS           # read in data
+  (userID:int, movieID:int, rating:int, ratingTime:int);     # tab-delimited expected by default
+metadata = LOAD '/user/maria_dev/ml-100k/u.item' USING       # read in data
+  PigStore('|') AS                                           # alter delim as |
+  (movieID:int, movieTitle:chararray, releaseDate:chararray,
+  videoRelease:chararray, imdbLink:chararray)                # data
+
+namelookup = FOREACH metadata GENERATE                       # iterate over records
+  movieID, movieTitle,
+  ToUnixTime(ToDate(releasetDate, 'dd-MMM-yyyy')) AS releaseTime;
+
+ratingsByMovie = GROUP ratings By movieID;                   # group up related data; called a bag.
+
+# reducer:
+avgRatings = FOREACH ratingsByMovie GENERATE group AS
+  movieID, AVG(ratings.rating) AS avgRating
+
+fiveStarMovies = FILTER avgRatings BY avgRating > 4.0;
+
+# weird join syntax:
+fiveStarsWithData = JOIN fiveStarMovies BY movieID, namelookup BY movieID;
+
+# there is a context syntax necessary to access the field.
+oldestFiveStarMovies = ORDER fiveStartsWithData BY namelookup::releaseTime;
+```
+- Use `DUMP` to check the data.
+- Use `DESCRIBE <table>` to list the schema of the table created.
+- Use `STORE <filename>` to save the results to a file.
+  * Example: `STORE ratings INTO 'outRatings' USING PigStore(':');`
+- Other Commands:
+  * `FILTER` : obv.
+  * `DISTINCT` : obv.
+  * `FOREACH GENERATE` : obv.
+  * ` MAPREDUCE` : Allows you to call explicit mappers/reducers on a relation.
+  * `STREAM` : sends to standard I/O
+  * `SAMPLE` : obv.
+  * `COGROUP` : ?
+  * `GROUP` : obv.
+  * `CROSS` : Cartesian Product.
+  * `CUBE` : ?
+  * `ORDER` : obv.
+  * `RANK` : similar to order.
+  * `LIMIT` : take the first n items.
+  * `UNION` : obv.
+  * `SPLIT` : obv.
+  * `EXPLAIN` : how Pig intends to submit a query.
+  * `ILLUSTRATE` : samples and shows what its' going to actually do.
+  * `REGISTER` : import my code from a jar file.
+  * `DEFINE` : name the code I'm using.
+  * `IMPORT` : pull in a written macro.
+- Etc...
 
 # Programming Hadoop with Spark
+- 
+
+
 
 # Using Relational Data Stores with Hadoop
 
