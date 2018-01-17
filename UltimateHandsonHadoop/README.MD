@@ -161,11 +161,24 @@ oldestFiveStarMovies = ORDER fiveStartsWithData BY namelookup::releaseTime;
 - Etc...
 
 # Programming Hadoop with Spark
-- 
-
-
+- **Spark** is a general engine for large scale data processing.
+- Spark is scalable.
+- Contains the information in RAM.
+- It is much faster than all other current alternatives.
+- Spark optimizes work flows.
+- It's being used world wide right now by many companies.
+- It's not really that hard to work with.
+- There are more components of spark:
+  * Streaming.
+  * SQL.
+  * MLLib.
+  * GraphX.
+- **RDD** stands for *Resilient Distributed Dataset*.
+- See other notes about Spark.
 
 # Using Relational Data Stores with Hadoop
+- 
+
 
 # Using Non-Relational Data Stores with Hadoop
 
