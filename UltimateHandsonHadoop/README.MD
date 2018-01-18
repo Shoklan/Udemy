@@ -177,8 +177,32 @@ oldestFiveStarMovies = ORDER fiveStartsWithData BY namelookup::releaseTime;
 - See other notes about Spark.
 
 # Using Relational Data Stores with Hadoop
-- 
-
+- **Hive** allows you to write SQL queries against Hadoop.
+- You would use it when you..:
+  * are familiar with SQL.
+  * Interactive.
+  * Scalable on clusters.
+  * Easy OLAP queries; **Online Analytic Processing**.
+  * Highly Optimized.
+  * Highly extensible.
+- **HiveQL** is *pretty much* SQL.
+- You can create a view using `CREATE VIEW .. AS`.
+- You can also skip creation using `CREATE VIEW IF NOT EXISTS .. AS`.
+- You could also drop it using `DROP VIEW <table_name>`.
+- Hive is a **Scheme-on-Read** format.
+- It uses a created **Metastore** to impose that structure on the data.
+- If you mark a table as `EXTERNAL` then Hive will query it but wont manage it.
+- You can logically partition the data using `PARTITIONED BY (country STRING);` which will allow you to condition on that column.
+- There is a CLI for Hive.
+- You can also save the queries to files.
+- **MySQL** is a free Relational Database technology.
+- **Sqoop** uses MapReduce to import the data specified from the SQL database.
+```bash
+sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.Driver --table movies
+```
+- You can append `--hive-import` to directly add the data to Hive.
+- You can also export instead.
+  * make sure to set up the tables in MySQL first before export.
 
 # Using Non-Relational Data Stores with Hadoop
 
