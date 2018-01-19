@@ -205,8 +205,112 @@ sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.
   * make sure to set up the tables in MySQL first before export.
 
 # Using Non-Relational Data Stores with Hadoop
+- There are many interpretations of NoSQL but basically it lacks a table structure.
+- **HBase** is the built in tool for managing this in the Hadoop ecosystem.
+- Scaling MySQL up requires:
+  * denormalization
+  * Caching layers.
+  * Master/slave setups.
+  * Sharding
+  * Materialized Views.
+  * Removing stored procedures
+- Sometimes you should ask yourself if you really need SQL.
+- Try to use the right tool for the right job.
+- **HBase** is a non-relational, scalable database built on HDFS.
+- *HBase* is the Open Source version of what Google described as *BigTable*.
+- Uses the **CRUD** model:
+  * Create.
+  * Read.
+  * Update.
+  * Delete.
+- The **HMaster** keeps track of the state of the Shards.
+- *HBase* data model:
+  * Fast access to any given Row.
+  * a row is referenced by a unique key.
+  * Each Row has some small number of **COLUMN FAMILIES**.
+  * A *Column Family* may contain arbitrary columns.
+  * You can have a very large number of columns in a *column family*.
+  * Each *cell* can have many versions with given timestamps.
+  * Sparse data is ok; missing columns in a row consume no storage.
+- Ways to access HBase:
+  * HBase shell.
+  * Java API.
+  * REST service.
+  * Thrift Service.
+  * Avro service.
+- To start the REST service for HBase use `/usr/hdp/current/hbase-master/bin/hbase-daemon.sh start rest -p 8000`.
+- *Pig* can actually integrate with HBase.
+- *HBase* must be setup first.
+- The relation must have a unique key as its first column.
+- `USING` clause allows you to `STORE` into an HBase table.
+- Can work at scale - HBase is transactional on rows.
+- To drop a table in HBase you need to `disable` it first.
+- **Cassandra** is a distributed database technology.
+- It has no single point of failure.
+- Even though it is classified as NoSQL, it has its own query language: CQL.
+- **CAP Principle** Consistency, Availability, Partition-Tolerance.
+- Can only have two out of three.
+- *Cassandra* favors availability over consistency.
+- Has something called *eventual consistency* in that eventually you will get a consistent result.
+- It uses Peer-to-Peer communication to negotiate and replicate across the tables.
+- **Keyspaces** are like databases in a normal solution.
+- The image is built on Fedora/Red Hat.
+- You can use `scl-utils` to manage different versions of python.
+- You can enable it using `scl enable python27 bash`.
+- Add the rep file `/etc/yum.repos.d/datastax.repo`:
+```bash
+[datastax]
+name = DataStax Repo for Apache Cassandra
+baseurl = http://rpm.datastax.com/community
+enabled = 1
+gpgcheck = 0
+```
+- To install run `yum install dsc30`.
+- Get the python dependecies using `pip install cqlsh`.
+- Start the service using `service cassandra start`.
+- To start the shell run `cqlsh`.
+  * If you get a version  ereror pass `--cqlversion="<version_to_use>"`.
+- To create a *Keyspace* use `CREATE KEYSPACE movielens WITH replication = {'class': 'SimpleStrategy', 'replication_factor':'1'} AND durable_writes = true;`.
+```
+CREATE TABLE users (user_id int, age int, gender text, occupation text, zip text, PRIMARY KEY (user_id));
+```
+- Much of the syntax is the same but there are no joins since it's not a real structure.
+- You will need to pass the connector to tell it where to find it.
+- You do this via `spark-submit --packages datastax:spark-cassandra-connector:2.0.0-Ms-s_2.11 <script>` .
+- **MongoDB** is a document based model.
+- No schema is enforced.
+- There is no single key as with other databases.
+- To shard it, you will need a key though.
+- The named parts are:
+  * Databases.
+  * Collections.
+  * Documents.
+- It has a single master.
+- It maintains copies of your primary database.
+- It can elect a new primary if the original goes down.
+- Quirks:
+  * A majority of servers in your set must agree on the primary.
+  * If you don't want to spend money on three servers, then you can setup a single 'arbiter' node.
+  * Apps must know about enough servers in the replica set to be able to reach one to lean who's primary.
+  * Replicas only address durability, not your ability to scale.
+  * Delayed secondaries can be set up as insurance against peoople being morons.
+- For Sharding, you will need to treat one of the values in the data as a psuedo private key.
+- It's not just a NoSQL solution.
+- The shell is a full Javascript Interpreter.
+- Supports many indices.
+- Built-in aggregation capabilities, MapReduce, GridFS.
+- A SQL connector exists but it's not designed for that.
+- How do you select which database?
+  1. Integration considerations.
+  2. Scaling requirements.
+  3. Support Considerations.
+  4. Budget considerations?
+  5. CAP Considerations.
+  6. Simplicity.
 
 # Querying Your Data Interactively
+- 
+
 
 # Managing Your Cluster
 
@@ -219,6 +323,9 @@ sqoop import --connect jdbc:mysql://localhost/movielens --driver com.mysql.jdbc.
 # Learning More
 
 # Research:
+- Datastax?
+- scl-utils?
+-
 
 # Reference:
 - [Hortonworks Site](www.Hortonworks.com/sandbox)
