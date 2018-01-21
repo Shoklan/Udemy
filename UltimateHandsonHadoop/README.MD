@@ -309,10 +309,50 @@ CREATE TABLE users (user_id int, age int, gender text, occupation text, zip text
   6. Simplicity.
 
 # Querying Your Data Interactively
-- 
-
+- **Apache Drill** allows you to issue SQL queries across your entire cluster.
+- **Presto** is made by Facebook.
+- Drill is an SQL query engine for a variety of non-relational databases and data files.
+- It's based on Google Dremel.
+- Its not SQL-like but really is SQL.
+- It has a ODBC/JDBC driver so it can be treated like SQL database.
+- It's internally represented as JSON and has no fixed schema.
+- It even allows you to do joins across database technologies; which normally is impossible.
+- To start drill run `/bin/drillbit.sh start`.
+- If you want to change the access port also pass `-Ddrill.exec.http.port=<port_number>`.
+- Apache Drill will use the external facing port and protocol you configure for each tool.
+- To stop the service just use `bin/drillbit.sh stop`.
+- **Apache Phoenix** is SQL for HBase.
+- It's a SQL driver for HBase that supports transactions.
+- Fast, low-latency with OLTP support.
+- Originally developed by Salesforce but was open sourced.
+- Exposes a JDBC connector for HBase.
+- Supports secondary indices and user-defined Functions.
+- Integrates with MapReduce, Spark, Hive, Pig, Flume.
+- Phoenix is exceptionally fast.
+- Using Phoenix:
+  * Command Line Interface.
+  * Phoenix API for Java.
+  * JDBC driver; thick client.
+  * Phoenix Query Server; intended to allow fro non-JVM access.
+  * Jars for MapReduce, Hive, Pig, Flume, Spark.
+- Installing phoenix can be done with a simple `yum install phoenix`.
+- You can start it using `python sqline.py`.
+- You can list all known tables using `!tables`.
+- *Phoenix* does not understand `insert` but instead uses `upsert` which will update the contents if they're already there.
+- You can quit using `!quit`.
+- To combine and use *Phoenix* with *Pig* you'll need to `REGISTER /usr/hdp/current/phoenix-client/phoenix-client.jar`.
+- **Pesto** is similar to *Apache Drill*.
+- It was developed and is still somewhat maintained by Facebook.
+- Exposes JDBC CLI, and Tableau.
+- One important reason to use it is the built-in Cassandra connector.
+- Facebook uses it and their data stores are well beyond massive.
+- It does not come with any configuration files and you will need to create the /etc dir along with the files.
+- The command line interface will also need to be downloaded.
+- Rename the file to `presto` and run `chmod +x presto` to make it executable.
+- Then, start it with `bin/launcher start`.
 
 # Managing Your Cluster
+ - 
 
 # Feeding Data to your Cluster
 
@@ -325,8 +365,11 @@ CREATE TABLE users (user_id int, age int, gender text, occupation text, zip text
 # Research:
 - Datastax?
 - scl-utils?
+- org.apache.phoenix.jdbc.PhoenixConnection
 -
+
 
 # Reference:
 - [Hortonworks Site](www.Hortonworks.com/sandbox)
 - [Movielens Data](www.movielens.org/datasets/movielens)
+- [Presto](www.prestodb.io)
