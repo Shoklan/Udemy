@@ -352,9 +352,43 @@ CREATE TABLE users (user_id int, age int, gender text, occupation text, zip text
 - Then, start it with `bin/launcher start`.
 
 # Managing Your Cluster
- - 
+ - **YARN** stands for *Yet Another Resource Negotiator*.
+ - It separates the problem of managing resources on your cluster from MapREduce.
+ - Enabled development of MapReduce alternatices built on top of YARN.
+ - You don't need to even interact with it, but you can write code against it.
+ - Your application talks to the Resource MAanger to distribute work to your cluster.
+ - You can specify dat locality.
+ - You can specify different scheduling options for applications.
+ - If you really need to then use *Apache Slider* or *Apache Twill*.
+ - **Apache Tez** constructs Directed Acyclic Graphs for more efficient processing of distributed jobs.
+ - It optimizes physical data flow and resource usage.
+ - **Apache Mesos** came out of Twitter.
+ - It can be used for more than just big data; web servers, scripts, etc.
+ - It's much closer to a genreal container solution than a resource negotiator.
+ - Zookeeper keeps track of information that must be synchronized across your cluster.
+ - It's a tool that applications can use to recover from partial failures in your cluster.
+ - Integral to the Hadoop ecosystem.
+ - It's a little distributed file system.
+ - You can connect to Zookeeper using `./zkCli.sh`.
+ - You can create a znode using `create -e /<nodename> "<ip_addr:port>"`.
+ - It wont keep this around since it treats you as the node.
+ - **Oozie** orchestrates your Hadoop jobs.
+ - It allows one to multi-stage jobs.
+ - The workflow builds a DAG of actions.
+ - Specified in XML.
+ - Check out sample templates online.
+ - When building this, make sure to test each step of the script before combining it all.
+ - Make a directory in HDFS for the job.
+ - Create the `workflow.xml` file.
+ - **Apache Zepplin** is a notebook interface for your Big Data.
+ - It is well integrated with *Apache Spark*.
+ - It also has *interpretators* for lots of other technologies.
+ - Comes with the the image used for the class.
+ - You can access it on port 9995.
+ - **HUE** stands for *Hadoop User Experience*.
 
 # Feeding Data to your Cluster
+-
 
 # Analyzing Streams of Data
 
@@ -366,8 +400,9 @@ CREATE TABLE users (user_id int, age int, gender text, occupation text, zip text
 - Datastax?
 - scl-utils?
 - org.apache.phoenix.jdbc.PhoenixConnection
+- Myriad?
+- Oozie?
 -
-
 
 # Reference:
 - [Hortonworks Site](www.Hortonworks.com/sandbox)
