@@ -2,10 +2,30 @@
 ## Franke Kane
 
 # Introduction
-- 
-
+- What is serverless?
+  * Is a Web application where you don't have to manage the server itself.
+- User's path:
+  * Served HTML, CSS, JS on landing.
+  * Javascript communicates and exchanges data using the API.
+- Amazong **Simple Storage Server** - or S3 - is where data is stored and can be loaded from.
+- The **API Gateway** will connect the user to your content.
+- **AWS Lambda** will then use services like DynamoDB or Cognito.
+- With this setup, you don't have to think about making sure uptime is not an issue.
+- You don't pay for processing time you don't use.
+- This also makes it easier to develop the front-end/back-end.
+- Good use cases include dynamic applications with lots of user interaction; most of the load is on the client side.
+- Bad use cases include where there is a significant amount of communication between Client and Server.
+- Steps for Version 1:
+  1. Create a new globally unique bucket for your website.
+  2. Upload static content to bucket.
+  3. Select *Properties* for the bucket.
+  4. Enable read access via *Static Website Hosting*.
+  5. WORKING!
 
 # Static Chat Application with S3
+-
+
+
 
 # Creating an API
 
@@ -22,3 +42,6 @@
 # Research:
 
 # Reference:
+- [Portal for AWS](https://portal.aws.amazon.com/billing/signup)
+- [AWS Free Tier Info](https://aws.amazon.com/free/)
+-
