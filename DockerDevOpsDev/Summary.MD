@@ -43,7 +43,7 @@
 - Just install it.
 - To install using shell use `sudo dpkg -i <file_name>`.
 - To check if it's installed, use `docker --version`.
-- To make sure you don't get permision issues use `sudo usermod -aG docker nick`.
+- To make sure you don't get permission issues use `sudo usermod -aG docker nick`.
 - Download **Docker Compose** and move it to */usr/local/bin*; make sure to allow execution.
 
 # Docker Basics
@@ -57,7 +57,7 @@
 - The containers are based on Open Standards.
 - Benefits:
   1. Scale up quickly.
-  2. Expand your developmeent team painlessly.
+  2. Expand your development team painlessly.
   3. Use Whatever technology fits best.
   4. Cross Environment consistency.
   5. Docker is also a framework.
@@ -114,7 +114,7 @@ RUN apt-get update &&        # ensure update to date
     --no-install-recommends
 
 ENV INSTALL_PATH /mobydock   # set default dir
-RUN mdir -p $INSTALL_PATH    # create it.
+RUN mkdir -p $INSTALL_PATH    # create it.
 
 WORKDIR $INSTALL_PATH                   # start here for cmds
 COPY requirements.txt requirements.txt  # copy the necessary reqs for this
@@ -134,7 +134,7 @@ CMD gunicon -b 0.0.0.0:8000 "mobydock.app:create_app()"  # start server and list
 - *Docker-Compose.yaml* defines all the different service configurations and images that your container will be using.
 - To get the software you'll need to use `docker-compose up` and it will install Posgres, redis, python
 - The `links:` section will define the names the other containers will be called at compilation.
-- To run a command agaisnt a container, you use `docker exec`.
+- To run a command against a container, you use `docker exec`.
 - Everything updates live when you makes changes to anything.
 - Sometimes, if you hit **CTRL+C** it doesn't always exit correctly.
 - You can use `docker-compose stop` to finish the job.

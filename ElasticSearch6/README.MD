@@ -54,7 +54,7 @@ curl -H 'Content-type: application/json' -XGET '127.0.0.1:9200/shakespeare/_sear
 "text_entry" : "to be or not to be"\
 }}}'
 ```
-- It's really about responsding to JSON requsts.
+- It's really about responding to JSON requsts.
 - **Kibana**:
   * WebUI for searching and visualizing.
   * Complex aggregations, graphs, charts
@@ -184,7 +184,7 @@ curl -H 'Content-type: application/json' -XGET '127.0.0.1:9200/shakespeare/_sear
 - You can also upload a list of all possible completions ahead of time using *completion suggesters*.
 
 # Importing Data Into Your Index - Big or Small
-- You can import form just about anything at this point.
+- You can import from just about anything at this point.
 - Stand-alone scripts can submit bulk documents via REST APIs.
 - Logstash and beats can stream data from logs, S3, databases, and more.
 - AWS systems can stream in data via lambda or kinesis Firehose.
