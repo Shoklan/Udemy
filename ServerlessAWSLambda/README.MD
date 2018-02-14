@@ -23,11 +23,58 @@
   5. WORKING!
 
 # Static Chat Application with S3
--
+- S3 is a Key-Blob store.
+- It's *eventually consistent* meaning that it will take time to fully sync.
+- Extremely durable.
+- Remember that S3 is **not** a file system.
+- **AWS policies** define access controls for:
+  * Users.
+  * AWS services.
+  * Resources.
+- You can set a global policy using a Javascript based JSON file.
+- To enable this:
+  1. Visit the console.
+  2. Select the *S3 Service*.
+  3. Select the S3 bucket of interest.
+  4. Select *Permissions*.
+  5. Select *Bucket Policy*.
+  6. Copy and paste JS below and adjust name.
 
+```js
+{
+  "Version": "2012-10-17",
+  "Id": "Policy1497053408897",
+  "Statement": [
+    {
+      "Sid": "Stmt1497053406813",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      //"Resource": "arn:aws:s3:::<your bucket name>/*"
+    }
+  ]
+}
+```
+- The *config.js* file is where userpoints and APIs are going to be defined.
+- The files uploaded can be accessed using the url and path to file within the buckets.
+
+## Javascript Review
+- It's similar to C in syntax and look.
+- Differences include that it does not require typing and functions are objects.
+- `==` means that the two operators are equivalent.
+- `===` means that the two operators are of the same type.
+- The values *null* and *undefined* are not the same thing in Javascript.
+- The access requests `object.value` and `object['value']` are the same.
+- We'll be using **JQuery** since it ubiquitous and useful.
+- **Document Object Model** or the *DOM*.
+- Javascript is single threaded but Node.js or your browser can use AJAX to do psuedo-multi-threading.
+- You can return values from those threads using what are called **Callbacks**.
+- You append items to the selected element using `.append(<content>)`.
 
 
 # Creating an API
+-
+
 
 # Use DynamoDB for Storage
 
@@ -40,8 +87,10 @@
 # Conclucsion
 
 # Research:
+- Promise?
+
 
 # Reference:
 - [Portal for AWS](https://portal.aws.amazon.com/billing/signup)
 - [AWS Free Tier Info](https://aws.amazon.com/free/)
--
+- [Brackets.io](www.brackets.io)
