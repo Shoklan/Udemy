@@ -106,10 +106,64 @@
 
 
 # Use DynamoDB for Storage
-- 
+- **DynamoDB** is a NoSQL database.
+- It's a key-value store.
+- Extremely scalable.
+- The tables have the basic structure of:
+  * Hash key.
+  * Sort key.
+  * Data.
+- Attribute Types:
+  * Binary, Set: B,BS.
+  * Boolean: BOOL.
+  * List: L.
+  * Map: M.
+  * Number, Set: N,NS.
+  * Null: NULL.
+  * String, Set: S,SS.
+- The Binary data is stored in Base64 strings.
+- There are a few ways to access content in DynamoDB.
+- *Get Item* uses the full key to get the item.
+- *Query* to select on partial keys.
+- *Scan* to filter.
+- You would use limits and offsets to assist with pagination.
+- You will need a policy to allow lambda to talk with DynamoDB.
+- Example Policy:
+```js
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "dynamodb:BatchWriteItem",
+        "dynamodb:PutItem",
+        "dynamodb:Query"
+      ],
+      "Resource": [
+        "arn:aws:dynamodb:<region>:<your account id>:table/Chat-Conversations",
+        "arn:aws:dynamodb:<region>:<your account id>:table/Chat-Messages",
+        "arn:aws:dynamodb:<region>:<your account id>:table/Chat-Conversations/index/Username-ConversationId-index"
+      ]
+    }
+  ]
+}
+```
+- The table information can be found in the DynamoDB table overview view.
+- You can define substitute expressions using:
+```js
+ProjectionExpression: '#T, Sender, Message',
+ExpressionAttributeNames: { '#T', 'Timestamp' }
+```
+- Much of the language is the same as other datbase solutions.
+- `limit` means how many results to return.
+- `ScanIndexForward` tells DynamoDB how to sort the contents.
 
 
 # Break up the Monolith
+-
+
 
 # Add Identity to the App
 
