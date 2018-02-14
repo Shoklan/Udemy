@@ -73,10 +73,41 @@
 
 
 # Creating an API
--
+- **Lambda** is a service on AWS that allows you to run functions in the cloud.
+- Currently supports Java, Python, Javascript [ Node.js ], etc.
+- It's cost could be nothing if you don't use it enough to care.
+- **Identitiy Access Management** - *IAM*.
+- This is where you control who, groups and what.
+- You can't use encyption keys inside the free tier.
+- To connect services together will require Roles and Policies to allow them to communicate.
+- To do this:
+  1. Navigate to the IAM Service.
+  2. Select or Build a Policy; many already exist.
+  3. Grant the policy to a Role by selecting *Role* on the left side.
+    * You'll also want to add the role *AWSLambdaBasicExecutionRole*.
+- Now you'll want to setup the function in Lambda:
+  1. Navigate to AWS Lambda Service.
+  2. Select Create Function.
+  3. Fill in function details.
+- The *API Gateway* has two modes:
+  1. Proxy.
+  2. Mapping.
+- *Proxy Mode* will send on the request without any modifications.
+- *Mapping Mode* will allow you to alter the inputs for the Lambda function.
+- To configure:
+  1. Navigate to *API Gateway*.
+  2. Select *New API*.
+  3. Fill in details.
+  4. Select *Create Resource* from the *Actions* tabular.
+  5. Mark the option *Configure as Proxy Service*.
+- *CORS* stands for **Cross-Origin Resource Sharing**.
+- You will need to deply the API after configuring it.
+- This is done via the *Actions* tabular in *API Gateway*.
 
 
 # Use DynamoDB for Storage
+- 
+
 
 # Break up the Monolith
 
