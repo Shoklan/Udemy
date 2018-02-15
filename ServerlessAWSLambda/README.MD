@@ -162,14 +162,58 @@ ExpressionAttributeNames: { '#T', 'Timestamp' }
 
 
 # Break up the Monolith
--
-
+- Having a single Lambda function conflicts with the advantages of using it.
+- The advantages of running in Proxy mode is that it's simple and costs less.
+- The advantages of API Gateway is that each function has its own lifecycle, simple input for each and API Compatability.
+- The methods are:
+  1. Read: [ GET, HEAD ].
+  2. Write: [ POST, PUT, PATCH ].
+  3. Other: [DELETE, OPTIONS].
+- Status Codes:
+  * 2xx: OK.
+  * 3xx: Redirects.
+  * 4xx: Client Error.
+  * 5**: Server Error.
+- URLS are broken into Five Pieces:
+  * Scheme.
+  * Host.
+  * Resource.
+  * Query String.
+  * Fragment.
+- We can use the fragment to help us keep track of navigation.
+- Headers are used to give the Browser information.
+  * An important header is the `content type` since that tells it how to process the data.
+- There are two types of resources:
+  * Fully-Defined.
+  * Parameterized.
+- Defining models in the API Gateway is a two step process.
+- The *Request Flow* is broken into:
+  1. The Method Request.
+  2. The Integration Request.
+- The *Method Request* deals with the shape of the request.
+- After, the result is passed to the *Integration Request*.
+- There are multiple options for Authorization supported by *Method Request*.
+- You can give out keys that allow access to multiple services.
+- **Cognito** can be used to handle logins - which will avoid the Public/Private key issues.
+- By default, only the body is sent on through the API Gateway.
+- You can configure it to pull other information out and pass those as well.
+- *Child Resource* variables will need the format `{var_name}`.
+- Stages should be thought of as a snapshot of your APIs.
+- There are three configurations for them:
+  1. Caching.
+  2. Throttling.
+  3. Variables.
+- **Canary** will allow you to send different percentages of people to different stages.
+- You can export the staging information.
+- Using the exported configuration, you can visualize it using the Swagger.io site.
 
 # Add Identity to the App
+- 
+
 
 # Optimization and Preparing For Production
 
-# Conclucsion
+# Conclusion
 
 # Research:
 - Promise?
@@ -179,3 +223,4 @@ ExpressionAttributeNames: { '#T', 'Timestamp' }
 - [Portal for AWS](https://portal.aws.amazon.com/billing/signup)
 - [AWS Free Tier Info](https://aws.amazon.com/free/)
 - [Brackets.io](www.brackets.io)
+- [Swagger.io](editor.swagger.io)
