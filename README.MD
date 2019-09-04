@@ -16,6 +16,7 @@
 | Elasticsearch 6 and Elastick Stack                 | [\ElasticSearch6]                | {2018/01/05}   |     |
 | The Ultimate Hands-On Hadoop - Tame Your Big Data  | [\UltimateHandsonHadoop]         |                |     |
 | Build a Serverless App with AWS Lambda             | [\ServerlessAWSLambda]           |                |     |
+| CCNP Video Boot Camp                               | [\CCNPBootCamp]                  |                |     |
 
 R: Redo.
 F: Frozen.
