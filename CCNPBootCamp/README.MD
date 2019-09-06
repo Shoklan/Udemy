@@ -56,6 +56,32 @@
 
 # Spanning Tree Protocol Fundamentals
 
+- A Broadcast Storm does not happen all at once; it slowly builds up.
+- The **Bridge Protocol DAta Unit (BPDU)** mac is 01:08:c2:00:00:00.
+- The **Configuration BPDUs** are what are used to STP calculations.
+- The root bridge is what sets the STP timers.
+- The **Bridge ID Priority (BID)** is a combination of the priority value and the switch's mac.
+- It will come as <pri-value>:<mac> as the format.
+- The Root Bridge will be the device with the lowest BID.
+- Config BPDUs go out every 2 seconds.
+- Each port has a **Path Cost** which is saved locally but not broadcast.
+- The **Root Path Cost** is a cumulative value which is incremented at each switch.
+- Remember that _this value is incremented when it is received and not when it is sent_.
+- The logic to select the Root Port:
+  1. First its the lowest bid.
+  2. Next with the lowest root path cost.
+  3. Next port with the lowest sender BID.
+  4. Next lowest port which received the BID.
+  5. Lastly, the lowest port it was sent from.
+- The shortest path is not always the shortest path - due to speed.
+- The difference between **Disabled** and **Blocked** on ports is that blocked accepts BPDUs.
+- The port mode **Listening** is listening for *BPDUs* and send them as well.
+- The port mode **Learning** still is not forwarding frames but can learn MAC Addresses.
+- STP Timers are important for the test - and you should know them - but you should be cautious about changing them manually.
+- The **Hello Time** defines how often the root bridge will originate Config BPDUs: default 2s.
+- The **Forwarding Delay** is the length of the listening and learning STP stages: default 15s.
+- The **Maximum Age** is how long the switch will retain the superiors BPDUs contents before discarding: 20s.
+
 # Advanced STP Features
 
 # RSTP & MST
