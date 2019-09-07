@@ -81,6 +81,10 @@
 - The **Hello Time** defines how often the root bridge will originate Config BPDUs: default 2s.
 - The **Forwarding Delay** is the length of the listening and learning STP stages: default 15s.
 - The **Maximum Age** is how long the switch will retain the superiors BPDUs contents before discarding: 20s.
+- If you change the timers on a non-root node then it will ignore it.
+- While a small network is fine to allow the root bridge to be decided by chance.
+- This is not a good idea on larger networks.
+
 
 # Advanced STP Features
 
