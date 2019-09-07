@@ -49,12 +49,24 @@
 - With respect to the Autonegotiation, **leave it alone**.
 - What this does is send a **Fast Link Pulses**.
 - It's a declaration of the capabilities of the sending device with regards to speed and duplex.
+- The reason they're not using them is the problem of switching loops at Layer 2.
 -
 
 
 # The VLAN Trunking Protocol
 
 # Spanning Tree Protocol Fundamentals
+- In this field, we like *Redundancy*.
+- A single point of failure is not acceptable.
+- It doesn't work the same at Layer 2 vs Layer 3.
+- AT L3, we're allowe to set Secondary paths in addition to primary paths.
+- While they exist at L2, they will not be used in addition to the primary path.
+- The purpose of **Spanning Tree Protocol** is to:
+  1. find the best loop-free paths
+  2. Block on the others to hold in standby.
+- Once this is found, it will begin unblocking the other ports and paths.
+-
+
 
 # Advanced STP Features
 
