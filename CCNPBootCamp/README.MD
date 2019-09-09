@@ -65,9 +65,6 @@
   1. find the best loop-free paths
   2. Block on the others to hold in standby.
 - Once this is found, it will begin unblocking the other ports and paths.
--
-
-
 - A Broadcast Storm does not happen all at once; it slowly builds up.
 - The **Bridge Protocol DAta Unit (BPDU)** mac is 01:08:c2:00:00:00.
 - The **Configuration BPDUs** are what are used to STP calculations.
@@ -97,9 +94,54 @@
 # Advanced STP Features
 
 # RSTP & MST
+- RSTP Stands for **Rapid Spanning Tree Protocol**.
+- It is defined in IEEE 802.1w and is considered an extension of 802.1d.
+- The 30 second delay in STP via listening and learning was once considered acceptable; not anymore for some networks.
+- *RSTP* -like STP - will not have **Root Ports** but rather **Designated Ports**.
+- It does however have **Alternate Ports** instead of blocking ports.
+- This will become the **Backup Port** for the segment - with no guarantee that the root switch will be reachable.
+- RSTP merges the states *disabled*, *blocking* and *listening* into a single state called **discarding**.
+- There are also two new port types:
+  1. **Edge Ports**: A port on the edge of the network; such as a end user's PC.
+    * This is a port configured for PortFast: goes straight from discarding to forwarding.
+    * If a BPDU comes in on an edge port, then it generates a **Togology Change Network BPDU**.
+  2. **Point-to-Point Ports**: Any connecting running Full Duplex Mode.
+- You **cannot** run RSTP over a Halfduplex system.
+- RSTP does not consider an edge port moving into forwarding mode a Topology change.
+- RSTP also generates BPDUs every 2 seconds regardless of whether they got a BPDU or not.
+- Every switch expects to receive a BPDU from its neighbor so if it misses 3 of them it assumes that the link is down.
+- **RSTP Syncronization** is a simple series of handshakes between switches carried out until all switches in the network are synchronized.
+- Does RSTP play well with STP? Mostly, yes.
+- You can tell switches how to handle BPDUs by setting the version number in it.
+  * Version 2 is RSTP
+  * Version 0 is STP
+- If you see the line `Spanning tree enabled protocol ieee` then you're running STP.
+- The other for RSTP is `Spanning tree enabled protocol rstp`.
+- It also shows up as type.
+- PVST stands for **Per-VlAN Spanning Tree** which a PVST+ proprietary to cisco.
+- This allows for fine tuning STP for each VLAN traffic.
+- Running will use more CPU load and RAM.
+- The PVST version must be running ISL Trunking.
+- It also doesn't play well with **Common Spanning Tree**.
+- **Multiple Spanning Tree** is defined in 802.1s and earns its name from allowing multiple VLANs to be mapped to a single instance of STP instead of per VLAN.
+- What it does is logically divides the Switches into regions and the switches in any given region must agree on:
+  1. MST config name.
+  2. MST revision Number.
+  3. MST VLAN mapping table.
+- CST is a mapping of the whole network while MST is subsets of the network.
+- IST stands for **Internal Spanning Tree** and is the instance that is responsible for keeping communication in the MST regions loop free.
+- All instances in IST are mapped to Instance 0 unless the Network Admin changes them to something else.
+-
+
+
+
+# VPNs and IPSec
+- 
+
 
 # More to Come
 
 # Reference:
 
 # Research:
+- dot1q?
