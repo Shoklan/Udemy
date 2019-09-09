@@ -66,7 +66,7 @@
   2. Block on the others to hold in standby.
 - Once this is found, it will begin unblocking the other ports and paths.
 - A Broadcast Storm does not happen all at once; it slowly builds up.
-- The **Bridge Protocol DAta Unit (BPDU)** mac is 01:08:c2:00:00:00.
+- The **Bridge Protocol Data Unit (BPDU)** mac is 01:08:c2:00:00:00.
 - The **Configuration BPDUs** are what are used to STP calculations.
 - The root bridge is what sets the STP timers.
 - The **Bridge ID Priority (BID)** is a combination of the priority value and the switch's mac.
@@ -136,7 +136,48 @@
 
 
 # VPNs and IPSec
-- 
+- VPN stands for **Virtual Private Network**.
+- We also refer to them as **Tunnels**.
+- **Data Origin Authentication** ensures that the VPN knows the real source of the packet.
+- GRE stands for **Generic Routing Encapsulation**.
+- **IPSec** offers encryption and Authentication.
+- It is comprised of three pieces:
+  1. **Authentication Header (AH)**: Methods for Authenticating and Securing Data.
+    * Data Origin Authentication.
+    * Data Integrity.
+    * Optional Replay Protection
+  2. **Eccapusluting Security Payload (ESP)**: defines a method for authenticating, security and encrypting data.
+    * Data Origin Authentication.
+    * Anti-replay Protection.
+    * Data Confidentiality.
+  3. **Internet Key Exchange (IKE)**: which negotiates the security parameters and authentication keys.
+- In **Tunnel Mode**, the entire process is transparent to the end hosts and everything gets encapsulated.
+- In **Transport Mode**, the payload is encrypted but the IP Header is not.
+- Process:
+  1. Process Initialization: receive interesting traffic
+  2. IKE Phase 1.
+  3. IKE Phase 2
+  4. ?
+  5. ?
+- One thing about configuring VPNs at Layer 2 is that you cannot test anything until after everything is configured and running.
+- For the connection to go ahead, the negotiated Encryption values must match but the lifetime of the recipient may be equal to or less than.
+- **IPSec Transform Sets** is simply a group of individual parameters that will enforce a security policy.
+- Crypto ACL will evaluate inbound and outbound traffic.
+- The same ACL is going to be read for both inbound and outbound traffic.
+- It is read forwards for inbound traffic and backwards for outbound traffic.
+- DMVPN stands for **Dynamic Multipoint VPNs**.
+- It allows a spoke router to dynamically create a VPN to another spoke when the VPN is actually needed and then tear that same VPN down when it's not needed anymore.
+- NHRP stands for **Next Hop Routing Protocol**.
+- If you see tunnels bouncing then it means the router can only reach the other router intermittently.
+- If you're troubleshooting then start with connectivity > mGRE > IPSec.
+- IPSec has one glaring weakness which is the inability to protect multicast packets.
+- mGRE makes it possible for the hub to use one interface for as many tunnels as you need.
+- Don't block IP protocol 47 since that is GRE.
+- If you set the IP addresses on **Virtual Routing and Forwarding (VRF)** interfaces and then setup VRF then it will strip them and you will need to add them back.
+- VRF keeps a separate routing table for each instance.
+-
+
+
 
 
 # More to Come
