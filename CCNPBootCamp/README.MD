@@ -49,15 +49,24 @@
 - With respect to the Autonegotiation, **leave it alone**.
 - What this does is send a **Fast Link Pulses**.
 - It's a declaration of the capabilities of the sending device with regards to speed and duplex.
+- The reason they're not using them is the problem of switching loops at Layer 2.
 -
 
 
 # The VLAN Trunking Protocol
 
 # Spanning Tree Protocol Fundamentals
-
+- In this field, we like *Redundancy*.
+- A single point of failure is not acceptable.
+- It doesn't work the same at Layer 2 vs Layer 3.
+- AT L3, we're allowe to set Secondary paths in addition to primary paths.
+- While they exist at L2, they will not be used in addition to the primary path.
+- The purpose of **Spanning Tree Protocol** is to:
+  1. find the best loop-free paths
+  2. Block on the others to hold in standby.
+- Once this is found, it will begin unblocking the other ports and paths.
 - A Broadcast Storm does not happen all at once; it slowly builds up.
-- The **Bridge Protocol DAta Unit (BPDU)** mac is 01:08:c2:00:00:00.
+- The **Bridge Protocol Data Unit (BPDU)** mac is 01:08:c2:00:00:00.
 - The **Configuration BPDUs** are what are used to STP calculations.
 - The root bridge is what sets the STP timers.
 - The **Bridge ID Priority (BID)** is a combination of the priority value and the switch's mac.
@@ -91,9 +100,95 @@
 
 
 # RSTP & MST
+- RSTP Stands for **Rapid Spanning Tree Protocol**.
+- It is defined in IEEE 802.1w and is considered an extension of 802.1d.
+- The 30 second delay in STP via listening and learning was once considered acceptable; not anymore for some networks.
+- *RSTP* -like STP - will not have **Root Ports** but rather **Designated Ports**.
+- It does however have **Alternate Ports** instead of blocking ports.
+- This will become the **Backup Port** for the segment - with no guarantee that the root switch will be reachable.
+- RSTP merges the states *disabled*, *blocking* and *listening* into a single state called **discarding**.
+- There are also two new port types:
+  1. **Edge Ports**: A port on the edge of the network; such as a end user's PC.
+    * This is a port configured for PortFast: goes straight from discarding to forwarding.
+    * If a BPDU comes in on an edge port, then it generates a **Togology Change Network BPDU**.
+  2. **Point-to-Point Ports**: Any connecting running Full Duplex Mode.
+- You **cannot** run RSTP over a Halfduplex system.
+- RSTP does not consider an edge port moving into forwarding mode a Topology change.
+- RSTP also generates BPDUs every 2 seconds regardless of whether they got a BPDU or not.
+- Every switch expects to receive a BPDU from its neighbor so if it misses 3 of them it assumes that the link is down.
+- **RSTP Syncronization** is a simple series of handshakes between switches carried out until all switches in the network are synchronized.
+- Does RSTP play well with STP? Mostly, yes.
+- You can tell switches how to handle BPDUs by setting the version number in it.
+  * Version 2 is RSTP
+  * Version 0 is STP
+- If you see the line `Spanning tree enabled protocol ieee` then you're running STP.
+- The other for RSTP is `Spanning tree enabled protocol rstp`.
+- It also shows up as type.
+- PVST stands for **Per-VlAN Spanning Tree** which a PVST+ proprietary to cisco.
+- This allows for fine tuning STP for each VLAN traffic.
+- Running will use more CPU load and RAM.
+- The PVST version must be running ISL Trunking.
+- It also doesn't play well with **Common Spanning Tree**.
+- **Multiple Spanning Tree** is defined in 802.1s and earns its name from allowing multiple VLANs to be mapped to a single instance of STP instead of per VLAN.
+- What it does is logically divides the Switches into regions and the switches in any given region must agree on:
+  1. MST config name.
+  2. MST revision Number.
+  3. MST VLAN mapping table.
+- CST is a mapping of the whole network while MST is subsets of the network.
+- IST stands for **Internal Spanning Tree** and is the instance that is responsible for keeping communication in the MST regions loop free.
+- All instances in IST are mapped to Instance 0 unless the Network Admin changes them to something else.
+-
+
+
+
+# VPNs and IPSec
+- VPN stands for **Virtual Private Network**.
+- We also refer to them as **Tunnels**.
+- **Data Origin Authentication** ensures that the VPN knows the real source of the packet.
+- GRE stands for **Generic Routing Encapsulation**.
+- **IPSec** offers encryption and Authentication.
+- It is comprised of three pieces:
+  1. **Authentication Header (AH)**: Methods for Authenticating and Securing Data.
+    * Data Origin Authentication.
+    * Data Integrity.
+    * Optional Replay Protection
+  2. **Eccapusluting Security Payload (ESP)**: defines a method for authenticating, security and encrypting data.
+    * Data Origin Authentication.
+    * Anti-replay Protection.
+    * Data Confidentiality.
+  3. **Internet Key Exchange (IKE)**: which negotiates the security parameters and authentication keys.
+- In **Tunnel Mode**, the entire process is transparent to the end hosts and everything gets encapsulated.
+- In **Transport Mode**, the payload is encrypted but the IP Header is not.
+- Process:
+  1. Process Initialization: receive interesting traffic
+  2. IKE Phase 1.
+  3. IKE Phase 2
+  4. ?
+  5. ?
+- One thing about configuring VPNs at Layer 2 is that you cannot test anything until after everything is configured and running.
+- For the connection to go ahead, the negotiated Encryption values must match but the lifetime of the recipient may be equal to or less than.
+- **IPSec Transform Sets** is simply a group of individual parameters that will enforce a security policy.
+- Crypto ACL will evaluate inbound and outbound traffic.
+- The same ACL is going to be read for both inbound and outbound traffic.
+- It is read forwards for inbound traffic and backwards for outbound traffic.
+- DMVPN stands for **Dynamic Multipoint VPNs**.
+- It allows a spoke router to dynamically create a VPN to another spoke when the VPN is actually needed and then tear that same VPN down when it's not needed anymore.
+- NHRP stands for **Next Hop Routing Protocol**.
+- If you see tunnels bouncing then it means the router can only reach the other router intermittently.
+- If you're troubleshooting then start with connectivity > mGRE > IPSec.
+- IPSec has one glaring weakness which is the inability to protect multicast packets.
+- mGRE makes it possible for the hub to use one interface for as many tunnels as you need.
+- Don't block IP protocol 47 since that is GRE.
+- If you set the IP addresses on **Virtual Routing and Forwarding (VRF)** interfaces and then setup VRF then it will strip them and you will need to add them back.
+- VRF keeps a separate routing table for each instance.
+-
+
+
+
 
 # More to Come
 
 # Reference:
 
 # Research:
+- dot1q?
