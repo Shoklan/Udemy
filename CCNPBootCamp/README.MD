@@ -4,9 +4,6 @@
 # Fundamentals Review
 - We're going to see both real world examples as well Cert info.
 - Also, he has a book now.
-
-
-# VLAN Fundamentals, Configuration and Troubleshooting
 - No floppy disks!
 - We also wont be talking about Hubs since they're the predecessor to todays switches.
 - With one big collision domain, we need rules about who gets to transmit when.
@@ -50,10 +47,57 @@
 - What this does is send a **Fast Link Pulses**.
 - It's a declaration of the capabilities of the sending device with regards to speed and duplex.
 - The reason they're not using them is the problem of switching loops at Layer 2.
--
+
+
+# VLAN Fundamentals, Configuration and Troubleshooting
+- VLANS are the fundamental of all switching and modern networks.
+- Even when you think you're not using them, you are since everything is in VLAN 1.
+- We can limit the overall number of broadcasts in our network by limiting their scope.
+- It is Cisco's recommendation to have 1 VLAN per IP Subnet.
+- We're going to focus on what is called **Static VLANs** where the VLAN membership is dependent on the port the host is connected to.
+- With **Dynamic VLANs**, membership is passed on MAC address of the host.
+- This is almost always configured on the host.
+- Please name VLANs when you make them.
+- The escape Sequence is *CTRL+SHIFT+6* twice.
+- InterVLAN traffic is possible but it does require the routing layer of the OSI Model.
+- A **Multilayer Switch (MLS)** or a layer 3 switch is capable of doing this.
+- To do this, you *must* get a router involved.
+- The more manual configuration you do, the larger a chance of a simple misconfiguration.
+- Quick note: PortFast is automatically enabled for a port when Dynamic VLAN Membership is enabled.
+- Port Security is when we're using the incoming MAC Address as a kind of password.
+- Port Security and Dynamic VLANs do not play well together.
+- Also, trunk ports cannot receive Dynamic VLANs since by definition they already belong to all VLANs.
+- Usually, a trunk will form on its own and you wont have to configure.
+- A trunk is a member of all VLANs by default and allows traffic for any and all VLANs to cross the trunk.
+- You can find the trunk of a switch using `show interface trunk`.
+- There is a little overhead since the frame has a VLAN ID added by the switch.
+- There a are two kinds of trunking protocols: ISL and dot1Q.
+- ISL is Cisco proprietary though.
+- It adds a total 30 bytes:
+  * 26 bytes in the header with the VLAN ID.
+  * 4 bytes trailer with a Cyclical Redundancy Check.
+- dot1Q has much less overhead.
+- It places only a 4-byte header on each frame.
+- If it's destined for the native VLAN then it doesn't even put that on the frame.
+- There are a few different **Trunking Modes**:
+  * Trunk Mode: Unconditional trunking.
+  * Dynamic Desirable: port is actively attempting for orm a trunk with the port at the remote end.
+  * Dynamic Auto: Will not initialize a trunk but if a remote port does then it will trunk.
+- **Dynamic Trunking Protocol (DTP)** handles the trunk negotiation workload.
+- The cost of this is that a port running it sends out DTP frames every 30 seconds.
+- Leaving this running can be a huge security risk.
+- Basic filtering is allowed at console using `|`
+- If you want to be prevent a port from trunking, then put it into access mode.
+- A reason that we wouldn't want all VLANs for trunking would be to limit broadcasts again.
+- 
+
+
+
 
 
 # The VLAN Trunking Protocol
+- The **VLAN Trunking Protocol** is pretty simple but the different modes can trip you up.
+
 
 # Spanning Tree Protocol Fundamentals
 - In this field, we like *Redundancy*.
@@ -96,7 +140,7 @@
 
 
 # Advanced STP Features
-- 
+-
 
 
 # RSTP & MST
