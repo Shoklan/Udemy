@@ -89,9 +89,18 @@
 - Basic filtering is allowed at console using `|`
 - If you want to be prevent a port from trunking, then put it into access mode.
 - A reason that we wouldn't want all VLANs for trunking would be to limit broadcasts again.
-- 
-
-
+- With IP phones, there are usually three connectors:
+  1. Connection to a Switch.
+  2. Connection to a PC.
+  3. Connection to an **Application-Specific Integrated Curcuit (ASIC)**.
+- The phone can be configured as an 802.1Q trunk or an access link.
+- The human ear will accept ~140-150milliseconds of delay before it notices a problem.
+- We have four options to set these up:
+  1. Use Acces Link.
+  2. Use a trunk with 802.1p
+  3. Use a trunk without tagging voice traffic.
+  4. Use a trunk with a specific Voice VLan ID.
+- PortFast is auto enabled for Voice VLANS.
 
 
 
@@ -103,7 +112,7 @@
 - In this field, we like *Redundancy*.
 - A single point of failure is not acceptable.
 - It doesn't work the same at Layer 2 vs Layer 3.
-- AT L3, we're allowe to set Secondary paths in addition to primary paths.
+- AT L3, we're allowed to set Secondary paths in addition to primary paths.
 - While they exist at L2, they will not be used in addition to the primary path.
 - The purpose of **Spanning Tree Protocol** is to:
   1. find the best loop-free paths
@@ -139,8 +148,10 @@
 - This is not a good idea on larger networks.
 
 
+
 # Advanced STP Features
 -
+
 
 
 # RSTP & MST
@@ -181,7 +192,6 @@
 - CST is a mapping of the whole network while MST is subsets of the network.
 - IST stands for **Internal Spanning Tree** and is the instance that is responsible for keeping communication in the MST regions loop free.
 - All instances in IST are mapped to Instance 0 unless the Network Admin changes them to something else.
--
 
 
 
@@ -225,7 +235,6 @@
 - Don't block IP protocol 47 since that is GRE.
 - If you set the IP addresses on **Virtual Routing and Forwarding (VRF)** interfaces and then setup VRF then it will strip them and you will need to add them back.
 - VRF keeps a separate routing table for each instance.
--
 
 
 
@@ -236,3 +245,4 @@
 
 # Research:
 - dot1q?
+- dot1p?
