@@ -50,7 +50,21 @@
 - What this does is send a **Fast Link Pulses**.
 - It's a declaration of the capabilities of the sending device with regards to speed and duplex.
 - The reason they're not using them is the problem of switching loops at Layer 2.
--
+
+
+- With IP phones, there are usually three connectors:
+  1. Connection to a Switch.
+  2. Connection to a PC.
+  3. Connection to an **Application-Specific Integrated Curcuit (ASIC)**.
+- The phone can be configured as an 802.1Q trunk or an access link.
+- The human ear will accept ~140-150milliseconds of delay before it notices a problem.
+- We have four options to set these up:
+  1. Use Acces Link.
+  2. Use a trunk with 802.1p
+  3. Use a trunk without tagging voice traffic.
+  4. Use a trunk with a specific Voice VLan ID.
+- PortFast is auto enabled for Voice VLANS.
+
 
 
 # The VLAN Trunking Protocol
@@ -59,7 +73,7 @@
 - In this field, we like *Redundancy*.
 - A single point of failure is not acceptable.
 - It doesn't work the same at Layer 2 vs Layer 3.
-- AT L3, we're allowe to set Secondary paths in addition to primary paths.
+- AT L3, we're allowed to set Secondary paths in addition to primary paths.
 - While they exist at L2, they will not be used in addition to the primary path.
 - The purpose of **Spanning Tree Protocol** is to:
   1. find the best loop-free paths
@@ -91,7 +105,9 @@
 - The **Forwarding Delay** is the length of the listening and learning STP stages: default 15s.
 - The **Maximum Age** is how long the switch will retain the superiors BPDUs contents before discarding: 20s.
 
+
 # Advanced STP Features
+
 
 # RSTP & MST
 - RSTP Stands for **Rapid Spanning Tree Protocol**.
@@ -131,7 +147,6 @@
 - CST is a mapping of the whole network while MST is subsets of the network.
 - IST stands for **Internal Spanning Tree** and is the instance that is responsible for keeping communication in the MST regions loop free.
 - All instances in IST are mapped to Instance 0 unless the Network Admin changes them to something else.
--
 
 
 
@@ -175,7 +190,6 @@
 - Don't block IP protocol 47 since that is GRE.
 - If you set the IP addresses on **Virtual Routing and Forwarding (VRF)** interfaces and then setup VRF then it will strip them and you will need to add them back.
 - VRF keeps a separate routing table for each instance.
--
 
 
 
@@ -186,3 +200,4 @@
 
 # Research:
 - dot1q?
+- dot1p?
