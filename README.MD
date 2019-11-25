@@ -9,7 +9,7 @@
 | Complete Web Developer Course                      | [\CompleteWebDeveloperCourse  ]  | {2017/5/27}    |     |
 | Learning Python GUI Programming Using Qt Framework | [\PythonQtFramework]             | {2017/10/28}   |     |
 | Learn Python and Django: Payment Processing        | [\PythonProcessingDjango]        | {2017/11/10}   |     |
-| Python ECommerce; Build a Django eCommerce Site    | [\PythonECommerceDjango]         |                |  F  |
+| Python ECommerce; Build a Django eCommerce Site    | [\PythonECommerceDjango]         |                |  D  |
 | Powershell: A Getting Started Guide for IT Admins  | [\PowershellItAdmins]            | {2017/11/30}   |     |
 | Docker for DevOps: Development to Production       | [\DockerDevOpsDev]               |                |  F  |
 | The Complete Financial Analyst Course 2017         | [\FinancialAnalyist2017]         |                |  F  |
@@ -17,6 +17,8 @@
 | The Ultimate Hands-On Hadoop - Tame Your Big Data  | [\UltimateHandsonHadoop]         |                |     |
 | Build a Serverless App with AWS Lambda             | [\ServerlessAWSLambda]           |                |     |
 | CCNP Video Boot Camp                               | [\CCNPBootCamp]                  |                |     |
+| Microsoft Windows Server 2012 Certification        | [\MSWindows2012Cert]             |       {}       |     |
 
 R: Redo.
 F: Frozen.
+D: Dead
