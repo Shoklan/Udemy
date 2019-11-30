@@ -93,6 +93,26 @@
   1. Delegation of Authority.
   2. Group Policy Objects.
 - You can then apply those to groups.
+- You can turn on **Advanced Features** here:
+![Enable Advanced Features](images/turn-on-advanved-features.png)
+- This will allow you to modify the Attributes of objects.
+- While you can configure this all manually, you really should create a template user to copy from.
+- You can also modify attributes on multiple objects while highlighting over them.
+- There are a *lot* of built in accounts into Active Directory.
+- These are accounts should be found in Builtin folder.
+- Many users are added to the **Domain Administrator** but it should only be people you trust.
+- When you join a computer to a Domain, it will have an object created for you.
+- It is possible using `redircmp` to assign the newly joined computers to a default Group that is not Computer.
+- Keep in mind that each object has a unique GUID and if you delete and re-create it then it is still not the same object.
+- When you delete an object, it doesn't actually delete it.
+- One of the useful functions we have to join to a domain is `djoin`.
+- The **Distinguished Name** is a an indetifier for objects comprised of *Organizational units*
+- You can export the object to csv using `csvde -f <filename> -d <distinguished-name>`.
+- The command `get-aduser` can be used to find user objects:
+```
+get-adusedr -Filter {name -eq "Dick Grayson}"
+```
+- You can chain to AD commands to apply to those objects.
 
 
 # Using Group Policy
@@ -105,6 +125,15 @@
 - `w32tm /query /configuration`?
 - `regsvr32`?
 - `repadmin`?
+- `redircmp`?
+- `redirusr`?
+- `dsmod`?
+- `netdom reset`?
+- `djoin`?
+- When upgrading domains, you can pass a lot of options to `adprep`.
+- When setting up a forest, you'll only need to run `adprep /forestprep` once.
+- When setting up a domain, you'll only need to run `adprep /domainprep` once.
+-
 
 
 
