@@ -116,6 +116,18 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 
 
 # Using Group Policy
+- The components that make up a Group Policy are User Configuration and a Group Configuration.
+- There are **Policies** and **Preferences**.
+  * *Policies* are Enforced and if changed, will re-apply.
+  * *Preferences* are set defaults but not enforced.
+- All of these configurations are saved in .admx files.
+- These can be found in `C:\Windows\PolicyDefinitions`
+- It is annoying to have these managed on each system so it is recommended to have a Central Store for them.
+- When Policies are applied, they are done in Descending order.
+- You can take backups of and import from those backups of Group Policy Objects.
+- You can force a refresh of GPO on a client computer using `gpupdate`.
+- You can query the results of that update via `gpresult`
+
 
 # Hyper-V
 
@@ -133,6 +145,8 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 - When upgrading domains, you can pass a lot of options to `adprep`.
 - When setting up a forest, you'll only need to run `adprep /forestprep` once.
 - When setting up a domain, you'll only need to run `adprep /domainprep` once.
+- Download GPO spreadsheets?
+- `gpresult` ?
 -
 
 
