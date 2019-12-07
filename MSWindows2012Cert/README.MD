@@ -132,6 +132,7 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 - You can take backups of and import from those backups of Group Policy Objects.
 - You can force a refresh of GPO on a client computer using `gpupdate`.
 - You can query the results of that update via `gpresult`
+- You can also see the same thing by running this under **Group Policy Results** in *Group Policy Management*.
 
 
 # Hyper-V
