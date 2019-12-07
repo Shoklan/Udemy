@@ -116,8 +116,20 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 
 
 # Using Group Policy
+- The Registry was introduced so that there would be a centralized place for configurations to be stored.
+- Pretty much every can be modified about Windows in this file.
+- You really don't want to do this manually on all the computers in a network.
+- While it is possible to apply GPO to Sites, this is not preferable since Sites are a Forest concept and GPO is about Domains.
+- The primary interface for this is **Group Policy Management**.
+- GPOs will apply from the closest to the furthest away in the Hierarchy.
+- 
+
+
 
 # Hyper-V
+- Running virtualized servers is much cheaper and you don't have to plan for worst case resource allocation as much.
+- This allows allows users to have their own sessions via **Virtual Desktop Environments (VDI)**.
+
 
 # Summary
 
