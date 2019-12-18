@@ -26,6 +26,11 @@
 
 
 # Learn How to Draw a Realistic Eye
+- You always want to start on the base before you worry about the details, otherwise they wont look good either.
+- As you get towards the end of the drawing, you'll be able to darken the lines, but you'll want them to be light at the beginning.
+- Make sure that your pencil is always sharp.
+- The more contrast, the better your artwork will look.
+- Drawing is about going over the drawing again and again, adding more detail as you go.
 
 
 # Learning Line Fundamentals
