@@ -44,7 +44,6 @@
 - **Cross Contour Lines** are lines used to create inside values of shapes.
 - Instead of making contour lines straight, they should follow the form of the object.
 ![Example of Cross Contour Lines](images/cross-contour-lines.png)
-- 
 
 
 # Learning Shape and Form Form Fundamentals
