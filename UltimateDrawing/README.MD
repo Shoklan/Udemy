@@ -32,8 +32,19 @@
 - The more contrast, the better your artwork will look.
 - Drawing is about going over the drawing again and again, adding more detail as you go.
 
-
 # Learning Line Fundamentals
+- Now we'll talk about lines.
+- There are lots of different kinds of lines.
+- A **Contour Lines** are the lines that make up an image.
+- While drawing them, you'll want to consider the thickness or thinness of the lines: called **Line Quality**.
+- One of the biggest tips for making excellent art is a heavy emphasis on Contrast everywhere.
+- Another way to sharpen your art skills is copying objects.
+- People tend to make the common mistake of looking at their drawing too much and the object not enough.
+- Eventually, you will be drawing out of your head but you'll want to work with real objects before that.
+- **Cross Contour Lines** are lines used to create inside values of shapes.
+- Instead of making contour lines straight, they should follow the form of the object.
+![Example of Cross Contour Lines](images/cross-contour-lines.png)
+- 
 
 
 # Learning Shape and Form Form Fundamentals
