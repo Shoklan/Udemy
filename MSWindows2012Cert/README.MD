@@ -137,7 +137,15 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 
 # Hyper-V
 - Running virtualized servers is much cheaper and you don't have to plan for worst case resource allocation as much.
-- This allows allows users to have their own sessions via **Virtual Desktop Environments (VDI)**.
+- **Virtual Desktop Infrastructure (VDI)** is when users are running their own Remote VMs per account.
+- Session Based logins allow users to share the OS - but there is only one OS.
+- The server must be a 64bit system to run Virtualizations.
+- The hardware must also support **Hardware Assisted Virtualization**.
+- You will want to usually run Hyper-V on Server Core to minimize everything else.
+- 
+
+
+
 
 
 # Summary
@@ -156,7 +164,7 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 - When setting up a domain, you'll only need to run `adprep /domainprep` once.
 - Download GPO spreadsheets?
 - `gpresult` ?
--
+- `bcedit`?
 
 
 
