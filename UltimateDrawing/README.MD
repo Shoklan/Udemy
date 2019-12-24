@@ -47,6 +47,14 @@
 
 
 # Learning Shape and Form Form Fundamentals
+- *Shapes* are the second most important aspect of drawing.
+- There are two kinds of shapes: **Orgranic** and **Geometric**.
+- Geometric are exactly what you would think.
+- An **Organic Shape** would be something without a well defined mathematical representation.
+- From Geometric shapes, you create organic shapes; use the geometric shapes as a guide.
+- **Negative Space** is the area where there is nothing from your shapes.
+- They are very important since they help define the artwork.
+-
 
 
 # Learning Values and Contrast
