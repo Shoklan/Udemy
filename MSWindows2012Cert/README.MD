@@ -136,19 +136,94 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 
 
 # Hyper-V
-- Running virtualized servers is much cheaper and you don't have to plan for worst case resource allocation as much.
-- **Virtual Desktop Infrastructure (VDI)** is when users are running their own Remote VMs per account.
-- Session Based logins allow users to share the OS - but there is only one OS.
-- The server must be a 64bit system to run Virtualizations.
-- The hardware must also support **Hardware Assisted Virtualization**.
-- You will want to usually run Hyper-V on Server Core to minimize everything else.
-- 
-
-
-
+- Now we're going to talk about Virtualization - which we usually think of as Server virtualization.
+- Server Virtualization breaks the bond between the OS and the hardware.
+- To run these, your hardware will need to support this:
+    * AMDs is called AMD-VT
+    * Intels is called Intel-VT
+- Once you're ready, you'll want to open **Server Maanger** and install the Role **Hyper-V**.
+- To be useful, these virtual guests will need to be able to talk to one another as well as outside the host.
+- Through the **Virtual Switch Manager**, we can create three different kinds of switches:
+    1. External.
+    2. Internal.
+    3. Private.
+- For *External*, this maps to a real NIC on the host machine.
+- For *Internal*, this is only visible to Hyper-V and the guests.
+- For *Private*, this is only visible to the Guests.
+- You can get a list of adapters using the `Get-NetAdapter`:
+![Create a Virtual Switch Using Powershell](images/powershell-create-switch.png)
+- You can append `-WhatIf` to a command that is a Dry Run with no changes.
+- With a **Syntthetic Network Adapter**, you will get the best performance since it's running at kernel level and is very fast.
+- You cannot PXE boot over the network to a Synthetic Network Adapter.
+- To do this, you will need a **Legacy Network Adapter**.
+- Each VM can have up to twelve different Virtual NICs: 8 Synthentic and 4 legacy.
+- There ia also another which is very new called **SR-IOV**.
+- This allows it to pretend it is many NIC adapters and bypasses the virtual switch - further increasing performance.
+- You can also add Extensions to the Virtaul Switches.
+- Windows Server 2012 introduces the VHDx format.
+- The old format - VHD - had a limit of 2TBs.
+- This sometimes caused Disk Passthrough to be used instead.
+- VHDX also gives you as good performance as a Bare Metal Drive.
+- You can also create the them via powershell:
+![Create Virtual Disks](images/create-virtual-disks-powershell.png)
+- Dynamic was not prefered with VHD since the write penalty was painful on performance.
+- The Goal of a Difference Disk is that you have a master copy OS that you can use as a base.
+- Then, you can create VMs with different disks but all dependent on that original disk - which will not be changed.
+- You can also natively mount them in 2012 by double clicking on the VHDs.
+- You can mount and unmount VHDs using Powershell using `Mount-VHD -Path <path-to-disk>` and `Unmount-VHD -Path <path-to-disk>`.
+- You can also use **Edit Disk** option to compact, convert or Expand virtual disks.
+- For Storage Devices, there are two different kinds of Buses: IDE and SCSI.
+- Hyper-V requires the the boot to be an IDE Controller since it's emulated and not Synthetic.
+- SCSI is however synthetic and will get the best performance.
+- Another advantage is that you can hot-add disks while the VM is running to the SCSI Controller.
+- Creating a new virtual machine is as simple as New > Virtual Machine.
+- While we're doing it from scratch, creating a bunch of templates would be the better way to do this.
+- Once it was online and patches, you would run `sisprep` to remove the SID and GUID to allow it to be used for other machines.
+- You can also do all of the create of the VM Template using powershell:
+![Create VM Templates via Powershell](images/create-template-powershell.png)
+- There are three primary values we configure for RAM in a VM guest:
+    1. The startup RAM.
+    2. The minimum RAM.
+    3. The maximum RAM.
+- With Dynamic Memory Allocation, Hyper-V inserts a Balloon Driver that will hold and claim memory inside to the guest as long as it is not really being used.
+- You can also configure **Smart Paging File Location** which will act as extended RAM for the Guest OS.
+- You can also reserve CPUs for the Virtual host - but this is not the default.
+- A **Snapshot** is a point in time version of a Virtual Machine.
+- This allows you to have a fall back point before applying patches, installing software, etc.
+- You can, of course, do all of this from powershell:
+![Take a Snapshot with Powershell](images/snapshot-powershell.png)
+- Prior to Windows 2012, to connect to a SAN you would need to use iSCSI.
+- With **Virtual Fibre Channel** it is possible for them to connect directly to via the NIC.
+- We create a new Virtual SAN in Hyper-V.
+- To get the full access to all Operations, you'll want to install the Integration servies.
+- To do this, you'd start the VM and select Action > Insert Integration Services Setup Disk.
+- This is located at `C:\Windows\system32\vmguest.iso`.
+- For Linux, you'll want to go download them instead for full Integrated Services.
+- These allow us to enable or disable extended Integration Services - such as Backup or Heartbeat.
+- Another is the setting *Backup (Volumesnapshot)* which informs the Guest that a VSS backup is taking place and changes should be flushed to disk.
+- You can also create reports in **Performance Monitor** which allows you to track which and what resources are being used by which host.
+- Windows Server 2012 comes with a new Metering Service which can be turned on using `Enable-VMResourceMetering -VMName <name>`.
+- You can then ask for the resource usage using `Measure-VM -Name <name>`.
+- You can do live migrations within Hyper-V under **Hyper-V Settings** > Live Migrations.
+![Features List of 2012R2](images/2012-r2-feature-list.png)
+- What are the differences between Generation 1 vs Generation 2 VM?:
+    * Lots of the legacy devices have been removed from Generation 2.
+    * You can boot from an SCSI Controller.
+    * You can PXE boot from a Synthetic Controller.
+    * It is also a UEFI based machine.
+    * Linux is not Supported.
+- While the performance of each is the same, booting is basically faster.
+- **Enhanced Session Mode** is built on top of the old VM Connection to allow for extended configuration options while connected to a VM.
+- To use this, the Guest OS must support the Remote Desktop Services.
+- The Hyper-V Settings must be configured to **Allow Enhanced Session Mode** as well as on the User Section.
+- The System Device which will tell you if this is available in the host is called **Microsoft Hyper-V Remote Desktop Control Channel**.
+- Also, Snapshots have been renamed to Checkpoints.
+- It is possible to **NIC Team** inside Hyper-V now - even though this is usually done at the host level.
 
 
 # Summary
+- Skip.
+
 
 # Research:
 - `w32tm /query /configuration`?
@@ -164,7 +239,14 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 - When setting up a domain, you'll only need to run `adprep /domainprep` once.
 - Download GPO spreadsheets?
 - `gpresult` ?
-- `bcedit`?
+- Coreinfo util?
+- `bcdedit`?
+- RamMap?
+- Setup Fibre Channel in Hyper-V?
+- Service Manager Console?
+- Hyper-V Replication?
+- SMB Direct?
+- IOPS?
 
 
 

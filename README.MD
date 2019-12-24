@@ -17,7 +17,8 @@
 | The Ultimate Hands-On Hadoop - Tame Your Big Data  | [\UltimateHandsonHadoop]         |                |     |
 | Build a Serverless App with AWS Lambda             | [\ServerlessAWSLambda]           |                |     |
 | CCNP Video Boot Camp                               | [\CCNPBootCamp]                  |                |     |
-| Microsoft Windows Server 2012 Certification        | [\MSWindows2012Cert]             |       {}       |     |
+| Microsoft Windows Server 2012 Certification        | [\MSWindows2012Cert]             |       {}       |  F  |
+| The Ultimate Drawing Course - Beginner to Advanced | [\UltimateDrawing]               |       {}       |     |
 
 R: Redo.
 F: Frozen.
