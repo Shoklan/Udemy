@@ -54,7 +54,12 @@
 - From Geometric shapes, you create organic shapes; use the geometric shapes as a guide.
 - **Negative Space** is the area where there is nothing from your shapes.
 - They are very important since they help define the artwork.
--
+- When drawing shadow, you need to consider where the source light coming from.
+- You usually want to start on the **Core Shadow** or the darkest side first.
+- Then, you work on the **Midtone Shadow** which is between the light source and the *Core Shadow*.
+![Example of Shadows](images/shadow-example.png)
+- Once done, worry about the **Cast Shadow**.
+- You can lay down paper to prevent smudging while detailing.
 
 
 # Learning Values and Contrast
