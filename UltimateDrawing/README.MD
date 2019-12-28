@@ -54,13 +54,27 @@
 - From Geometric shapes, you create organic shapes; use the geometric shapes as a guide.
 - **Negative Space** is the area where there is nothing from your shapes.
 - They are very important since they help define the artwork.
--
 
 
 # Learning Values and Contrast
+- **Space** is just the illusion of creating 3D objects in 2D space.
+- **Overlapping** is when you appear to draw objects in front of or behind others.
+- **Size** is when we draw objects scaled in such a way to represent proportional distance.
+- **Placement** is using the location in the frame to imply distance.
+- **Detail** is when you add more details to an object to imply they are closer in frame.
+- **Value** is when you use the change in value to imply distance.
+- **Perspective** is lines you use to guide how far away something is.
 
 
 # Learning Space and Perspective
+![Creating Space Visual Examples](images/creating-space.png)
+- The further away things are, the lighter then tend to be.
+- **One Point Perspective** is where we use one point to build the perspective.
+-  This point is the vanishing point of the picture.
+- Normally, you will want to modify your horizon line so that it is not straight.
+- **Two-Point Perspective** is when there are two vanishing points instead of just one.
+- The **Rule of 60%** is that you can only show 60% of what is inside your horizon line.
+![60% Rule](images/60-rule-space.png)
 
 
 # Still Life Drawing
