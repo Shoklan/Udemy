@@ -116,6 +116,11 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 
 
 # Using Group Policy
+- The Registry was introduced so that there would be a centralized place for configurations to be stored.
+- Pretty much every can be modified about Windows in this file.
+- You really don't want to do this manually on all the computers in a network.
+- While it is possible to apply GPO to Sites, this is not preferable since Sites are a Forest concept and GPO is about Domains.
+- The primary interface for this is **Group Policy Management**.
 - The components that make up a Group Policy are User Configuration and a Group Configuration.
 - There are **Policies** and **Preferences**.
   * *Policies* are Enforced and if changed, will re-apply.
@@ -127,6 +132,7 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 - You can take backups of and import from those backups of Group Policy Objects.
 - You can force a refresh of GPO on a client computer using `gpupdate`.
 - You can query the results of that update via `gpresult`
+- You can also see the same thing by running this under **Group Policy Results** in *Group Policy Management*.
 
 
 # Hyper-V
@@ -196,7 +202,7 @@ get-adusedr -Filter {name -eq "Dick Grayson}"
 - These allow us to enable or disable extended Integration Services - such as Backup or Heartbeat.
 - Another is the setting *Backup (Volumesnapshot)* which informs the Guest that a VSS backup is taking place and changes should be flushed to disk.
 - You can also create reports in **Performance Monitor** which allows you to track which and what resources are being used by which host.
-- Windows Server 2012 comes with a new Metering Service which can be turned on using `Enable-VMResourceMetering -VMName <name>`. 
+- Windows Server 2012 comes with a new Metering Service which can be turned on using `Enable-VMResourceMetering -VMName <name>`.
 - You can then ask for the resource usage using `Measure-VM -Name <name>`.
 - You can do live migrations within Hyper-V under **Hyper-V Settings** > Live Migrations.
 ![Features List of 2012R2](images/2012-r2-feature-list.png)
