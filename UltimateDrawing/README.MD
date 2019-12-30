@@ -63,6 +63,15 @@
 
 
 # Learning Values and Contrast
+- **Values** are how light or dark colors are.
+- The value of colors next to a section have a large impact on how you perceive it.
+- The value of a line has to do with the pressure you apply to the pencil.
+- The **Focal Point** is where the eye is drawn to first.
+- Draw this:
+![Apples to draw](images/apple.png)
+- **Contrast** is just the difference in values.
+- The more contrast between points, the more it will draw a users eyes in.
+- If you know where you want the focal point to be, then start there and create the most contrast first.
 
 
 # Learning Space and Perspective
