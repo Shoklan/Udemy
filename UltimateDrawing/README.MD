@@ -93,6 +93,27 @@
 
 
 # Still Life Drawing
+- **Drawing from Life** artwork is important because all of your artwork is going to be from life.
+- Sometimes, math and formulas wont cut it and you'll just have to draw them until you get it.
+- The first thing to realize is that you're trying to copy exactly from real life what you see.
+- Use your thumb on your pencil to measure the perspective distance to transfer to your sketchpad.
+- Make sure to always measure from the same distance away else you'll get different measurements.
+- There are three primary techniques:
+  1. **Cross Hatching**: It is similar to Cross Contouring but the lines will cross in different directions.
+  2. **Blending**: Layering in the values as you draw.
+  3. **Rendering**: Start with a neutral value and then make highlights on top of it.
+![Example of the Primary Techniques](images/primary-value-styles.png)
+- When doing **Still Life** drawings, it is a good idea to break the drawing into sections.
+- The first phase of the still life is just to get the layout and not about details or accuracy.
+- Draw this!:
+![The Bird to Draw](images/bird-grid.png)
+- To create good composition, there are a few tools:
+  * **Central**: There is an object in the center of the frame which is the focus.
+  * **Rules of Third**: Breaking the frame into thirds and putting objects on those lines will be good focual points.
+  * **Focal Point Contrast**: Contrast into the focul point.
+  * **Depth of Field**: Blurring one layer to keep what you want in focus.
+  * **Asymmetry/Balance**: Object is not symmetrical.
+![Good Composition Tools](images/good-composition-tools.png)
 
 
 # Creating Textures in your Drawing
