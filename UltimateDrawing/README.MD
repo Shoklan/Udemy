@@ -117,6 +117,9 @@
 
 
 # Creating Textures in your Drawing
+![ Examples of Textures](images/texture-examples.png)
+- You should use highlights and shadows to make them more realistic.
+- Lots of examples but not a lot of good notes.
 
 
 # Drawing the Human Face
