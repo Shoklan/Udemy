@@ -150,6 +150,9 @@
 
 # Drawing the Human Figure
 
+- Lots of good visual examples but not a lot of great notes.
+- You only want good balance for characters that are not moving.
+
 
 # Animation Character Design
 
