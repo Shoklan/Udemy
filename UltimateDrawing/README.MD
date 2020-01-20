@@ -155,6 +155,10 @@
 
 
 # Animation Character Design
+- It will take a lot of practice to get the characters to look in the direction that you want them to.
+- Be careful not to make the characters neck too long.
+- 
+
 
 # Research:
 
