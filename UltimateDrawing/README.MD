@@ -123,13 +123,41 @@
 
 
 # Drawing the Human Face
+- You'll want to draw a sharper jaw line while drawing male characters.
+![Phase 1 of Drawing a Face](images/draw-a-face-phase1.png)
+- Make sure when drawing hair that you do long, broad strokes else it wont look realistic.
+![Face Profile - Phase 2](images/draw-a-face-phase2.png)
+- While people are usually taught a generic eye shape, there are actually lots of different shapes.
+    * Almond Shape.
+    * Round Eye Shape.
+    * Hooded Eye Shape.
+    * Upturned Eye Shape.
+    * Mono-Lid Eye Shape.
+![Types of Eyes](images/types-of-eyes.png)
+- The iris is important in displaying how the character feels/looks.
+- Fear/surprise/excitement is done via raising the top of the eye and showing white above it.
+- Tired/Exhausting is when you cover part of the eye with the eyelid.
+- Anger has more to do with a scruntched eyebrow.
+- The bottom of a nose is somewhat like a boomerang.
+![Nose outline](images/nose-outline.png)
+- Good lecture on the ears but not much to notate.
+- The first thing about human hair is that you're drawing a form.
+- So, you will need to use lines with shadow to create it.
+- It is a mistake to try and draw it as if each line is a piece of hair.
+- The shorter the hair, the closer to the scalp you'll want it to be.
+- When drawing hair, the space between your strokes is actually where the hair is.
 
 
 # Drawing the Human Figure
 - The first thing you will want to do is find a reference.
-- 
+- Lots of good visual examples but not a lot of great notes.
+- You only want good balance for characters that are not moving.
+
 
 # Animation Character Design
+- It will take a lot of practice to get the characters to look in the direction that you want them to.
+- Be careful not to make the characters neck too long.
+
 
 # Research:
 
