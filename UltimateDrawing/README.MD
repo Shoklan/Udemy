@@ -126,7 +126,8 @@
 
 
 # Drawing the Human Figure
-
+- The first thing you will want to do is find a reference.
+- 
 
 # Animation Character Design
 
