@@ -3,7 +3,7 @@
 
 
 # Introduction
-
+- How to not suck, the basics.
 
 # Environment Set-Up
 
@@ -69,6 +69,15 @@
 
 
 # Recommender Systems
+- The two most common types of **Recommendar Systems** are:
+  1. Content Based.
+  2. Collaborative Filtering
+- In the real world, *Collaborative Filtering* is what gets used.
+- It can also be split into two subcategories:
+  1. Memory-Based Collaborative Filtering.
+  2. Model-Based Collaborate Filtering.
+- There wont be a lecture walk through for the Advanced notebook due to the mathematical requirements.
+- Walkthrough via video is not good for notes.
 
 
 # Natural Language Processing
@@ -81,5 +90,7 @@
 
 
 # Research:
+- [Recommender Systems by Jannach and Zanker](https://www.amazon.com/Recommender-Systems-Introduction-Dietmar-Jannach-dp-0521493366/dp/0521493366)
+
 
 # Reference:
