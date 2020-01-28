@@ -149,7 +149,7 @@
 
 
 # Drawing the Human Figure
-
+- The first thing you will want to do is find a reference.
 - Lots of good visual examples but not a lot of great notes.
 - You only want good balance for characters that are not moving.
 
@@ -157,7 +157,6 @@
 # Animation Character Design
 - It will take a lot of practice to get the characters to look in the direction that you want them to.
 - Be careful not to make the characters neck too long.
-- 
 
 
 # Research:
