@@ -14,11 +14,12 @@
 | Docker for DevOps: Development to Production       | [\DockerDevOpsDev]               |                |  F  |
 | The Complete Financial Analyst Course 2017         | [\FinancialAnalyist2017]         |                |  F  |
 | Elasticsearch 6 and Elastick Stack                 | [\ElasticSearch6]                | {2018/01/05}   |     |
-| The Ultimate Hands-On Hadoop - Tame Your Big Data  | [\UltimateHandsonHadoop]         |                |     |
-| Build a Serverless App with AWS Lambda             | [\ServerlessAWSLambda]           |                |     |
-| CCNP Video Boot Camp                               | [\CCNPBootCamp]                  |                |     |
+| The Ultimate Hands-On Hadoop - Tame Your Big Data  | [\UltimateHandsonHadoop]         |       {}       |     |
+| Build a Serverless App with AWS Lambda             | [\ServerlessAWSLambda]           |       {}       |     |
+| CCNP Video Boot Camp                               | [\CCNPBootCamp]                  |       {}       |     |
 | Microsoft Windows Server 2012 Certification        | [\MSWindows2012Cert]             |       {}       |  F  |
-| The Ultimate Drawing Course - Beginner to Advanced | [\UltimateDrawing]               |       {}       |     |
+| The Ultimate Drawing Course - Beginner to Advanced | [\UltimateDrawing]               | {2020/01/20}   |     |
+| Python for Data Science and Machine Learning       | [\PythonDSBootcamp]              |       {}       |     |
 
 R: Redo.
 F: Frozen.
