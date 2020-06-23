@@ -1,8 +1,8 @@
 # The Complete Financial Analyst Course 2017
-## 365 Careers, Org
+## 365 Careers, Org | Ned Krastev
 
 # Welcome! Course Introduction
-- First we'll be working with Microsoft Excel.
+- First, we'll be working with Microsoft Excel.
 - Then, we'll learning about Accounting.
 - Then, we'll be going over Finance 101 topics.
 - Finally, we'll discuss Powerpoint.
@@ -22,21 +22,23 @@
 - You can cancel an entry by pressing `ESC`.
 - Pressing *F2* will move you to the *formula bar*.
 - Pressing *DEL* will delete the contents of the selection.
-- You can find **Formating** either by rightt clicking or in the *Ribbon*.
+- You can find **Formating** either by right clicking or in the *Ribbon*.
 - You can press *CTRL+SPCBAR* to select a whole column.
 - You can press *SHFT+SPCBAR* to select a whole row.
 - Excel can also act as a calculator.
-- To start a formula, you must start the box with eihter `=` or `+`.
+- To start a formula, you must start the box with either `=` or `+`.
 - You can use **Cell References** to make formulas easier to understand.
 - A window opens when you click on the **Function Button** which lists all functions broken down by category.
-- **Paste Special** allows for detialed configuration of what precisely you want to copy.
+- **Paste Special** allows for detailed configuration of what precisely you want to copy.
 - You can press *ALT+E+S* to do this.
 
 # Microsoft Excel - Useful Tools
 - You can push text onto a new row but inside the same cell using *ALT+ENTER*.
 - **Text-To-Columns** *Data Tabular > Text To Columns*
 - You can set up a **Print Selection Area** under the *Print Tabular*.
+- You can force a cell's contents to wrap using the *Home > Wrap Text* option.
 - To insert a *hyperlink* you'll navigate to *Insert > Hyperlink*.
+- You can also use the keyboard short cut *CTRL + k*.
 - You can link to a location in the same document as an option.
 - A **Freeze Pane** will hold some rows or columns in place while you scroll.
 - Excel 2016 contains a search bar to seek functions, etc.
@@ -48,8 +50,11 @@
 - To enable the **Developer Tab**, you navigate to *Right click View > Select "Customize the Ribbon"* and add it.
 - An **Excel Macro** is a set of instructions that can be triggered by a shortcut, toolbar button or an icon.
 - After naming and enacting it, you can rerun it by navigating to *Developer Tab > Macros* and selecting the one you want.
-- To Enable **Fast Scrolling** use *CTRL + ARROW_KEYS*.
+- To Enable **Fast Scrolling** use *CTRL + ARROW_KEYS* which will take you to the last non-blank cell.
 - You can **Quick Select** by doing that but also holding down *shift*.
+- If you double click on a cell reference in a formula then it should take you to that cell.
+- If it doesn't then you'll want to enable it using *File > Options > Advanced > Disable Allow Editing Directly in Cells*
+- Once this is done, you can press *F5+Enter* to jump back.
 - If you want the reference to remain fixed, then add `$` before it.
 - This needs to be applied per row/column if you never want it to move.
 - **Special Select** allows you to select based on conditions.
@@ -59,11 +64,20 @@
 - You can name cells by selecting a set and then typing the reference name in the *Name Box*.
 - Then, you can use that name in formulas.
 - To create a **Drop Down Menu** you navigate to *Data Tab > Data Validation*.
+- You will not be able to type new values unless you disable that effect under the same place.
 - To create sorting on all columns in a table, navigate to *Sort & Filter > Custom Sort*.
-- You can nagivate the *Ribbon* by first pressing *ALT*; letters will be listed for each option.
+- You can navigate the *Ribbon* by first pressing *ALT*; letters will be listed for each option.
 - Example: *ALT+A+T* creates a filter.
 - The **Quick ACtion Toolbar** allows you to add common commands to the title bar.
 - You can also access that same bar using *ALT+[n]*, where n is the icons position in the title bar.
+- Sometimes excel does not recognize a field as a number and you can multiply it by 1 and it will.
+- Find and replace exists.
+- Excel also allows you to find and replace formatting.
+- The green tagged corners of cells are there to inform you that a calculation error took place.
+- When you save and close a file, excel keeps your last position per sheet which is unprofessional.
+- Just select cell A1 in all of them and then save it for **Beauty Saving**.
+- **Conditional Formatting** services as a quick rule of them that aids in understanding data.
+- Beware of the negative and positive values throwing off the range and therefore the colors.
 
 # Microsoft Excel - Beginner, Intermediate, Adv. Functions
 - The function `SUM()` is self evident.
