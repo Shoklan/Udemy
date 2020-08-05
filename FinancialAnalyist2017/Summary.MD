@@ -472,25 +472,139 @@ A *Balance Sheet* has two sides:
 
 
 # Financial Statement Analysis - An Introduction
+- All businesses are required to have Financial Statements.
+- A **Financial Statement** contains:
+  * Balance Sheet.
+  * Income Statement
+  * Cash Flows
+  * Management Discussion
+  * Footnotes.
+- The form larger businesses need to prepare is called **Form 10-K**.
 
 
+# Financial Statement Analysis - Subleties.
+- Understanding a businesses underlying function will be crucial in reading and understanding its Financial Statements.
+- Questions to think about:
+  * Is the company growing faster?
+  * Is it able to charge a higher price?
+  * Is it profitable?
+  * Is the business efficient?
+- There is no rule regulating how to organize financial statements formats.
+- A **Horizontal Analysis** is a year by year comparison of values.
+- A **Vertical Analysis** involves comparing numbers from the same account period.
+- The **Days Analysis** represents how long it takes to count *Trade Receivables*.
+- For metric **Days Sales Outstanding**, it is calculated using [Trade Receivables]/[Revenues] * 360
+- For metric **Days Payable Outstanding**, it is calculated using [Trade Payables]/[Cost of Goods Sold] * 360
+- For metric **Days Inventory Outstanding**, it is calculated using [Inventory]/[Cost of Goods Sold] * 360
+- The four key topics to Asses Business Performance are:
+  * **Liquidity**: A firms capabilitiy to pay its short term obligations.
+  * **Solvency**: A companies capability to meet its long term obligations
+  * **Profitability**: A firms ability to generate profits.
+  * **Growth**: The speed at which a company's financial are growing.
+- **Current Ratio**: [Short Term Assets] / [Short Term Liabilities]
+- **Net Trade Cycle**: [DSO] + [DIO] - [DPO]
+- **Debt Ratio**: [Total Liabilities] / [Total Assets]
+- **Interest Coverage**: [EBIT]/[Interest Expenses]
+- **Return On Assets**: [EBIT]/[Total Assets]
+- **Return On Equity**: [Net Income]/[Total Equity]
+- **Revenue Growth**: ([This Years Revenue]/[Last Years Revenue]) -1
 
 
-# Accounting - Subtleties of Financial Statement Analysis
+# Financial Statement Analysis - Practical Case Study
+- Examples of calculating the ratios.
 
-# Accounting - Practical Case Study
+
+# Financial Statement Analysis - Tesla
+- The **Quick Ratio** is defined as ([Cash] + [Marketable Securities])/[Current Liabilities]
+
+
+# Working Capital Management
+- **Working Capital** has two definitions:
+  1. [Current Assets] - [Current Liabilities]
+  2. [Trade Receivables] + [Inventory] - [Trade Payables]
+- During good economic times, Investors care about the P&L.
+- During Bad Times, they care about the Balance Sheet.
+- While trying to decide whether to accept a client, we should consider:
+  * Ask for a bank reference.
+  * Obtain a trade reference.
+  * Read the client's credit Rating and related news.
+  * Visit a client's facilities.
+- Keep on sending out invoices on time.
+- Legal procedures are a measure of last resort.
+- We want to make sure that there are always raw resources for what our clients want.
+- There are three variables we should watch for **Re-order Levels**:
+  1. Lead Time.
+  2. Average Daily Consumption.
+  3. Safety Stock
+- The equation is: [Lead Time] * [Average Daily Consumption] + [Safety Stock]
+- **Econimic Order Quantity** should help us determine the minimum cost to sustain when ordering supplies.
+- There are foour variables for the equation:
+  1. Expected Annual Usage.
+  2. Product Cost, per unit.
+  3. Cost of Purchasing.
+  4. Holding Cost
+- **The Wilson EOQ Formula**: sqrt( (2 * [Annual Usage] * [Product Cost])/[Holding Cost])
+- A **Par Level** is just a technical term for *Re-order Level*.
+
 
 # Fundamentals of Business & Financial Analysis
+- Lots of slides.
+
 
 # Finance 101 - The Time Value of Money and Interest Rate Components
+- The core principle is that Money today is more valuable than money tomorrow.
+- Money today offers more opportunities than money tomorrow.
+- An **Interest Rate** is the cost of borrowing or the cost that one pays for the rental of funds.
+- Every type of interest rate can be disaggregated as the sum of five components.
+- The building block of all rates is the **Risk-Free Rate** which assumes no risk of default and no inflation.
+- The second component is **Expected Inflation** which compensates for the reduced purchasing power of money.
+- The next component is the **Default Risk** which compensates for the lender for assuming default risk.
+- The next component is the **Liquidity Premium** that investors demand when a security is defficult to sell.
+- The last component is the **Maturity Premium** which compensates an investor for the long maturity of his investment.
+- *Libor* stands for **London Interbank Offered Rate** which is the average interest rate estimated by leading banks in London.
+- The **Expected Loss** equation is given by: [Exposure at Default] * [Probability of Default] * [Loss Given Default]
+  * **Exposure at Default** how much of the bank's money will be at risk if we default.
+  * **Probability of Default** is how likely it is that we default.
+  * **Loss Given Default** is what percentage of the bank's money will be lost.
+- The difference between individual borrowers and Corporate Borrowers is the types of loans.
 
 # Finance 101 - The Value of Cash Flows With Different Timing
+- In Finance, we should never simply add money when the Time Value of Money is applicable.
+
 
 # Finance 101 - Loan Calculations
+- An **Annuity** is a series of payments made at fixed intervals of time.
+- The equation of the **Future Value of Annuity** is (((1 + [Interest Rate]^[Number of Periods]) -1)/[Interest Rate])
 
-# Capital Budgeting - A Complete Case Study
 
-# Powerpoint - An Introduction
+# Capital Budgeting - Basic Notions
+- **Capital Budgeting** is the process that companies go through to determine whether to invest in a long term asset.
+- The topics of discussion are:
+  * The Amount of Capital.
+  * The project's timeline.
+  * The Financial Return
+- A Beta less than one shows that the stock is less volatile than the market.
+- A Beta equal to one means the stock is as volatile as the market.
+- A Beta greater than one shows that the stock is more volatile than the market.
+- When a company that is highly diversified has a project then using that companies Beta is not accurate.
+- We'll then want to adjust the risk profile by the industry.
+
+
+# Capital Budgeting  - A Complete Case Study
+- Walk through of how to calculate Potential profit gains from moving a factory.
+- There are many different ways to to calculate a companies Cost of Equity.
+- We're going to use the **Capital Asset Pricing Model (CAPM)**.
+- We've talked about the formula before: [Cost of Equity] = [Risk-Free Rate] + [Beta] * [Market Premium]
+- Risk-Free is usually a 10-year Government Bond since that is about as stable as can be found.
+
+
+# Tesla Practical Case Study - Building a Financial Planning Model
+- It is a really good idea to have driver sheet when building models.
+- 
+
+
+# Powerpoint - Introduction to Power Point.
+- Skipping.
 
 # Powerpoint - Tips and Tricks
 
@@ -502,6 +616,8 @@ A *Balance Sheet* has two sides:
 - IASB?
 - Vertex One?
 - Stock vs Liquid Dividends?
+- Wilson EOQ formula?
+- Cost of Equity?
 
 
 # Reference:
