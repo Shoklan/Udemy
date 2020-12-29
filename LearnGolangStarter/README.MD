@@ -1,13 +1,17 @@
 # Learn How To Code: Google's Go (golang) Programming Language
 ## Todd McLeod
 
-# Introduction
+# 1. Introduction
+- Google hired a bunch of luminaries to write a new language.
+- One of the fastest growing languages.
+- One of the highest paying languages as well.
+- Golang was designed to take advantage of multiple cores.
+- Golang is really good at networking at scale.
+
+# 2. Course Overview
 
 
-# Course Overview
-
-
-# Your Development Environment
+# 3. Your Development Environment
 
 
 # Variables, Values, Type
@@ -89,7 +93,7 @@
 
 
 # Introduction
-
+-
 
 # Installing Go
 
@@ -147,3 +151,4 @@
 # Research:
 
 # Reference:
+- [Golang Code Specification](https://golang.org/ref/spec)
