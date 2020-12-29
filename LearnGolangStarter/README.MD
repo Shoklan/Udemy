@@ -9,10 +9,11 @@
 - Golang is really good at networking at scale.
 
 # 2. Course Overview
+ - Refer to course outline.
+ - **Documentation** is a document which describes how to use something.
 
 
 # 3. Your Development Environment
-
 
 # Variables, Values, Type
 
