@@ -20,6 +20,7 @@
 | Microsoft Windows Server 2012 Certification        | [\MSWindows2012Cert]             |       {}       |  F  |
 | The Ultimate Drawing Course - Beginner to Advanced | [\UltimateDrawing]               | {2020/01/20}   |     |
 | Python for Data Science and Machine Learning       | [\PythonDSBootcamp]              |       {}       |     |
+| Learn To Code: Google's Go Programming Language    | [\LearnGolangStarter]            |                |     |
 
 R: Redo.
 F: Frozen.
