@@ -45,6 +45,25 @@
 
 
 # Variables, Values, Type
+- There is an idiomatic way to write go code.
+- You always must import `package main`.
+- The function `func main()` is the entry point into running the program.
+- There are three types of control flow in Golang:
+  1. Sequence.
+  2. Loop; Iterative.
+  3. Conditional.
+- A **Package** is a way to put similar code together.
+- You can't have a variable and not use it in Golang.
+- It does have the throw away variable `_` though.
+- Identifiers name program entities such as variables and types.
+  - They are allowed to be `identifiers = letter { letter | unicode_digit } .`
+- The **Short Variable Declaration Operator** declares and assigns a value.
+- Once you've initialized the variable, you can simply assign to it after.
+- If you declare a variable then you **must** use it.
+- If you want to constrain it to a particular type then you declare it with `var z int` or whatever type you're after.
+- When you declare a variable with a type but no value then it will assign the default value to it at first.
+- You can print the type of a variable using `fmt.Printf("%T\n", y)`.
+- You can create your own types using `type <your-type> <underlying-type>` `type hotdog int`.
 
 
 # Exercise - Ninja Level 1
