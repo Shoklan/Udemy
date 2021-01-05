@@ -14,6 +14,35 @@
 
 
 # 3. Your Development Environment
+- Anything with respect to bash will not documented.
+- You can go to the [Golang Playground](https://play.golang.org) for lots of the early code.
+- You can check the version using `go version`
+- You can ask for documentation about commands using `go help [CMD]`.
+- Golang is a very opinionated language about how you should do things.
+- It is this way due to ideas about team efficiency and productivity.
+- It expects the folder structure to look like:
+  - Top-Level-Folder
+    - bin
+    - pkg
+    - src
+      - <github.com>
+        - <github username>?
+          - <repo>
+- In the tutorial by Todd, he's set the `GOROOT` which prevented mine from running so don't do that if you're in linux.
+- You use `go get` to download from a version control repository.
+- To get the code you would run `go get -d githunb.com/GoesToEleven/go-programming`.
+- `go fmt` runs the command `gofmt -l -w` on the packages named.
+- You can format everything in a directory using `go fmt ./...` .
+- You can use `go build` to actually compile the executable.
+- If you want to change the name then use the flag `-o`.
+- To create a new module you use `go mod init`
+- You can get the current list of module dependencies using `go list -m all`.
+- You can remove unused dependencies using `go mod tidy`.
+- When you call `go test` it will download the dependencies and indirect dependencies for the program.
+- You want both `go.mod` and `go.sum` add to your repository since the .sum is the cryptotgraphic hash.
+- To upgrade a dependency, you just use the `go get` on the dependency path: `go get rsc.io/sampler`.
+- You can specify the version of the package using the `<package>@vx.x.x`.
+
 
 # Variables, Values, Type
 
