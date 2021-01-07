@@ -98,7 +98,8 @@ gb = 1 << (iota * 10)
 ```
 
 
-# Exercises - Ninja Level 2
+# 7. Exercises - Ninja Level 2
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
 # Control Flow
