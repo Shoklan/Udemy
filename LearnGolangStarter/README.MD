@@ -44,7 +44,7 @@
 - You can specify the version of the package using the `<package>@vx.x.x`.
 
 
-# Variables, Values, Type
+# 4. Variables, Values, Type
 - There is an idiomatic way to write go code.
 - You always must import `package main`.
 - The function `func main()` is the entry point into running the program.
@@ -62,11 +62,14 @@
 - If you declare a variable then you **must** use it.
 - If you want to constrain it to a particular type then you declare it with `var z int` or whatever type you're after.
 - When you declare a variable with a type but no value then it will assign the default value to it at first.
+- These are called the **Zero Values**.
 - You can print the type of a variable using `fmt.Printf("%T\n", y)`.
 - You can create your own types using `type <your-type> <underlying-type>` `type hotdog int`.
+- You can convert types using the type as a function: `y := int(x)`.
 
 
-# Exercise - Ninja Level 1
+# 5. Exercise - Ninja Level 1
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
 # Programming Fundamentals
