@@ -118,7 +118,8 @@ gb = 1 << (iota * 10)
 - There is also the `default` case which is evaluated if nothing else is.
 
 
-# Exercises - Ninja Level 3
+# 9. Exercises - Ninja Level 3
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
 # Grouping Data
