@@ -102,7 +102,20 @@ gb = 1 << (iota * 10)
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Control Flow
+# 8. Control Flow
+- Code runs sequentially until it hits a control flow keyword.
+- The for loop structure looks like `for i := 0; <condition>; i++ {}`
+- For loops traditionally declare `i` for incrementing.
+- You can run loops inside loops.
+- You don't actually need to specify declare a variable nor increment parts of the for loop structure.
+- You use `break` to exit a loop.
+- You can use `continue` to continue in a loop.
+- You can get the remainder from a division using `%` operator.
+- Golang has the normal `if` and `else` structure.
+- A `switch` statement always starts with that key word.
+- Then, actual branching logic is built around `case` keywords.
+- You can actually tell case in golang to evaluate the next case using the `fallthrough` keyword.
+- There is also the `default` case which is evaluated if nothing else is.
 
 
 # Exercises - Ninja Level 3
