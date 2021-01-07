@@ -67,12 +67,35 @@
 - You can create your own types using `type <your-type> <underlying-type>` `type hotdog int`.
 - You can convert types using the type as a function: `y := int(x)`.
 
-
 # 5. Exercise - Ninja Level 1
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Programming Fundamentals
+# 6. Programming Fundamentals
+- We're going to learn about Bool types now.
+- You can declare it with `var x bool`.
+- `false` is the *zero value* for bool.
+- Floating points have decimal point; integers don't - basically.
+- The `u` stands for unsigned values which means that it's only natural numbers.
+- Golang will optimize for whatever machine it is running on when it compiles.
+- You can access the underlying system information using the `runtime` package.
+- You can get the OS using `runtime.GOOS`.
+- You can get the architecture using `runtime.GOARCH`.
+- Now we will discuss string type.
+- You can declare strings with \` or " or even '.
+- Backticks are a raw string which includes newline characters.
+- Strings in go are immutable.
+- You can convert a string into an array of bytes using `[]bytes(s)`.
+- You index the arrays just like you would in other languages.
+- `const` is how you declare constant variables which are not allowed to change.
+- An **Iota** is an identifier which is used with constant and which can simplify constant definitions that use auto increment numbers.
+- Golang has bit shifting operators: `<<` and `>>`.
+- You can include *iota* in normal operations:
+```golang
+kb = 1 << (iota * 10)
+mb = 1 << (iota * 10)
+gb = 1 << (iota * 10)
+```
 
 
 # Exercises - Ninja Level 2
