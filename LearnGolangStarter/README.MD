@@ -122,7 +122,54 @@ gb = 1 << (iota * 10)
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Grouping Data
+# 10. Grouping Data
+- **Arrays** can contain multiple values of the same type; Structs can contain different types.
+- You declare it with `var <indetifier> [<size>]<type>`
+- You can get the length of an array using `len()`.
+- *Arrays* are primarily the building block for slices.
+- A **Composite Literal** has the structure: `x:= type{values}`.
+```golang
+x := []int{4,5,6,7}
+```
+- It creates a new instance every time it is evaluated.
+- A Slice allows you to group together values of the same type
+- Slice indexing is like most arrays.
+- Golang has the pythonic for syntax:
+```golang
+for i,v := range x {
+  fmt.Println(i,v)
+}
+```
+- It also has the same syntax for indexing as well: `x[:5]`.
+- There is no deletion mechanism in a slice; you will need to extract the values you want instead and re-assign.
+- **Append** is a function that appends the elements to the end of a slice and returns the result.
+```golang
+x = append(x, 5, 5, 5)
+```
+- Basically, `make` is manually allow you to control the expansion of the array when you need to resize it.
+- Multidimensional slices use the normal syntax:
+```golang
+xp := [][]string{jb,mp}
+```
+- Maps are the key,value pairings of the Golang language.
+- They look to be locked by type - meaning you cannot have multiple types like in python:
+```Golang
+m := map[string]int{
+  "James": 32,
+  "Miss MoneyPenny": 27,
+}
+```
+- You can catch whether a value existed using something similar to functional languages:
+```golang
+if v,ok := m["Miss MoneyPenny"]; ok {
+  // ......
+}
+```
+- You can delete a key,value pair using the `delete` function:
+```golang
+delete(<map-name>, "key")
+```
+-
 
 
 # Exercises - Ninja Level 4
