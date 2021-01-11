@@ -178,6 +178,37 @@ delete(<map-name>, "key")
 
 
 # 12. Structs
+- A **struct** is a data structure which allows us to compose values together of different types.
+- It looks like this:
+```golang
+type person struct{
+  first string
+  last string
+}
+```
+- You use it with:
+```golang
+p1 := person{
+  first:"trutles",
+  last:"totoise"
+}
+```
+- You access them with dot notation: `p1.first`.
+- You can embed structs inside another struct.
+- **Promoted Fields** - which are fields the superstruct inherits from the embedded struct - can be called directly using dot notation from the superstruct.
+```golang
+sa1 := secretAgent{
+  person: person{
+    first: "James",
+    last: "Bond",
+    age:   32,
+  },
+  ltk: true,
+}
+
+fmt.Println(sa1.first)
+```
+- You can embed a struct without declaring it internally - which is called an **Anonymous Struct**.
 
 
 # Exercises - Ninja Level 5
