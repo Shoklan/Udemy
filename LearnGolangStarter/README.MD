@@ -169,13 +169,15 @@ if v,ok := m["Miss MoneyPenny"]; ok {
 ```golang
 delete(<map-name>, "key")
 ```
--
 
 
-# Exercises - Ninja Level 4
+# 11. Exercises - Ninja Level 4
+- Lots of examples about how to do the stuff we learned  - with code examples.
+- You can dump the values out of a slice using the ellipsis notation: `y...`.
+- You can get the capacity of a slice using the function `cap()`.
 
 
-# Structs
+# 12. Structs
 
 
 # Exercises - Ninja Level 5
