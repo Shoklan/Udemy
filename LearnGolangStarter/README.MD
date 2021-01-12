@@ -292,10 +292,12 @@ func bar() func() int{
 - **Recursion** is when a function calls itself until a condition is met to cease execution.
 
 
-# Exercises - Ninja Level 6
+# 15. Exercises - Ninja Level 6
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
 # Pointers
+-
 
 
 # Exercises - Ninja Level 7
