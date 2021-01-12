@@ -211,7 +211,8 @@ fmt.Println(sa1.first)
 - You can embed a struct without declaring it internally - which is called an **Anonymous Struct**.
 
 
-# Exercises - Ninja Level 5
+# 13. Exercises - Ninja Level 5
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
 # Functions
