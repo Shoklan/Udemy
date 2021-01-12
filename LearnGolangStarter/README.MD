@@ -215,7 +215,81 @@ fmt.Println(sa1.first)
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Functions
+# 14. Functions
+- **Functions** are all about being modular.
+- This is one of the ways in which we modularize our code in Golang.
+- The other is **packages**.
+- They start with the keyword `func`.
+- Next is a **receiver** which attaches it to a type.
+- Next is an identifier.
+- Next is parameters.
+- Next is returns.
+- Next is the code itself.
+```golang
+func foo() {
+  fmt.Println("Hello")
+}
+
+func bar(s string) {
+  fmt.Println("Hello", s)
+}
+
+func woo (st string) string {
+  return fmt.Sprintf("Hellow from woo," st)
+}
+
+func mouse (frst, lst string) (string, bool){
+  a := fmt.Sprintf(fn, " ", ln, `, says "Hello"`)
+  b := false
+  return a,b
+}
+```
+- You call it like a normal function in any programming language.
+- Everything in Golang is pass by value.
+- You can tell a function definition that there is an unlimited number using `...<type>`.
+- This is called a **Variatic Parameter**.
+- **Unfurling** is not part of the language specification but we're going to call it this.
+- You *unfurl* using `xi...`.
+- The keyword `defer` will push running the function off until when it is called or the end of the Code Block.
+- This is sometimes called **Lazy Loading** or **Lazy Evaluation**. // Notes by myself.
+- A common usage would be to defer a file closure.
+- You can attach a method to something using `func (s <type>) identifier(){}`.
+- This is called a **Receiver**.
+- **Interfaces** allow us to define behavior.
+- It has the structure:
+```golang
+// Any type which has this speak function is also of type human:
+type human interface {
+  speak()
+}
+```
+- A value can be of more than one type.
+- These *interfaces* allow us to apply different outcomes to different types with the same methods.
+- This is called **Polymorphism**.
+- Everything implements the interface empty type.
+- **Anonymous Functions** are functions without identifiers:
+```golang
+func(){
+  fmt.Println("Anon~")
+}()
+```
+- A **Func Expression** is an *anonymous function* which is saved to an identifier.
+- Golang treats functions as First Class Citizens.
+- Which really just means it can do anything else that other types can do.
+- This also means that you can return functions as well.
+```golang
+
+func bar() func() int{
+  return func() int {
+    return 451
+  }
+}
+```
+- A **Callback** is when you pass a function into another function.
+- This is not very idiomatic for Golang.
+- A **Closure** encloses a variable in some code such that it's scope is limited to an area of the code.
+- Anything you can do with *Recursion*, you can also do with loops.
+- **Recursion** is when a function calls itself until a condition is met to cease execution.
 
 
 # Exercises - Ninja Level 6
