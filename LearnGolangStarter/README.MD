@@ -446,8 +446,8 @@ cancel()
 - You can check if the context is done using `ctx.Done()`
 
 
-# Exercises - Ninja Level 10
-
+# 23. Exercises - Ninja Level 10
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 # Error Handling
 
