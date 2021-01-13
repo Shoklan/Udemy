@@ -312,10 +312,27 @@ var b *int = &a // This is ok.
 
 
 # 17. Exercises - Ninja Level 7
--
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Application
+# 18 Application
+- Now we're going to write actual code to integrate what we learned with JSON.
+- We haven't talked about error handling yet but you'll want this to take place right after where an error would be returned.
+- To **marshel** the json means to convert a struct to JSON.
+- You do this using `json.Marshal(<declared-struct>)`.
+- To **unmarshal** json would be to convert from json into a struct.
+- You have to give it the address instead of the values.
+- We're going to check on the *Writer Interface* since we'll be certain to be using it a lot.
+- Think of **Encode** and **Decode** as being down straight to/from the wire.
+- Any type with has the function `Write(p []byte) (n int, err error)` is of type Writer.
+- The package `sort` is for primitives for sorting slices and user defined structs.
+- Beware since these look to sort in place - like Python's sort does.
+- When sorting, you will need:
+  1. `Len() int`.
+  2. `Swap(i, j int) bool`
+  3. `Less(i, j int) bool`
+- I know about bcrypt and encryption and how this works.
+- The `x` in the url means that it's still under the experimental branch and is not in the standard library yet.
 
 
 # Exercises - Ninja Level 8
