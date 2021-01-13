@@ -385,7 +385,65 @@ func blah(){
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Channels
+# 22. Channels
+- The syntax to create a channel is: `<identifier> := make(chan <type>)`.
+- You can only put whatever the type declared into this channel.
+- The operator to put something on the channel is `<-`: `c <- 42`.
+- You can take off the channel using `<- c`.
+- This will deadlock until both the Input and Output confirm the transaction.
+- **Channels Block**.
+- Make sure that you're putting them into go routines else the program will deadlock and die.
+- You can also pass a number to the `make()` call which will add a buffer of values for even if nothing is on the other side.
+- Running this on my own shows that this is basically a kind of queue:
+```golang
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	c := make(chan int, 2)
+
+	c<- 42
+	c<- 43
+
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+}
+
+// Output:
+42
+43
+```
+- This order does not seem to change no matter how many times it's ran.
+- While you can use buffers, try to avoid them as much as possible.
+- What we've been using is a bidirectional channel.
+- But, you can also declare unidirectional channels for a function.
+- You declare that with `make(chan <- int)` which will only allow it to be sent to.
+- You use `make( <- chan int)` to declare a receive only channel.
+- You can go from general to specific and so when you have a function, you can set one to send and the other to receive.
+- There is a nice design pattern for ranging over channels.
+- You set a for loop to put the values on the channel until it is pulled.
+- Then you pull them off in another for loop in a different function
+- Close the channel: `close(c)`.
+- Fan Out, Fan in are a common concurrency pattern.
+- **Context** is a tool which can be used to manage go routines.
+- This allows you to close all the processes associated with a task, job or function.
+```golang
+ctx := context.Background()
+
+// Stuff and things.
+
+ctx, cancel := context.WithCancel(ctx)
+
+
+/// moar stuff
+
+cancel()
+```
+- You check the context with `ctx.Err()`.
+- You can check if the context is done using `ctx.Done()`
 
 
 # Exercises - Ninja Level 10
