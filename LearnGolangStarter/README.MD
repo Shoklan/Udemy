@@ -338,8 +338,48 @@ var b *int = &a // This is ok.
 # 19. Exercises - Ninja Level 8
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
-# Concurrency
--
+# 20. Concurrency
+- **Golang** is the first major programming language to take advantage of multiple cores in hardware.
+- **Concurrency** is a design pattern for code which should allow it to run in parallel and it is built into the language.
+- For this, you must have more than one CPU.
+- You can use:
+  - `runtime.NumCPU()` to get the number of CPUs for the computer.
+  - `runtime.NumGoroutine()` to get the number of Go Subrountines.
+- You put something in a go routine using `go <expression>`.
+- There is something called `func init(){}` which can be set to run before your function.
+- If func main finishes then everything else will stop as well - including our go routines.
+- Therefore, we need some primitives which will tell it to wait.
+- We use something called a **Wait Group** in this case.
+```Golang
+import(
+  "sync"
+)
+
+var wg sync.WaitGroup
+
+wg.add(1)
+// Stuff
+
+wg.Wait()
+
+func blah(){
+  // Ze Code! It does zomething!
+  wg.Done()
+}
+```
+- A **Race Condition** in concurrent programming is when the read/writes are not updated correctly due to multiple accessors.
+- Go encourages sharing variables around on channels.
+- Only one go rountine has access to a channel at one time.
+- You can tell go that it's allowed to run other stuff using `runtime.Gosched()`.
+- In `go` there is a flag `-race` to check for race conditions: `go run -race main.go`.
+- To declare a mutex you use `var mu sync.Mutex`.
+- You lock with `mu.Lock()` and now nothing can touch any variables for the section until you `mu.Unlock()`.
+- Not in the video but it also supports **Braodcasts**!
+- You can also specify if other routines are allowed to read or write or both using `RWMutex`.
+- Now we're going to check out **Atomic** to do something similar.
+- If you see int64 then chances are you're looking at someone using the *Atomic* package.
+- The `Add` and `Load` use pointers so make sure to pay attention - if you're using them at all.
+
 
 # Exercises - Ninja Level 9
 
