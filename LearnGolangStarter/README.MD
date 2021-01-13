@@ -296,8 +296,19 @@ func bar() func() int{
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Pointers
--
+# 16. Pointers
+- **Pointers** point to location in memory where values are stored.
+- The operator `&` is used to reference the pointer of an identifier.
+- You cannot assign a *pointer* to a variable identifier but you can assign a *pointer* to pointer of a variable indetifier:
+```Golang
+var b int = &a // This is bad.
+var b *int = &a // This is ok.
+```
+- You can use the declaration operator to store the memory address: `b := &a`.
+- You can then get the value at that address using `*b`; this is called **De-referencing an Address**.
+- The correct time to use pointers is when you have a large amount of data and don't want to pass it around.
+- You can also change a specific value at a specific location.
+- A **Method Set** are the collection of methods attached to a type.
 
 
 # Exercises - Ninja Level 7
