@@ -335,11 +335,11 @@ var b *int = &a // This is ok.
 - The `x` in the url means that it's still under the experimental branch and is not in the standard library yet.
 
 
-# Exercises - Ninja Level 8
-
+# 19. Exercises - Ninja Level 8
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 # Concurrency
-
+-
 
 # Exercises - Ninja Level 9
 
