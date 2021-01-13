@@ -381,7 +381,8 @@ func blah(){
 - The `Add` and `Load` use pointers so make sure to pay attention - if you're using them at all.
 
 
-# Exercises - Ninja Level 9
+# 21. Exercises - Ninja Level 9
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
 # Channels
