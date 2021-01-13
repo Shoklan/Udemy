@@ -311,7 +311,8 @@ var b *int = &a // This is ok.
 - A **Method Set** are the collection of methods attached to a type.
 
 
-# Exercises - Ninja Level 7
+# 17. Exercises - Ninja Level 7
+-
 
 
 # Application
