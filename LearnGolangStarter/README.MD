@@ -449,7 +449,39 @@ cancel()
 # 23. Exercises - Ninja Level 10
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
-# Error Handling
+# 24. Error Handling
+- Golang does not have exceptions.
+- Error is simply another type as well.
+- Any other type with the method return `Error() string` is also of type error and can therefore throw errors.
+- You should not get in the habit of simply throwing the errors away.
+- Error defaults to `nil` for a default value.
+- You can use `fmt.Scan()` to collect user input.
+- You can use the function `io.Copy()` to write to a file.
+```golang
+f, err := os.Create("Names.txt")
+
+r := strings.NewReader("James Bond")
+io.Copy(f, r)
+```
+- You have a few options to read an error.
+  1. `fmt.Println()`; to Stdout
+  2. `log.Println()`; to Stdout, or log file.
+  3. `log.Fatalln()`; will shut down program.
+  4. `log.Panicln()`; can use `recover` which will not be covered in this course.
+  5. `panic()`.
+- You change the log location using `log.SetOutput(f)` where `f` is a file descriptor open.
+- Defer functions are Last In, First Out.
+- When a `panic()` is called, any defer'd functions will execute as per normal.
+- Starting ientifiers with lower case letters means that they're not going to be exported outside the pacakge.
+- Sometimes declaring an error globally in your module or package can be useful:
+```golang
+var ErrNorgateMath = errors.New("THis is the errror message!")
+
+#...
+
+fmt.Errorf("This is the error message!: %v", f)
+```
+- You should start the documentation for your function with the function name.
 
 
 # Exercises - Ninja Level 11
@@ -524,6 +556,10 @@ cancel()
 
 
 # Research:
+- `recover()`?
+- Named Returns?
+-
+
 
 # Reference:
 - [Golang Code Specification](https://golang.org/ref/spec)
