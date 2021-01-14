@@ -449,6 +449,7 @@ cancel()
 # 23. Exercises - Ninja Level 10
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
+
 # 24. Error Handling
 - Golang does not have exceptions.
 - Error is simply another type as well.
@@ -484,10 +485,12 @@ fmt.Errorf("This is the error message!: %v", f)
 - You should start the documentation for your function with the function name.
 
 
-# Exercises - Ninja Level 11
+# 25. Exercises - Ninja Level 11
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Writing Documentation
+# 26. Writing Documentation
+-
 
 
 # Exercises - Ninja Level 12
