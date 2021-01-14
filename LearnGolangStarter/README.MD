@@ -490,10 +490,18 @@ fmt.Errorf("This is the error message!: %v", f)
 
 
 # 26. Writing Documentation
--
+- The first step to understanding how to write documentation starts with reading it.
+- `godoc` extracts and generates Go package documentation.
+- There is a subcommand `doc` of `go` which will show you documentation.
+- Documentation is generated from our comments.
+- You can check sub components using dot notation: `go doc fmt.Println`.
+- The greatest thing about `godoc` is that you can run a local server and see all the documentation: `godoc -http=:8080`
+- To get the documentation to show up at godocs.org, you will want to past the path to your github repo into the search bar.
+- If you have a lot of documentation to add at the beginning - beyond what should fit in code - then you should make a doc.go file.
 
 
-# Exercises - Ninja Level 12
+# 27. Exercises - Ninja Level 12
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
 # Testing and Benchmarking
