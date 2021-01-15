@@ -504,10 +504,73 @@ fmt.Errorf("This is the error message!: %v", f)
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
 
-# Testing and Benchmarking
+# 28. Testing and Benchmarking
+- To start using testing, you want to import `testing`.
+- Functions should start with `Test` and then then name of the function being tested.
+  - It not required though.
+- The function takes an argument `t *testing.T`.
+- Notice that the testing is dependent on our own good reasoning.
+  - It cannot save you from yourself.
+- When you name the test file, you'll want to call it `<filename>_test.go`.
+- You run them with `go test`.
+- You can get verbose printouts using `-v`.
+- A **Table Test** is a feature where you test a *table* of values for a function.
+```golang
+func TestMySum(t *testing.T){
+
+  type test struct{
+    data []int
+    answer int
+  }
+
+  tests := []test{
+    test{[]int{21,21}, 42},
+    test{[]int{1,2,21}, 24},
+    test{[]int{1,2,3}, 6}
+  }
+
+  for _, v := range tests{
+    x := mySum( v.data...)
+    if x != v.answer {
+      // # throw error here
+    }
+  }
+}
+```
+- An example is a great way to both document and show how to use your package.
+- You include the examples in the test file and start the function with `Example`.
+```golang
+func ExampleSum(){
+  fmt.Println(Sum(2,3))
+  // Output:
+  // 5
+}
+```
+- Remember you can use `gofmt` to format the code.
+- You can use `go vet` to report suspicious constructs, whatever that means.
+- You can use `golint` to report poor coding style.
+- Do not treat the output of linting as a Gold Standard.
+- It is not installed by default so you will need to `go get` it.
+- **Benchmarking** measures the performance of your code.
+- You also include benchmarks in the testing files with a function that starts with `Benchmark`
+```golang
+func BenchmarkGreet(b *testing.B){
+  for i := 0; i < b.N; i++ {
+  // # your code goes here.
+  }
+}
+```
+- You then ask it to run the benchmarks with `go test -bench .`.
+- **Coverage** in programming is how much of your code is covered by tests.
+- In practice, it is not possible to cover all the code you've written.
+- You can enable it by passing `-coverage` to `go test`.
+- You can pass `-coverprofile <filename>` to print the output of the tests to a file. for coverage.
+- You can also output an html file using `go tool cover -html=c.out`.
+- Get our data structures right.
 
 
-# Exercises - Ninja Levle 13
+# 29. Exercises - Ninja Levle 13
+- Lots of examples about how to do the stuff we learned  - with code examples.
 
 
 # Introduction
