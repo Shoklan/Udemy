@@ -572,6 +572,7 @@ func BenchmarkGreet(b *testing.B){
 # 29. Exercises - Ninja Levle 13
 - Lots of examples about how to do the stuff we learned  - with code examples.
 
+# Lectures below this point were Legacy and Done at a previous time, Undocumented.
 
 # Introduction
 -
