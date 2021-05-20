@@ -68,6 +68,35 @@
 
 
 # Conveying Story Through Games
+- Story can be expressed through:
+  * The goal.
+  * Game Mechanics.
+  * Game Characters.
+  * Dialogue.
+  * Setting.
+  * Level Design.
+  * Sound Design.
+- The **Goal** is what the player needs to do.
+- The *goal* of the game is often the goal of the story.
+- If the goal is the what the player needs to do; the *game mechanics* is how they achieve their goal.
+> The most effective way to communicate how to do things is to weave the what and the how into the games instructions.
+
+![Articulate Game Mechanics](images/questions-to-ask-about-player-engagement.png)
+- Characters fall into two categories:
+  1. POV characters.
+  2. NPCs
+- The characters need to fit within the style and tone of the game.
+![Questions about characters](images/questions-to-ask-about-npcs-and-pov-characters.png)
+- **Level Design** is all the ingredients added into a level to make it what it is.
+- Think about the player's journey:
+  * What information do they have?
+  * What is the best way to convey this information?
+- **Sound Design** is incredible important as it makes the game immersive.
+- **Exposition** is something that is story relevant is expressed.
+- Too subtle and the player doesn't understand; to clunky and it will simply be a set of instructions laid out for the player.
+- A **Cut Scene** is a short film within the game.
+- A *Cut Scene* is best when it shows something that would be missed or cannot be done in gameplay.
+- Make sure to convey ideas without simply saying them: "I'm so tired" vs "I'm low on energy."
 
 
 # Developing Your Characters
