@@ -52,6 +52,19 @@
 
 
 # Start with an Idea!
+- Sometimes ideas are disjointed and you'll have to flesh them out.
+> There are no bad ideas.
+
+- // **Incorrect**.
+> Bad games are not usually a bad idea but a poorly developed idea.
+
+- There is no one way to generate ideas.
+- What are you responsible for in the game?
+- Ideas often start with "What if?" or "Wouldn't it be cool if?".
+- The whole point of being a story teller is to share them.
+- You need to be able to communicate your game idea to others in order to get them interested.
+- It can be a great exercise to explain your idea in a couple sentences or a paragraph.
+- It can be useful to check out other games that are similar in idea.
 
 
 # Conveying Story Through Games
