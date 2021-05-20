@@ -21,6 +21,7 @@
 | The Ultimate Drawing Course - Beginner to Advanced | [\UltimateDrawing]               | {2020/01/20}   |     |
 | Python for Data Science and Machine Learning       | [\PythonDSBootcamp]              |       {}       |     |
 | Learn To Code: Google's Go Programming Language    | [\LearnGolangStarter]            |                |     |
+| Game Writing: Storytelling Video Game Design       | [\StorytellingGameDesign]        |                |     |
 
 R: Redo.
 F: Frozen.
