@@ -3,7 +3,7 @@
 ## Gwen Davies
 
 
-# What is a Game?
+# 1. What is a Game?
 - As Humans, telling stories is something we instinctively do.
 - When a story is a passive medium - such as books, magazines - then the medium is under authorial control.
 - Games are more active experiences - which is what makes them different.
@@ -24,7 +24,7 @@
 > The player decides what to eat; the writer designs the menu.
 
 
-# Storytelling - The Basics
+# 2. Storytelling - The Basics
 - You can use **Story Lite** vs **Story Rich** as a tool to decide what the story elements should look like.
 - It could be a backdrop and not much else.
 - The **Storyworld** is the entirety of hte world in which your story takes place.
@@ -51,7 +51,7 @@
 ![Escalation Questions](images/reflection-escalation-questions.png)
 
 
-# Start with an Idea!
+# 3. Start with an Idea!
 - Sometimes ideas are disjointed and you'll have to flesh them out.
 > There are no bad ideas.
 
@@ -67,7 +67,7 @@
 - It can be useful to check out other games that are similar in idea.
 
 
-# Conveying Story Through Games
+# 4. Conveying Story Through Games
 - Story can be expressed through:
   * The goal.
   * Game Mechanics.
@@ -99,18 +99,60 @@
 - Make sure to convey ideas without simply saying them: "I'm so tired" vs "I'm low on energy."
 
 
-# Developing Your Characters
+# 5. Story Structure
+![Story Structure Overview](images/story-structure-hills-overview.png)
+- The best way to use **Structure Guidelines** are to use it to generate story events or characte development.
+- As well as *Diagnostic Tools* for while you're developing your story further.
+> Effective Stories are structured stories.
+
+- **Structure** is the shape of progression.
+- Effective stories have variety.
+- A game with earned successes is usually the most fun.
+- You want to keep in mind that you don't want a game that's hard enough that players never win.
+- A game may not have an explicit "Level" but it can be seen to have "missions" which can be used as goalposts for progress.
+- Pacing can be problematic for open world games when a player can choose any or no paths.
+- It is helpful to keep in mind that the player's journey through the game is linear.
+> Be aware of what makes na engaging and satisfying linear story when creating a game with branching stoyrlines
+> // The player will still think of their experience as linear.
+
+- If you have branches then your job is to make sure all paths have value.
+- Beware of simply making sure that there is a singular theme with which to guide your story.
+- **What core emotion do you want your game to appeal to?**
+![Questions About Emotions](images/questions-about-emotions.png)
+- Stories - almost always - need a beginning, a middle and an end.
+- The **Beginning** or **Orientation** is the part of the story which tells us what the world of the story is.
+- The **Middle** or **Comlications** is the part of the story where things get complicated for the Protagonist.
+- The **End** or **Resolution** is where they face up to the Antagonist.
+- Here is a model or structure to build stories around:
+  1. **The Setup**: where we learn what the story  and game is about.
+  2. **Catalyst**: Something which nudges the character into action.
+  3. **Character In Action**: player starts the journey.
+  4. **Inciting Incident**: This is what unbalances the player in some way.
+  5. **Breathing Space**: A break from the main points.
+  6. **Focus Point One**: Something that forces them to accept what is happening, learned.
+  7. **Obstacles Tougher; Protagonist Stronger**.
+  8. **Midpoint; Point of No Return**.
+  9. **Focus Point Two**.
+  10. **Onwards and Upwards**
+  11. **The Moment of Truth**.
+  12. **Resolving the Problem**
+- The **Hero's Journey** is the structure of the character's progression.
+- This tool is intended to be a way of identifying motifs in stories.
 
 
-# Genre and Audienace Expectations
+# 6. Developing Your Characters
 
 
-#
+# 7. Genre and Audienace Expectations
+
 
 # Research:
 - Zombies run?
 - Miguel Sicart?
 - Old Man's Journey?
+- Christpher Vogler?
+- "The Writer's Journey: Mythic Structures for Writers"
+
 
 # Reference:
 -
