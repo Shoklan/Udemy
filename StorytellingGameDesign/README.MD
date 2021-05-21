@@ -186,7 +186,8 @@ What do you think players will find appealing about this character? (Why will th
 
 
 # 7. Genre and Audience Expectations
-
+- **Genre** is ways to group different kinds of media.
+- Knowing your *genre* will help you figure out what your reader's/player's expectations are.
 
 
 # Research:
