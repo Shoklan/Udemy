@@ -141,9 +141,52 @@
 
 
 # 6. Developing Your Characters
+![Players Play Games](images/why-do-players-play-games.png)
+- It is through the character that they are playing and encounter the game world.
+- Having different playable characters can increase re-playability.
+- Be mindful of consistency between characters.
+- You need to create characters that are interesting and fun to play.
+```
+Does the player have any agency in the creation or choice of character? Explain what you envision for your game. If you’re not sure yet, return to this later. If the player gets to choose between characters, choose one for the rest of this exercise, and then repeat for another character.
+
+What is the player’s POV? Are you a character within the game? Or are you more like a god overseeing the creation of something?
+
+Does the character have a name?
+
+What is the character’s/player’s mission in the game?
+
+Do they have a motivation driving them?
+
+Is there anything that hinders the character/player in their mission?
+
+What are their skills?
+
+How do these skills help towards achieving the game’s mission(s)?
+
+What skills can they gain on their game journey?
+
+Do they have any weaknesses?
+
+What is the character’s physical appearance?
+
+Does their physical appearance reflect anything about their skills or the game world around them?
+
+Does their physical appearance affect how NPCs react to them?
+
+Do they communicate with other characters in the game? If so, how?
+
+Does their mode of communication add to the atmosphere of the game?
+
+How do you imagine the character progressing across the course of a level and/or across the whole game? (Do they learn things? Do they gain new skills?)
+
+How does the character relate to the theme of the game?
+
+What do you think players will find appealing about this character? (Why will they find them fun to play?)
+```
 
 
-# 7. Genre and Audienace Expectations
+# 7. Genre and Audience Expectations
+
 
 
 # Research:
